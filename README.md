@@ -1,6 +1,7 @@
 <img src="https://raw.githubusercontent.com/kr0tchet/HL2UpdatePlusPlus/main/hl2u%2B%2Blogo.png" width="600" height="129"><br>
 
 This is the raw files of the patch itself. Still work in progress on GitHub.
+(Link Updated 2/26/23)<br>
 You can download it now at:
 
 GitHub: Go to releases page.
@@ -9,7 +10,7 @@ GameBanana: https://gamebanana.com/mods/429040
 
 PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-mod-source-2022-patch-updated-2023/
 
-OneDrive (Direct link): https://1drv.ms/u/s!ApXWaOsJtM-_oS78jLZiMpQ29XxZ
+OneDrive (Direct link): https://1drv.ms/u/s!ApXWaOsJtM-_oS2P6slSlFz3Y3E9?e=K6JFf6
 
 About this patch/mod:
 
@@ -31,3 +32,42 @@ Engine last updated in Feb 11, 2023.
 
 This mod will get updates when Valve releases a engine update for the vanilla game, which will be
 ported over to work with HL2 Update.
+
+<b>Licenses:</b><br>
+] Licensing:
+Creative Commons License
+This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
+
+You can freely share the mod anywhere you want.
+
+Publishing the mod anywhere else requires my permissions. 
+(except Steam Workshop, which you can publish it there as long you credited me 
+since I don't have enough $5 to spent on Steam to unlock that feature, and even then both 
+HL2 and HL2 Update never have any Workshop whatsoever as of 2023).
+
+There are some exceptions: Valve, Fillip Victor, or anyone involved on the original games, 
+has a rights to selling the game or update the game with this patch installed, regardless if its was 
+similar to this mod or using part of this mod or not.
+<br>
+] SDL2 license:
+This software is provided 'as-is', without any express or implied
+warranty.  In no event will the authors be held liable for any damages
+arising from the use of this software.<br>
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must not
+   claim that you wrote the original software. If you use this software
+   in a product, an acknowledgment in the product documentation would be
+   appreciated but is not required.<br>
+2. Altered source versions must be plainly marked as such, and must not be
+   misrepresented as being the original software.<br>
+3. This notice may not be removed or altered from any source distribution.<br>
+
+The setup icon was based off the Half-Life 2 icon made by vaksa<br>
+(C) 2005 vaksa, used with permissions<br>
+https://www.deviantart.com/vaksa/art/Half-Life-2-icon-16869820<br>
+
+This patch is not made by, or affiliated with Valve, Fillip Victor, and the people who worked on the game.
