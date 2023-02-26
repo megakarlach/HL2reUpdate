@@ -1,4 +1,4 @@
-
+<img src="https://raw.githubusercontent.com/kr0tchet/HL2UpdatePlusPlus/main/hl2u%2B%2Blogo.png" width="600" height="129"><br>
 
 This is the raw files of the patch itself. Still work in progress on GitHub.
 You can download it now at:
