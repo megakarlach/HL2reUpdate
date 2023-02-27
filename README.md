@@ -18,8 +18,11 @@ OneDrive (Direct link): https://1drv.ms/u/s!ApXWaOsJtM-_oS2P6slSlFz3Y3E9?e=K6JFf
 About this patch/mod:
 
 This is the patch for HL2 Update mod, which upgrades the outdated version of the Source engine to latest one came from vanilla game, while also adding new features:
+- Increased FOV from 90 to 110 (120 max via Console "fov_desired 120")
+- HUD Aspect Ratio (4:3, 16:9, 16:10)
 - Vulkan renderer (-vulkan)
 - Working Gamepad UI/Steam Deck UI (-gamepadui)
+- Better controller support (Steam Input, untested)
 - Customized Gamepad UI to have the images on "New Game" chapters matching the one from HL2 Update.
 - and more...
 
