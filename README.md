@@ -29,6 +29,7 @@ This is the patch for HL2 Update mod, which upgrades the outdated version of the
 Bug that are also fixed (by Valve), which also works with HL2 Update mod including:
 - Dropship gun fix which now allows it to turn it's rifle.
 - Long loading saves bug/engine freezing while saving has been fixed (caused by the game tries to access \\MOD, which freezes the engine).
+- Fixed some stuttering on level transitions
 - NPC eyes not blinking
 - Missing Combine sounds has been fixed (noticeable by shooting them)
 - and much more... (https://web.archive.org/web/20160830085422/http://forums.steampowered.com/forums/showthread.php?t=1286478)
