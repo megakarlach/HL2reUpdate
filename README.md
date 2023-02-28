@@ -34,8 +34,8 @@ Bug that are also fixed (by Valve), which also works with HL2 Update mod includi
 - Missing Combine sounds has been fixed (noticeable by shooting them)
 - and much more... (https://web.archive.org/web/20160830085422/http://forums.steampowered.com/forums/showthread.php?t=1286478)
 
-Current version: Source 2013, v24 build 7671541_u103 (slightly modified to separate it from the version used on vanilla HL2), 
-Engine last updated in Feb 11, 2023.
+Current version: Source 2013, v24 build 7671541upp1032 (slightly modified to separate it from the version used on vanilla HL2), 
+Engine officially (by Valve) last updated in Jan 17, 2023.
 
 This mod will get updates when Valve releases a engine update for the vanilla game, which will be
 ported over to work with HL2 Update.
