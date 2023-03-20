@@ -15,7 +15,7 @@ PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-mod-source-2
 
 OneDrive (Direct link): https://1drv.ms/u/s!ApXWaOsJtM-_oS2P6slSlFz3Y3E9?e=K6JFf6
 
-About this patch/mod:
+# About this patch/mod
 
 This is the patch for HL2 Update mod, which upgrades the outdated version of the Source engine to latest one came from vanilla game, while also adding new features:
 - Increased FOV from 90 to 110 (120 max via Console "fov_desired 120")
@@ -40,8 +40,9 @@ Engine officially (by Valve) last updated in Jan 17, 2023.
 This mod will get updates when Valve releases a engine update for the vanilla game, which will be
 ported over to work with HL2 Update.
 
-<b>Licenses:</b><br>
-] Licensing:
+# Licenses
+
+<b>For this mod:</b><br>
 Creative Commons License
 This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
 
@@ -56,7 +57,7 @@ There are some exceptions: Valve, Fillip Victor, or anyone involved on the origi
 has a rights to selling the game or update the game with this patch installed, regardless if its was 
 similar to this mod or using part of this mod or not.
 <br>
-] SDL2 license:
+<b>For SDL2:</b><br>
 This software is provided 'as-is', without any express or implied
 warranty.  In no event will the authors be held liable for any damages
 arising from the use of this software.<br>
