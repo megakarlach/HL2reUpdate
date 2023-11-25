@@ -1,4 +1,6 @@
-<img src="https://raw.githubusercontent.com/kr0tchet/HL2UpdatePlusPlus/main/hl2u%2B%2Blogo.png" width="600" height="129"><br>
+<img src="https://raw.githubusercontent.com/megakarlach/HL2UpdatePlusPlus/main/hl2reupdatelogo.jpg" width="800" ><br>
+
+IMPORTANT, everything on the so called "code" above is now out of date, please get the latest one from releases instead. I will update that later.
 
 See this patch showcases here:
 https://www.youtube.com/embed/BPhvxuZAkQ4
@@ -9,9 +11,9 @@ You can download it now at:
 
 GitHub: Go to releases page.
 
-GameBanana: https://gamebanana.com/mods/429040
+GameBanana: https://gamebanana.com/mods/429040 (will be 1.0.4.0 soon asap)
 
-PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-mod-source-2022-patch-updated-2023/
+PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-mod-source-2022-patch-updated-2023/ (1.0.32b, will update soon).
 
 OneDrive (Direct link): https://1drv.ms/u/s!ApXWaOsJtM-_oS2P6slSlFz3Y3E9?e=K6JFf6
 
