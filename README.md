@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/megakarlach/HL2UpdatePlusPlus/main/hl2reupdatelogo.jpg" width="800" ><br>
+<img src="https://raw.githubusercontent.com/megakarlach/HL2UpdatePlusPlus/main/hl2reupdatelogo.jpg" width="640" ><br>
 
 **IMPORTANT**, this mod was formerly called as "__Half-Life 2: Update++__", but decided to renamed it to "**Half-Life 2: reUpdate**" as it's was cooler.
 
