@@ -15,7 +15,9 @@ GameBanana: https://gamebanana.com/mods/429040 (will be 1.0.4.0 soon asap)
 
 PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-mod-source-2022-patch-updated-2023/ (1.0.32b, will update soon).
 
-OneDrive (Direct link): https://1drv.ms/u/s!ApXWaOsJtM-_oS2P6slSlFz3Y3E9?e=K6JFf6
+MEGA: (Tomorrow or next few days)
+
+OneDrive (Direct link): Deprecated. Use other mirrors instead.
 
 # About this patch/mod
 
