@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/megakarlach/HL2UpdatePlusPlus/main/hl2reupdatelogo.jpg" width="800" ><br>
 
-IMPORTANT, everything on the so called "code" above is now out of date, please get the latest one from releases instead. I will update that later.
+**IMPORTANT**, everything on the so called "code" above is now out of date, please get the latest one from releases instead. I will update that later.
 
 See this patch showcases here:
 https://www.youtube.com/embed/BPhvxuZAkQ4
