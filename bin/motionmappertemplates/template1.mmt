@@ -1,0 +1,51 @@
+#
+# default template file is analogus to not specifying a template file at all
+#
+# Note: comments must start with a "#" as the first character of the line
+#
+
+#
+# Mapping controls
+#
+# Description:
+#
+# Attempts to maintain leg/foot animation "feel" by maximum adjustments.
+#
+# Maintains foot -> leg length relationship.
+# Maintains foot -> hip relationship
+# Maintains foot -> ground relationship, adjusts root accordingly.
+#
+# Attempts to achieve absolute hand -> body relationship.
+#  Therefore does not adjust hand positions relative to arm length changes
+#	attempting to maintain potential weapon relationships. However, body
+#   length/height is accounted for by allowing root space offset in z.
+#
+
+rootScaleJoint ValveBiped.Bip01_L_Foot
+rootScaleAmount 1.0
+toeFloorZ 2.7777
+
+twoJointIKSolve ValveBiped.Bip01_L_Foot
+reverseSolve 0
+extremityScale 1.0
+limbRootOffsetScale 1.0 1.0 0.0
+
+twoJointIKSolve ValveBiped.Bip01_R_Foot
+reverseSolve 0
+extremityScale 1.0
+limbRootOffsetScale 1.0 1.0 0.0
+
+oneJointPlaneConstraint ValveBiped.Bip01_L_Toe0
+
+oneJointPlaneConstraint ValveBiped.Bip01_R_Toe0
+
+twoJointIKSolve ValveBiped.Bip01_R_Hand
+reverseSolve 1
+extremityScale 0.0
+limbRootOffsetScale 0.0 0.0 1.0
+
+twoJointIKSolve ValveBiped.Bip01_L_Hand
+reverseSolve 1
+extremityScale 0.0
+limbRootOffsetScale 0.0 0.0 1.0
+

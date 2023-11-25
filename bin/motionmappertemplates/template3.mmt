@@ -1,0 +1,45 @@
+#
+# Note: comments must start with a "#" as the first character of the line
+#
+
+#
+# Mapping controls
+#
+# Description:
+#
+# Does not attempt to maintain leg/foot animation "feel" instead matches
+#  foot/root positions exactly and adjusts leg animation attempting to 
+#  solve for these constraints. Note: longer legs is better for this!
+#
+# Doe NOT maintain foot -> leg length relationship.
+# Does NOT maintain foot -> hip relationship
+# Maintains foot -> ground relationship, does not adjust root.
+#
+# Attempts to achieve absolute hand -> root relationship.
+#  Therefore does not adjust hand positions relative to body changes
+#  attempting to maintain potential weapon relationships.
+#
+
+rootScaleJoint ValveBiped.Bip01_L_Foot
+rootScaleAmount 0.0
+toeFloorZ 2.7777
+
+twoJointIKSolve ValveBiped.Bip01_L_Foot
+reverseSolve 0
+extremityScale 0.0
+limbRootOffsetScale 0.0 0.0 0.0
+
+twoJointIKSolve ValveBiped.Bip01_R_Foot
+reverseSolve 0
+extremityScale 0.0
+limbRootOffsetScale 0.0 0.0 0.0
+
+twoJointIKSolve ValveBiped.Bip01_L_Hand
+reverseSolve 1
+extremityScale 0.0
+limbRootOffsetScale 0.0 0.0 0.0
+
+twoJointIKSolve ValveBiped.Bip01_R_Hand
+reverseSolve 1
+extremityScale 0.0
+limbRootOffsetScale 0.0 0.0 0.0
