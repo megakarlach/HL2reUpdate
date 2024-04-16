@@ -1,10 +1,10 @@
 "GameInfo"
 {
-    game        "HALF-LIFE 2"
+    game        "HALF-LIFE 2 - UPDATE"
     title           "HALF-LIFE ' "
     GameData	halflife2.fgd
     type		singleplayer_only
-    supportsvr	0	// Disabled otherwise it can cause error with newer Source version that depecrated this.
+    supportsvr	0	// Disabled otherwise it can cause error with newer Source version that depecrated this, plus it can cause SteamVR to open for no reason.
 
  
  	developer	"Filip Victor"

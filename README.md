@@ -2,103 +2,98 @@
 
 **IMPORTANT**, this mod was formerly called as "__Half-Life 2: Update++__", but decided to renamed it to "**Half-Life 2: reUpdate**" as it's was cooler.
 
+IMPORTANT: THIS IS FOR HALF-LIFE 2: UPDATE (by Fillip Victor) ONLY, DO NOT INSTALL THIS ON VANILLA HL2 (AND IT'S EPISODES), OR ANY OTHER MODS (including MMOD).
+This mod was formerly known as "__Half-Life 2: Update++__", but has been renamed to "**Half-Life 2: reUpdate**".
+
 See this patch showcases here:
 https://www.youtube.com/embed/BPhvxuZAkQ4
 
 This is the raw source files of the patch itself.<br>
-(Link Updated 2/26/23)<br>
-You can download it now at:
+(Link Updated 4/16/24)<br>
 
-GitHub: Go to releases page.
+There's also HL2 reUpdate for Mac and Linux, but those are currently untested since I don't use these OS.
 
-GameBanana: https://gamebanana.com/mods/429040 (will be 1.0.4.0 soon asap)
+README FOR HL2: reUPDATE (formerly HL2: Update++)
+1.0.4.1 - build 8491853 - Windows version - 4/16/2024
 
-PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-mod-source-2022-patch-updated-2023/ (1.0.32b, will update soon).
+For more information about this patch, see:
+GameBanana: https://gamebanana.com/mods/429040
+PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-new-engine-patch-new-bugfixes-for-hl2-update-updated-2023/
 
-MEGA: (Tomorrow or next few days)
+Downloads:
+Gamebanana, PCGW: See above.
+MEGA: https://mega.nz/folder/cj8VWTgI#hsPshFA1J4ARrqcw_UVmHQ
 
-OneDrive (Direct link): Deprecated. Use other mirrors instead.
+			== How to install/update patch? ==
+1. Run Installer > Next
+2. Read stuff carefully if needed (as it's include details about new version, or duplication of README which you can ignore) then Agree
+3. Select the game install folder, Example: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Update
+3b. For those who don't know where Steam and the game is installed, go to Steam Library > 
+right click Half-Life 2 Update > Properties > Local Files > Browse...
+4. Install (make sure the game is closed)
+5. Launch it, you are basically done!
 
-# About this patch/mod
+6 (Optional). If you want to install the custom Orange UI with Verdana & Trebuchet MS font, 
+put the VPK file into hl2\custom folder (if it doesn't exist, create it).
 
-This is the patch for HL2 Update mod, which upgrades the outdated version of the Source engine to latest one came from vanilla game, while also adding new features:
-- Increased FOV from 90 to 110 (120 max via Console "fov_desired 120")
+			== INFO ==
+
+This is the unofficial patch for Half-Life 2: Update (http://store.steampowered.com/app/290930), which upgrades the outdated version of the Source engine to latest version using files from vanilla version of Half-Life 2, aka the original 
+(https://store.steampowered.com/app/220), which allows Half-Life 2: Update to have new features and bug fixes from the vanilla game such as:
+
+- Increased FOV from 90 to 110 (120 max via Console "fov_desired 120" or Gamepad UI)
 - HUD Aspect Ratio (4:3, 16:9, 16:10)
 - Vulkan renderer (-vulkan)
 - Working Gamepad UI/Steam Deck UI (-gamepadui)
-- Better controller support (Steam Input, untested)
-- Customized Gamepad UI to have the images on "New Game" chapters matching the one from HL2 Update.
-- and more...
+- Legacy controller support (XInput) has working rumble/vibration (through updated SDL2) (WINDOWS ONLY).
+- Better controller support (Steam Input, may not work)
 
-Bug that are also fixed (by Valve), which also works with HL2 Update mod including:
-Recently (Nov 17, 2023):
+Beside the official changes above. The reUpdate patch also added/changed some features:
+- The Gamepad UI have been customized, in this case, most thumbnails on "New Game" chapters are taken from HL2: Update instead of the vanilla HL2.
+- (NEW) More improvements and few new features to Gamepad UI, restored some missing options, including:
+Keyboard Advanced Options:
+Fast Weapon Switch - Disabled (0), Enabled (1), Gamepad style (2), Horizontal style/Postal III style (3), can be also changed with "hud_fastswitch" command.
+Enable Developer Console directly via Gamepad UI
+Mouse sensitivity on Gamepad UI can be increased up to 20.
+- (NEW) Some improvements to old VGUI:
+Video - Advanced
+Removed broken "Use 'bloom' effect when available" that always uncheck itself when saved. Bloom and HDR will still functioning normally with it's options remain available.
+FOV options increased to 120 without using Console command.
+- Optional: Orange Gamepad UI scheme with Verdana & Trebuchet MS font included.
+
+Bugs that are also fixed (by Valve), will now works with HL2: Update aswell including:
+Recently:
 - Fixed a hang where NPC pathfinding could stall forever
 - Fixed sprinting when using an external controller (This fix would be pointless with HL2 reUPDATE due to Steam Controller being unsupported anyway).
+
 Previously:
-- Dropship gun fix which now allows it to turn it's rifle.
+- Dropship container gun fix which makes the gun possible to turn (existed since 2010, now fixed).
 - Long loading saves bug/engine freezing while saving has been fixed (caused by the game tries to access \\MOD, which freezes the engine).
+- Improved loading times
 - Fixed some stuttering on level transitions
 - NPC eyes not blinking
 - Missing Combine sounds has been fixed (noticeable by shooting them)
-- and much more... (https://web.archive.org/web/20160830085422/http://forums.steampowered.com/forums/showthread.php?t=1286478)
-Technical info:
-Current version: Source 2013, v24 - build 8491853, last updated in Nov 17, 2023. Custom version numbering was removed to avoid causing other issues.
+- and much more... (see https://web.archive.org/web/20160830085422/http://forums.steampowered.com/forums/showthread.php?t=1286478)
 
-This mod will get updates (as long i'm not dead or quit working on the project) when Valve releases a engine update for the vanilla game, which will be
-quickly ported over to work with HL2 Update.
+== OTHER UNFIXED BUGS ==
+- Steam Input are non-functional. You can use the legacy XInput mode (using -nosteamcontroller command line) for game controllers (this is optimized for X360 Controller, but may work
+with anything else).
+- Demo mode. This may or may not happen, you can follow the instruction above if you encountered this.
+- DirectX 8 mode by default. This is a common bug that also affect vanilla HL2 aswell, and there's no way we gonna fix them. To fix this, launch the game with -dxlevel 95, configure your video settings, save it (by clicking OK), then
+exit the game, remove the launch options, launch the game again, if you got video settings reset, configuring it again, then save it, try to relaunch
+just to make sure, if video settings isn't reset to low quality or DX8, then you are good to go.
 
-# Licenses
+			== LICENSE ==
 
-<h1>For this patch &amp; game files:<br></h1>
+Games files included in this patch are © 2004 - 2024 Valve Corporation.
+Redistributing this patch is allowed as long if you credit this to me, and Valve. Commercial purposes not allowed.
 
-Games files included in this patch are © 2004 - 2023 Valve Corporation. Redistributing this patch is allowed as long it was credited to both me and Valve themselves. Not for commercial purposes.<br><br><pre>SOURCE 1 SDK LICENSE
+For SDL2:
 
-Source SDK Copyright(c) Valve Corp.  
-
-THIS DOCUMENT DESCRIBES A CONTRACT BETWEEN YOU AND VALVE 
-CORPORATION ("Valve").  PLEASE READ IT BEFORE DOWNLOADING OR USING 
-THE SOURCE ENGINE SDK ("SDK"). BY DOWNLOADING AND/OR USING THE 
-SOURCE ENGINE SDK YOU ACCEPT THIS LICENSE. IF YOU DO NOT AGREE TO 
-THE TERMS OF THIS LICENSE PLEASE DON’T DOWNLOAD OR USE THE SDK.  
-
-  You may, free of charge, download and use the SDK to develop a modified Valve game 
-running on the Source engine.  You may distribute your modified Valve game in source and 
-object code form, but only for free. Terms of use for Valve games are found in the Steam 
-Subscriber Agreement located here: <a href="//store.steampowered.com/subscriber_agreement/" rel="nofollow">http://store.steampowered.com/subscriber_agreement/</a> 
-
-  You may copy, modify, and distribute the SDK and any modifications you make to the 
-SDK in source and object code form, but only for free.  Any distribution of this SDK must 
-include this LICENSE file and thirdpartylegalnotices.txt.  
- 
-  Any distribution of the SDK or a substantial portion of the SDK must include the above 
-copyright notice and the following: 
-
-    DISCLAIMER OF WARRANTIES.  THE SOURCE SDK AND ANY 
-    OTHER MATERIAL DOWNLOADED BY LICENSEE IS PROVIDED 
-    "AS IS".  VALVE AND ITS SUPPLIERS DISCLAIM ALL 
-    WARRANTIES WITH RESPECT TO THE SDK, EITHER EXPRESS 
-    OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED 
-    WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, 
-    TITLE AND FITNESS FOR A PARTICULAR PURPOSE.  
-
-    LIMITATION OF LIABILITY.  IN NO EVENT SHALL VALVE OR 
-    ITS SUPPLIERS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, 
-    INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER 
-    (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF 
-    BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF 
-    BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) 
-    ARISING OUT OF THE USE OF OR INABILITY TO USE THE 
-    ENGINE AND/OR THE SDK, EVEN IF VALVE HAS BEEN 
-    ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  
- 
-       
-If you would like to use the SDK for a commercial purpose, please contact Valve at 
-sourceengine@valvesoftware.com<br></pre>
-
-<h1>For SDL2:<br></h1>
-<pre class="SelectedElement">This software is provided 'as-is', without any express or implied
+This software is provided 'as-is', without any express or implied
 warranty.  In no event will the authors be held liable for any damages
-arising from the use of this software.<br>
+arising from the use of this software.
+
 
 Permission is granted to anyone to use this software for any purpose,
 including commercial applications, and to alter it and redistribute it
@@ -107,16 +102,19 @@ freely, subject to the following restrictions:
 1. The origin of this software must not be misrepresented; you must not
    claim that you wrote the original software. If you use this software
    in a product, an acknowledgment in the product documentation would be
-   appreciated but is not required.<br>
-2. Altered source versions must be plainly marked as such, and must not be
-   misrepresented as being the original software.<br>
-3. This notice may not be removed or altered from any source distribution.<br>
-</pre>
+   appreciated but is not required.
 
-The setup icon was based off the Half-Life 2 icon made by vaksa<br>
-© 2005 vaksa, used with permissions<br>
-https://www.deviantart.com/vaksa/art/Half-Life-2-icon-16869820<br>and the Windows Vista/7 setup icon from Microsoft Windows. © Microsoft Corporation.<br><br><br>
+2. Altered source versions must be plainly marked as such, and must not be
+   misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source distribution.
+
+The setup icon was based off the Half-Life 2 icon made by vaksa
+© 2005 vaksa, used with permissions
+https://www.deviantart.com/vaksa/art/Half-Life-2-icon-16869820
+and the Windows Vista/7 setup icon from Microsoft Windows. © Microsoft Corporation.
 
 This patch is not made by, or affiliated with Valve, Fillip Victor, and others who have worked on the game.
+
 
 
