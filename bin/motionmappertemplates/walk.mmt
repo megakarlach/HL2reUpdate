@@ -1,0 +1,41 @@
+#
+# Note: comments must start with a "#" as the first character of the line
+#
+
+#
+# Mapping controls
+#
+# Description:
+#
+# Basic template for walk/run cycles and non-two handed weapon motions.
+#
+
+rootScaleJoint ValveBiped.Bip01_L_Foot
+rootScaleAmount 1.0
+
+toeFloorZ 2.7777
+
+twoJointIKSolve ValveBiped.Bip01_L_Foot
+reverseSolve 0
+extremityScale 1.0
+limbRootOffsetScale 1.0 1.0 0.0
+
+twoJointIKSolve ValveBiped.Bip01_R_Foot
+reverseSolve 0
+extremityScale 1.0
+limbRootOffsetScale 1.0 1.0 0.0
+
+oneJointPlaneConstraint ValveBiped.Bip01_L_Toe0
+
+oneJointPlaneConstraint ValveBiped.Bip01_R_Toe0
+
+twoJointIKSolve ValveBiped.Bip01_R_Hand
+reverseSolve 1
+extremityScale 1.0
+limbRootOffsetScale 0.0 0.0 1.0
+
+twoJointIKSolve ValveBiped.Bip01_L_Hand
+reverseSolve 1
+extremityScale 1.0
+limbRootOffsetScale 0.0 0.0 1.0
+

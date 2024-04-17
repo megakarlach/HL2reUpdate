@@ -1,0 +1,48 @@
+#
+# Note: comments must start with a "#" as the first character of the line
+#
+
+#
+# Mapping controls
+#
+# Description:
+#
+# Attempts to maintain individual leg/foot animation "feel" by maximum adjustments.
+#
+# Maintains foot -> leg length relationship.
+# Maintains foot -> hip relationship
+# Maintains foot -> ground relationship, adjusts root accordingly.
+#
+# Attempts to maintain individual arm animation "feel" yet maintaining hand to hand relationship.
+#	Maintains potential weapon relationship BASED on a weapon scaled in length by 60%.
+#  Note: The limb root offset is never used in arms due to no reference pose in .smd files
+#
+
+rootScaleJoint ValveBiped.Bip01_L_Foot
+rootScaleAmount 1.0
+toeFloorZ 2.7777
+
+twoJointIKSolve ValveBiped.Bip01_L_Foot
+reverseSolve 0
+extremityScale 1.0
+limbRootOffsetScale 1.0 1.0 1.0
+
+twoJointIKSolve ValveBiped.Bip01_R_Foot
+reverseSolve 0
+extremityScale 1.0
+limbRootOffsetScale 1.0 1.0 1.0
+
+oneJointPlaneConstraint ValveBiped.Bip01_L_Toe0
+
+oneJointPlaneConstraint ValveBiped.Bip01_R_Toe0
+
+twoJointIKSolve ValveBiped.Bip01_R_Hand
+reverseSolve 1
+extremityScale 1.0
+limbRootOffsetScale 1.0 1.0 1.0
+
+twoJointIKSolve ValveBiped.Bip01_L_Hand
+reverseSolve 1
+extremityScale 1.0
+limbRootOffsetScale 1.0 1.0 1.0
+

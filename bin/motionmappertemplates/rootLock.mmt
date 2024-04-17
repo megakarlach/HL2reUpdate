@@ -1,0 +1,44 @@
+#
+# Note: comments must start with a "#" as the first character of the line
+#
+
+#
+# Mapping controls
+#
+# Description:
+#
+# This template is for motions wherein the character interacts with
+# an object in the environment. No actual "mapping" is done to foot 
+# and hand positions. However, the new joint lengths are solved for.
+# Note that the positions of the hands and feet will attempt to 
+# remain the same relative to the ROOT, which is not changed from the
+# source animation. If bones lengths are shortened significantly this
+#  may not be possible and you may get motion artifacts.
+# 
+
+rootScaleJoint ValveBiped.Bip01_L_Foot
+rootScaleAmount 0.0
+
+toeFloorZ 2.7777
+
+twoJointIKSolve ValveBiped.Bip01_L_Foot
+reverseSolve 0
+extremityScale 0.0
+limbRootOffsetScale 0.0 0.0 0.0
+
+twoJointIKSolve ValveBiped.Bip01_R_Foot
+reverseSolve 0
+extremityScale 0.0
+limbRootOffsetScale 0.0 0.0 0.0
+
+
+twoJointIKSolve ValveBiped.Bip01_R_Hand
+reverseSolve 1
+extremityScale 0.0
+limbRootOffsetScale 0.0 0.0 0.0
+
+twoJointIKSolve ValveBiped.Bip01_L_Hand
+reverseSolve 1
+extremityScale 0.0
+limbRootOffsetScale 0.0 0.0 0.0
+
