@@ -24,7 +24,7 @@ Downloads:
 Gamebanana, PCGW: See above.
 MEGA: https://mega.nz/folder/cj8VWTgI#hsPshFA1J4ARrqcw_UVmHQ
 
-			== How to install/update patch? ==
+# How to install/update patch?
 1. Run Installer > Next
 2. Read stuff carefully if needed (as it's include details about new version, or duplication of README which you can ignore) then Agree
 3. Select the game install folder, Example: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Update
@@ -83,7 +83,7 @@ with anything else).
 exit the game, remove the launch options, launch the game again, if you got video settings reset, configuring it again, then save it, try to relaunch
 just to make sure, if video settings isn't reset to low quality or DX8, then you are good to go.
 
-			== LICENSE ==
+# LICENSE
 
 Games files included in this patch are © 2004 - 2024 Valve Corporation.
 Redistributing this patch is allowed as long if you credit this to me, and Valve. Commercial purposes not allowed.
