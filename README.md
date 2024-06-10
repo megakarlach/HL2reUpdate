@@ -15,19 +15,7 @@ Gamebanana, PCGW: See above.
 MEGA: https://mega.nz/folder/cj8VWTgI#hsPshFA1J4ARrqcw_UVmHQ
 Last updated 4/16/2024.
 
-# How to install/update patch?
-1. Run Installer > Next
-2. Read stuff carefully if needed (as it's include details about new version, or duplication of README which you can ignore) then Agree
-3. Select the game install folder, Example: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Update
-3b. For those who don't know where Steam and the game is installed, go to Steam Library > 
-right click Half-Life 2 Update > Properties > Local Files > Browse...
-4. Install (make sure the game is closed)
-5. Launch it, you are basically done!
-6. (optional) If you want to install the custom Orange-themed Gamepad UI with Verdana & Trebuchet MS font (looks similar to the console version), 
-put the VPK file into hl2\custom folder (if it doesn't exist, create it).
-
 # About this mod
-
 This is the unofficial patch for Half-Life 2: Update, which adds all the bug fixes, Steam Deck features from original (vanilla) Half-Life 2 to HL2: Update.
 
 ## Here are the features:
@@ -40,30 +28,30 @@ This is the unofficial patch for Half-Life 2: Update, which adds all the bug fix
 
 Beside the official changes above. The reUpdate patch also added/changed some features:
 - The Gamepad UI have been customized, in this case, most thumbnails on "New Game" chapters are taken from HL2: Update instead of the vanilla HL2.
-- (NEW) More improvements and few new features to Gamepad UI, restored some missing options, including:
-Keyboard Advanced Options:
-Fast Weapon Switch - Disabled (0), Enabled (1), Gamepad style (2), Horizontal style/Postal III style (3), can be also changed with "hud_fastswitch" command.
-Enable Developer Console directly via Gamepad UI
-Mouse sensitivity on Gamepad UI can be increased up to 20.
+- More improvements and few new features to Gamepad UI, restored some missing options, including:
+  Keyboard Advanced Options:
+    Fast Weapon Switch - Disabled (0), Enabled (1), Gamepad style (2), Horizontal style/Postal III style (3), can be also changed with "hud_fastswitch" command.
+    Enable Developer Console directly via Gamepad UI
+    Mouse sensitivity on Gamepad UI can be increased up to 20.
 - (NEW) Some improvements to old VGUI:
-Video - Advanced
-Removed broken "Use 'bloom' effect when available" that always uncheck itself when saved. Bloom and HDR will still functioning normally with it's options remain available.
-FOV options increased to 120 without using Console command.
+  Video - Advanced
+    Removed broken "Use 'bloom' effect when available" that always uncheck itself when saved. Bloom and HDR will still functioning normally with it's options remain available.
+    FOV options increased to 120 without using Console command.
 - Optional: Orange Gamepad UI scheme with Verdana & Trebuchet MS font included.
 
-Bugs that are also fixed (by Valve), will now works with HL2: Update aswell including:
-Recently:
+## Bugs fixed:
+November 17, 2023
 - Fixed a hang where NPC pathfinding could stall forever
 - Fixed sprinting when using an external controller (This fix would be pointless with HL2 reUPDATE due to Steam Controller being unsupported anyway).
 
 Previously:
-- Dropship container gun fix which makes the gun possible to turn (existed since 2010, now fixed).
+- Dropship container gun fix which makes the gun possible to turn (previously present since 2007 on X360/PS3 (Orange Box), and 2010 on PC, now fixed).
 - Long loading saves bug/engine freezing while saving has been fixed (caused by the game tries to access \\MOD, which freezes the engine).
-- Improved loading times
+- Improved loading times (for users with HDD only)
 - Fixed some stuttering on level transitions
-- NPC eyes not blinking
-- Missing Combine sounds has been fixed (noticeable by shooting them)
-- and much more... (see https://web.archive.org/web/20160830085422/http://forums.steampowered.com/forums/showthread.php?t=1286478)
+- NPC eyes not blinking (fixed in 2019)
+- Some missing Combine sounds has been fixed (noticeable by shooting them)
+- and much more... (see [here](https://web.archive.org/web/20160830085422/http://forums.steampowered.com/forums/showthread.php?t=1286478))
 
 # Bugs that hasn't been fixed
 - Steam Input are non-functional.
@@ -73,6 +61,17 @@ Previously:
   To workaround this bug, launch the game with -dxlevel 95, configure your video settings, save it (by clicking OK), then
   exit the game, remove the launch options, launch the game again, if your video settings was reset again, just configuring it again, then save it, try to relaunch
   just to make sure, if video settings doesn't reset to low quality, low textures or DX8, then you are good to go.
+
+# How to install/update patch?
+1. Run Installer > Next
+2. Read stuff carefully if needed (as it's include details about new version, or duplication of README which you can ignore) then Agree
+3. Select the game install folder, Example: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Update
+3b. For those who don't know where Steam and the game is installed, go to Steam Library > 
+right click Half-Life 2 Update > Properties > Local Files > Browse...
+4. Install (make sure the game is closed)
+5. Launch it, you are basically done!
+6. (optional) If you want to install the custom Orange-themed Gamepad UI with Verdana & Trebuchet MS font (looks similar to the console version), 
+put the VPK file into hl2\custom folder (if it doesn't exist, create it).
 
 # LICENSE (ignore)
 
