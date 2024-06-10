@@ -4,12 +4,12 @@
 See this patch showcases here:
 https://www.youtube.com/embed/BPhvxuZAkQ4
 
-1.0.4.1 - build 8491853 - Windows version - 4/16/2024
-
 More information about this patch:
 GameBanana: https://gamebanana.com/mods/429040
 
 PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-new-engine-patch-new-bugfixes-for-hl2-update-updated-2023/
+
+Patch current version: 1.0.4.1 - build 8491853 - 4/16/2024 (Windows & Linux)
 
 Downloads:
 Gamebanana, PCGW: See above.
@@ -24,8 +24,8 @@ This is the unofficial patch for Half-Life 2: Update, which adds all the bug fix
 - HUD Aspect Ratio (4:3, 16:9, 16:10)
 - Vulkan renderer (-vulkan)
 - Working Gamepad UI/Steam Deck UI (-gamepadui)
-- Legacy controller support (XInput) has working rumble/vibration (through updated SDL2) (WINDOWS ONLY).
-- Better controller support (Steam Input, may not work)
+- XInput/Legacy controller support has working rumble/vibration (as SDL2 was updated) (Windows only).
+- Steam Input (may not work)
 
 Beside the official changes above. The reUpdate patch also added/changed some features:
 - The Gamepad UI have been customized, in this case, most thumbnails on "New Game" chapters are taken from HL2: Update instead of the vanilla HL2.
