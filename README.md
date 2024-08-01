@@ -20,39 +20,10 @@ Last updated 4/16/2024.
 WARNING: This mod is for "Half-Life 2: Update" only.
 This is the unofficial patch for Half-Life 2: Update, which adds all the bug fixes, Steam Deck features from original (vanilla) Half-Life 2 to HL2: Update.
 
-## Installation / Update (Windows)
-1. [Buy Half-Life 2](https://store.steampowered.com/app/290930) (you don't need to download the original version unless you want to play the episodes, as HL2 Update is standalone)
-2. [Download and Install Half-Life 2: Update from Steam](https://store.steampowered.com/app/290930)
-3. [Download the reUpdate patch](https://github.com/megakarlach/HL2reUpdate/releases)
-4. Extract, then run the reUpdate installer > Next
-5. These are just readme about the patch itself, with links in case you need to update patch. Simply click "Agree".
-6. Select the game install folder, example: C:\Program Files (x86)\Steam\steamapps\common\Half-Life 2 Update (different on most systems)
-7. Install (make sure the game is closed)
-8. Launch it, you are basically done!
+## Installation / Update
+See [Wiki - Installation](https://github.com/megakarlach/HL2reUpdate/wiki/Installation)
 
-## Installation / Update (Mac, 32-bit only)
-1. [Buy Half-Life 2](https://store.steampowered.com/app/290930) (you don't need to download the original version unless you want to play the episodes, as HL2 Update is standalone)
-2. [Download and Install Half-Life 2: Update from Steam](https://store.steampowered.com/app/290930)
-3. [Download the reUpdate patch](https://github.com/megakarlach/HL2reUpdate/releases)
-4. Go to these following folders (depends where Steam & the game is installed):
-~/Library/Application Support/Steam/SteamApps/common/Half-Life 2 Update
-5. Open "1. Mac Binaries (untested)" folder, copy everything then paste on "Half-Life 2 Update" folder, overwrite everything.
-6. Open "2. Assets" folder, copy everything & paste on "Half-Life 2 Update" folder
-7. Launch it, see if its work, if it was, you are basically done!
-
-## Installation / Update (Linux)
-1. [Buy Half-Life 2](https://store.steampowered.com/app/290930) (you don't need to download the original version unless you want to play the episodes, as HL2 Update is standalone)
-2. [Download and Install Half-Life 2: Update from Steam](https://store.steampowered.com/app/290930)
-3. [Download the reUpdate patch](https://github.com/megakarlach/HL2reUpdate/releases)
-4. Go to these following folders (depends where Steam & the game is installed)
-	Normal: ~/.local/share/Steam/steamapps/common/Half-Life 2 Update
-	Flatpak: ~/.var/app/com.valvesoftware.Steam/steamapps/common/Half-Life 2 Update
-		(sudo perms or similar might be required, idk)
-5. Open "1. Linux Binaries (untested)" folder, copy everything then paste on "Half-Life 2 Update" folder, overwrite everything.
-6. Open "2. Assets" folder, copy everything & paste on "Half-Life 2 Update" folder
-7. Launch it, see if its work, if it was, you are basically done!
-
-(Optional) If you want to install the custom Orange-themed Gamepad UI with Verdana & Trebuchet MS font (looks similar to the console version), 
+(Optional) If you want to install the custom Orange-themed Gamepad UI with Verdana & Trebuchet MS font (inspired by the X360/PS3 Orange Box menu UI), 
 put the VPK file into hl2\custom folder (if it doesn't exist, create it).
 
 NOTE: For those who don't know where Steam and the game (Half-Life 2: Update) is installed, go to Steam Library > 
