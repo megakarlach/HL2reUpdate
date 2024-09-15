@@ -1,0 +1,601 @@
+//=========================================================================================
+//
+// Weightlists
+//
+$Weightlist AllBones "Valvebiped.Bip01_Pelvis" 1.0
+$weightlist HipsUpperBody {
+	"Valvebiped.Bip01_Pelvis" 1.0 
+	"ValveBiped.Bip01_R_Thigh" 0.0 
+	"ValveBiped.Bip01_L_Thigh" 0.0
+	} 
+$Weightlist UpperbodyBlend {
+	"ValveBiped.Bip01_Pelvis" 0.1 
+	"ValveBiped.Bip01_L_Thigh" 0.0 
+	"ValveBiped.Bip01_R_Thigh" 0.0 
+	"ValveBiped.Bip01_Spine" 0.2 
+	"ValveBiped.Bip01_Spine1" 0.4 
+	"ValveBiped.Bip01_Spine2" 0.6 
+	"ValveBiped.Bip01_Spine4" 1.0
+	}
+$Weightlist UpperbodyBlendPose {
+	"ValveBiped.Bip01_Pelvis" 0.1 
+	"ValveBiped.Bip01_L_Thigh" 0.0 
+	"ValveBiped.Bip01_R_Thigh" 0.0 
+	"ValveBiped.Bip01_Spine" 0.2 
+	"ValveBiped.Bip01_Spine1" 0.4 
+	"ValveBiped.Bip01_Spine2" 0.6 
+	"ValveBiped.Bip01_Spine4" 0.4
+	"ValveBiped.Bip01_L_Clavicle" 0.8
+	"ValveBiped.Bip01_L_Upperarm" 1.0
+	"ValveBiped.Bip01_R_Clavicle" 0.8
+	"ValveBiped.Bip01_R_Upperarm" 1.0
+	}
+$weightlist WeaponGestureArms {
+	"ValveBiped.Bip01_Pelvis" 0.0 
+	"ValveBiped.Bip01_L_Clavicle" 1.0 
+	"ValveBiped.Bip01_R_Clavicle" 1.0
+	} 
+$weightlist WeaponGestureSpine {
+	"ValveBiped.Bip01_Spine" 1.0 
+	"ValveBiped.Bip01_L_Thigh" 0.0 
+	"ValveBiped.Bip01_R_Thigh" 0.0 	
+	"ValveBiped.Bip01_L_Clavicle" 0.0 
+	"ValveBiped.Bip01_R_Clavicle" 0.0
+	}
+
+//=========================================================================================
+//
+// Attachments
+//
+$attachment anim_attachment_RH "ValveBiped.bip01_R_Hand" 0 0 0 
+//$attachment "aim_attachment" "ValveBiped.aim_attachment" -0.00 0.00 -0.00 rotate 0 -90 90
+
+//=========================================================================================
+//
+// Macro: SDK Aim Layer
+//
+// Frames: 0 = Down-Left, 1 = Down-Center, 2 = Down-Right
+//         3 = Mid-Left,  4 = Mid-Center,  5 = Mid-Right
+//         6 = Up-Left,   7 = Up-Center,   8 = Up-Right,
+//         9 = Straight Up
+// IK-Rules: Feet are locked.
+// The aim-layer is additive.
+// 
+// Usage: SDKAimLayer <layername> <filename>
+// 	- layername: the aim layer name
+//	- filename: the name of the layer's aim matrix animation file (see frames above for definition of file).
+//
+// Example: SDKAimLayer primary_aim_idle "primary_aim_matrix"
+//
+$definemacro SDKAimLayer layername filename \\
+$animation a_$layername$_neutral     $filename$ frame 4 4 weightlist HipsUpperBody \\
+$animation a_$layername$_down_left   $filename$ frame 0 0 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_down_center $filename$ frame 1 1 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_down_right  $filename$ frame 2 2 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_mid_left    $filename$ frame 3 3 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_mid_center  $filename$ frame 4 4 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_mid_right   $filename$ frame 5 5 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_up_left     $filename$ frame 6 6 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_up_center   $filename$ frame 7 7 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_up_right    $filename$ frame 8 8 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_straight_up $filename$ frame 9 9 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$sequence $layername$ { \\
+	a_$layername$_straight_up a_$layername$_straight_up a_$layername$_straight_up \\
+	a_$layername$_up_right a_$layername$_up_center a_$layername$_up_left \\
+	a_$layername$_mid_right a_$layername$_mid_center a_$layername$_mid_left \\
+	a_$layername$_down_right a_$layername$_down_center a_$layername$_down_left \\
+	blendref a_$layername$_neutral \\
+	blendcenter a_$layername$_mid_center \\
+	blendwidth 3 calcblend body_yaw "anim_attachment_RH" ZR calcblend body_pitch "anim_attachment_RH" YR \\
+//	blendwidth 3 calcblend body_yaw "aim_attachment" ZR calcblend body_pitch "aim_attachment" YR \\
+	delta \\
+	iklock rfoot 1 0 iklock lfoot 1 0 \\
+	hidden \\
+	} \\
+$continue $layername$
+
+$definemacro SDKAimLayerNoUp layername filename \\
+$animation a_$layername$_neutral     $filename$ frame 4 4 weightlist HipsUpperBody \\
+$animation a_$layername$_down_left   $filename$ frame 0 0 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_down_center $filename$ frame 1 1 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_down_right  $filename$ frame 2 2 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_mid_left    $filename$ frame 3 3 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_mid_center  $filename$ frame 4 4 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_mid_right   $filename$ frame 5 5 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_up_left     $filename$ frame 6 6 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_up_center   $filename$ frame 7 7 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$animation a_$layername$_up_right    $filename$ frame 8 8 subtract a_$layername$_neutral 0 weightlist HipsUpperBody \\
+$sequence $layername$ { \\
+	a_$layername$_up_right a_$layername$_up_center a_$layername$_up_left \\
+	a_$layername$_mid_right a_$layername$_mid_center a_$layername$_mid_left \\
+	a_$layername$_down_right a_$layername$_down_center a_$layername$_down_left \\
+	blendref a_$layername$_neutral \\
+	blendcenter a_$layername$_mid_center \\
+	blendwidth 3 calcblend body_yaw "anim_attachment_RH" ZR calcblend body_pitch "anim_attachment_RH" YR \\
+//	blendwidth 3 calcblend body_yaw "aim_attachment" ZR calcblend body_pitch "aim_attachment" YR \\
+	delta \\
+	iklock rfoot 1 0 iklock lfoot 1 0 \\
+	hidden \\
+	} \\
+$continue $layername$
+
+
+//================================================================================================
+// Generic foot contact IK to bbox
+//================================================================================================
+//$cmdlist foottouch ikrule lfoot footstep ikrule rfoot footstep
+$cmdlist foottouch ikrule lfoot touch "" ikrule rfoot touch ""
+
+
+//================================================================================================
+// Make a loop move for a move N with hand IK rules.
+//================================================================================================
+$definemacro MakeLoopMoveIK movename filename startframe angle basemove blendmove \\
+$animation a_$movename$ $filename$ { \\
+	LX LY \\
+	rotateto $angle$ \\
+	startloop $startframe$ \\
+	alignto $basemove$ \\
+	weightlist UpperBodyBlend \\
+	worldspaceblendloop $blendmove$ 0 \\
+	weightlist AllBones \\
+	noautoik \\
+	ikrule lhand touch "ValveBiped.Bip01_R_Hand" \\
+	cmdlist foottouch \\
+} \\
+$continue a_$movename$
+
+//================================================================================================
+//
+// Reference pose.
+//
+$animation a_ref_moveN "idle" lx ly
+$animation a_ref_run "idle" lx ly origin -6 0 0
+
+//================================================================================================
+//
+// Macro: SDKRunWithWeaponPose
+//
+// Use a pose from the idle and aim of a weapon to create the runs with weapon.
+//
+// Usage: SDKRunWithWeaponPose name filename frame aimmatrix activityname
+//	- name: unique id
+//	- filename: name of the runN filename
+//	- frame: all the poses/aimes are stored in groups and indexed via a frame number
+//	- aimmatrix: the name of the aimmatrix for the movement type
+//	- activity: the name of the movement activity
+//
+// Example:
+//
+
+//$cmdlist runtouch ikrule lfoot footstep range .. 14 2 .. contact 0 ikrule rfoot footstep range .. 6 10 .. contact 8
+$cmdlist runtouch ikrule lfoot touch "" ikrule rfoot touch ""
+
+$animation a_runS  "run_s_bar"  startloop 3  	LX LY  	origin -6 0 0	rotateto -180 noautoik fps 33 cmdlist runtouch
+$animation a_runSE "run_se_bar" startloop 3  	LX LY  	origin -6 0 0	rotateto -135 noautoik fps 33 cmdlist runtouch
+$animation a_runE  "run_e_bar"  startloop 10   	LX LY  	origin -6 0 0	rotateto  -90 noautoik fps 33 cmdlist runtouch
+$animation a_runNE "run_ne_bar" startloop 11   	LX LY  	origin -6 0 0	rotateto  -45 noautoik fps 33 cmdlist runtouch
+$animation a_runN  "run_n_bar"  startloop 11   	LX LY  	origin -6 0 0	rotateto    0 noautoik fps 33 cmdlist runtouch
+$animation a_runNW "run_nw_bar" startloop 11   	LX LY  	origin -6 0 0	rotateto   45 noautoik fps 33 cmdlist runtouch
+$animation a_runW  "run_w_bar"  startloop 10   	LX LY 	origin -6 0 0	rotateto   90 noautoik fps 33 cmdlist runtouch
+$animation a_runSW "run_sw_bar" startloop 3  	LX LY  	origin -6 0 0	rotateto  135 noautoik fps 33 cmdlist runtouch
+
+
+$definemacro SDKRunWithWeaponPose name filename frame aimmatrix activityname \\
+$sequence pose_blend_runN_$name$ $filename$ { \\
+	frame $frame$ $frame$ \\
+	iklock lfoot 1 0 iklock rfoot 1 0 \\
+	weightlist UpperbodyBlendPose \\
+	worldspace \\
+	hidden \\
+	addlayer $aimmatrix$ \\
+} \\
+$animation a_pose_runI_$name$ $filename$ frame $frame$ $frame$ numframes 17 origin -6 0 0 loop noautoik fps 33 cmdlist runtouch \\
+$sequence r_$name$ { \\
+	a_runSW a_runS a_runSE \\
+	a_runW  a_pose_runI_$name$ a_runE \\
+	a_runNW a_runN a_runNE \\
+	blendwidth 3 blend move_y 1 -1 blend move_x -1 1 \\
+	blendlayer pose_blend_runN_$name$ 0 0 0 0 local \\
+	activity $activityname$ 1 \\
+	{ event 7001 14 "lfoot" } \\
+	{ event 7001 5 "rfoot" } \\
+}
+
+//================================================================================================
+//
+// Macro: SDKRunWithWeapon
+//
+// NOTE: Assumes the files of the "movename" exist.  For example, if movename = Run, then RunN, RunNE, RunE, etc.
+//       are the .smd filenames for the 9-way movement.
+//
+// Usage: SDKRunWithWeapon name filename aimmatrix activityname
+//	- name: unique id
+//	- filename: name of the moveN filename
+//	- aimmatrix: the name of the aimmatrix for the movement type
+//	- activity: the name of the movement activity
+//
+// Example: SDKRunWithWeapon "primary_RunN" primary_aim_run ACT_DOD_RUN_PRIMARY
+//
+$definemacro SDKRunWithWeaponMerged name filename filename2 frame aimmatrix activityname \\
+$sequence blend_runN_$name$ $filename$ { \\
+	startloop 11 \\
+	lx ly \\
+	iklock lfoot 1 0 \\
+	iklock rfoot 1 0 \\
+	weightlist UpperbodyBlendPose \\
+	worldspace \\
+	hidden \\
+	addlayer $aimmatrix$ \\
+} \\
+$animation a_runI_$name$ $filename2$ frame $frame$ $frame$ numframes 17 origin -6 0 0 loop noautoik fps 33 alignto a_ref_moveN cmdlist runtouch \\
+$sequence r_$name$ { \\
+	a_runSW a_runS a_runSE \\
+	a_runW  a_runI_$name$ a_runE \\
+	a_runNW a_runN a_runNE \\
+	blendwidth 3 blend move_y 1 -1 blend move_x -1 1 \\
+	blendlayer blend_runN_$name$ 0 0 0 0 local \\
+	activity $activityname$ 1 \\
+	{ event 7001 14 "lfoot" } \\
+	{ event 7001 5 "rfoot" } \\
+}
+
+
+$definemacro SDKRunWithWeapon name filename filename2 frame aimmatrix activityname \\
+$animation a_blend_runN_$name$ $filename$ lx ly \\
+$animation a_runI_$name$ $filename2$ frame $frame$ $frame$ numframes 17 origin -6 0 0 loop noautoik ikrule lhand touch "ValveBiped.Bip01_R_Hand" cmdlist runtouch \\
+$MakeLoopMoveIK runS_$name$  "run_s_bar"     3 -180 a_ref_run  a_blend_runN_$name$ \\
+$MakeLoopMoveIK runSE_$name$ "run_se_bar"    3 -135 a_ref_run  a_blend_runN_$name$ \\
+$MakeLoopMoveIK runE_$name$  "run_e_bar"    10  -90 a_ref_run  a_blend_runN_$name$ \\ 
+$MakeLoopMoveIK runNE_$name$ "run_ne_bar"   11  -45 a_ref_run  a_blend_runN_$name$ \\
+$MakeLoopMoveIK runN_$name$  "run_n_bar"    11    0 a_ref_run  a_blend_runN_$name$ \\
+$MakeLoopMoveIK runNW_$name$ "run_nw_bar"   11   45 a_ref_run  a_blend_runN_$name$ \\
+$MakeLoopMoveIK runW_$name$  "run_w_bar"    10   90 a_ref_run  a_blend_runN_$name$ \\
+$MakeLoopMoveIK runSW_$name$ "run_sw_bar"    3  135 a_ref_run  a_blend_runN_$name$ \\
+$sequence r_$name$ { \\
+	a_runSW_$name$ a_runS_$name$ a_runSE_$name$ \\
+	a_runW_$name$  a_runI_$name$ a_runE_$name$ \\
+	a_runNW_$name$ a_runN_$name$ a_runNE_$name$ \\
+	blendwidth 3 blend move_y 1 -1 blend move_x -1 1 \\
+	addlayer $aimmatrix$ \\
+	activity $activityname$ 1 \\
+	noautoik \\
+	{ event 7001 14 "lfoot" } \\
+	{ event 7001 5 "rfoot" } \\
+}
+
+//================================================================================================
+//
+// Macro: SDKCrouchWalkWithWeaponPose
+//
+// Usage: SDKCrouchWalkWithWeaponPose name filename frame aimmatrix activityname
+// 	- name: unique id
+//	- fS, fSE, fE, fNE, fN, fNW, fW, fSW: startloop numbers for S, SE, etc.
+//	- filename: name of the moveN filename
+//	- frame: all the poses/aimes are stored in groups and indexed via a frame number
+//	- aimmatrix: the name of the aimmatrix for the movement type
+//	- activity: the name of the movement activity
+//
+// Example:
+//
+
+//$cmdlist crouchtouch ikrule lfoot footstep range .. 17 6 .. contact 22 ikrule rfoot footstep range .. 7 19 .. contact 11 
+$cmdlist crouchtouch ikrule lfoot touch "" ikrule rfoot touch ""
+
+$animation a_crouchSE "crouch_se_bar"   startloop 18  LX LY rotateto -135 noautoik origin -6 0 0 cmdlist crouchtouch
+$animation a_crouchE  "crouch_e_bar"    startloop 6   LX LY rotateto  -90 noautoik origin -6 0 0 cmdlist crouchtouch
+$animation a_crouchNE "crouch_ne_bar"   startloop 6   LX LY rotateto  -45 noautoik origin -6 0 0 cmdlist crouchtouch
+$animation a_crouchN  "crouch_n_bar"    startloop 6   LX LY rotateto    0 noautoik origin -6 0 0 cmdlist crouchtouch
+$animation a_crouchNW "crouch_nw_bar"   startloop 6   LX LY rotateto   45 noautoik origin -6 0 0 cmdlist crouchtouch
+$animation a_crouchW  "crouch_w_bar"    startloop 18  LX LY rotateto   90 noautoik origin -6 0 0 cmdlist crouchtouch
+$animation a_crouchSW "crouch_sw_bar"   startloop 18  LX LY rotateto  135 noautoik origin -6 0 0 cmdlist crouchtouch
+$animation a_crouchS  "crouch_s_bar"    startloop 18  LX LY rotateto -180 noautoik alignto a_crouchN cmdlist crouchtouch
+
+$definemacro SDKCrouchWalkWithWeaponPose name filename frame aimmatrix activityname \\
+$sequence pose_blend_crouchN_$name$ $filename$ { \\
+	frame $frame$ $frame$ \\
+	weightlist UpperbodyBlendPose \\
+	worldspace \\
+	hidden \\
+	addlayer $aimmatrix$ \\
+	ikrule lhand touch "ValveBiped.Bip01_R_Hand" \\
+}\\
+$animation a_pose_crouchI_$name$ $filename$ frame $frame$ $frame$ numframes 25 loop noautoik origin -6 0 0 cmdlist crouchtouch \\
+$sequence cw_$name$ { \\
+	a_crouchSW a_crouchS a_crouchSE \\
+	a_crouchW  a_pose_crouchI_$name$ a_crouchE \\
+	a_crouchNW a_crouchN a_crouchNE \\
+	blendwidth 3 blend move_y 1 -1 blend move_x -1 1 \\
+	blendlayer pose_blend_crouchN_$name$ 0 0 0 0 local \\
+	activity $activityname$ 1 \\
+}
+
+
+//================================================================================================
+//
+// Macro: SDKCrouchWalkWithWeapon
+//
+// Usage: SDKCrouchWalkWithWeapon name filename aimmatrix activityname
+// 	- name: unique id
+//	- filename: name of the moveN filename
+//	- aimmatrix: the name of the aimmatrix for the movement type
+//	- activity: the name of the movement activity
+//
+//
+$definemacro SDKCrouchWalkWithWeapon name filename filename2 frame aimmatrix activityname \\
+$sequence blend_crouchN_$name$ $filename$ { \\
+	startloop 6 \\
+	lx ly \\
+	weightlist UpperbodyBlendPose \\
+	worldspace \\
+	hidden \\
+	addlayer $aimmatrix$ \\
+} \\
+$animation a_crouchI_$name$ $filename2$ frame $frame$ $frame$ numframes 25 loop origin -6 0 0 noautoik cmdlist crouchtouch \\
+$sequence c_$name$ { \\
+	a_crouchSW a_crouchS a_crouchSE \\
+	a_crouchW  a_crouchI_$name$ a_crouchE \\
+	a_crouchNW a_crouchN a_crouchNE \\
+	blendwidth 3 blend move_y 1 -1 blend move_x -1 1 \\
+	blendlayer blend_crouchN_$name$ 0 0 0 0 local \\
+	activity $activityname$ 1 \\
+}
+
+//================================================================================================
+//
+// Macro: SDKWalkWithWeaponPose
+//
+// Use a pose from the idle and aim of a weapon to create the runs with weapon.
+//
+// Usage: SDKWalkWithWeaponPose name filename frame aimmatrix activityname
+//	- name: unique id
+//	- filename: name of the moveN filename
+//	- frame: all the poses/aimes are stored in groups and indexed via a frame number
+//	- aimmatrix: the name of the aimmatrix for the movement type
+//	- activity: the name of the movement activity
+//
+//
+
+//$cmdlist walktouch ikrule lfoot footstep range .. 22 6 .. contact 27 ikrule rfoot footstep range .. 7 21 .. contact 15 
+$cmdlist walktouch ikrule lfoot touch "" ikrule rfoot touch ""
+
+
+$animation a_walkS "walk_s_bar"		startloop 21	LX LY 	origin -5 0 0 	rotateto -180 	noautoik fps 35 cmdlist walktouch
+$animation a_walkSE "walk_se_bar"	startloop 23	LX LY 	origin -5 0 0 	rotateto -135 	noautoik fps 35 cmdlist walktouch
+$animation a_walkE "walk_e_bar"		startloop 8	LX LY 	origin -5 0 0 	rotateto -90	noautoik fps 35 cmdlist walktouch
+$animation a_walkNE "walk_ne_bar"	startloop 9	LX LY 	origin -5 0 0 	rotateto -45	noautoik fps 35 cmdlist walktouch
+$animation a_walkN "walk_n_bar"		startloop 9	LX LY 	origin -5 0 0 	rotateto 0	noautoik fps 35 cmdlist walktouch
+$animation a_walkNW "walk_nw_bar"	startloop 8	LX LY 	origin -5 0 0 	rotateto 45	noautoik fps 35 cmdlist walktouch
+$animation a_walkW "walk_w_bar"		startloop 21	LX LY 	origin -5 0 0 	rotateto 90	noautoik fps 35 cmdlist walktouch
+$animation a_walkSW "walk_sw_bar"	startloop 22	LX LY 	origin -5 0 0 	rotateto 135	noautoik fps 35 cmdlist walktouch
+
+
+$definemacro SDKWalkWithWeaponPose name filename frame aimmatrix activityname \\
+$sequence pose_blend_walkN_$name$ $filename$ { \\
+	frame $frame$ $frame$ \\
+	weightlist UpperbodyBlendPose \\
+	worldspace \\
+	hidden \\
+	addlayer $aimmatrix$ \\
+} \\
+$animation a_pose_walkI_$name$ $filename$ frame $frame$ $frame$ numframes 31 loop origin -6 0 0 noautoik cmdlist walktouch \\
+$sequence w_$name$ { \\
+	a_walkSW a_walkS a_walkSE \\
+	a_walkW a_pose_walkI_$name$ a_walkE \\
+	a_walkNW a_walkN a_walkNE \\
+	blendwidth 3 blend move_y 1 -1 blend move_x -1 1 \\
+	blendlayer pose_blend_walkN_$name$ 0 0 0 0 local \\
+	activity $activityname$ 1 \\
+	{ event 7001 14 "lfoot" } \\
+	{ event 7001 5 "rfoot" } \\
+}
+
+
+//================================================================================================
+//
+// Macro: SDKWalkWithWeapon
+//
+// Usage: SDKWalkWithWeapon name filename aimmatrix activityname
+//	- name: unique id
+//	- filename: name of the moveN filename
+//	- aimmatrix: the name of the aimmatrix for the movement type
+//	- activity: the name of the movement activity
+//
+//
+$definemacro SDKWalkWithWeapon name filename filename2 frame aimmatrix activityname \\
+$sequence blend_walkN_$name$ $filename$ { \\
+	startloop 9 \\
+	lx ly \\
+	weightlist UpperbodyBlendPose \\
+	worldspace \\
+	hidden \\
+	addlayer $aimmatrix$ \\
+} \\
+$animation a_walkI_$name$  $filename2$ frame $frame$ $frame$ numframes 30 loop origin -6 0 0 noautoik  cmdlist walktouch \\
+$sequence w_$name$ { \\
+	a_walkSW a_walkS a_walkSE \\
+	a_walkW a_walkI_$name$ a_walkE \\
+	a_walkNW a_walkN a_walkNE \\
+	blendwidth 3 blend move_y 1 -1 blend move_x -1 1 \\
+	blendlayer blend_walkN_$name$ 0 0 0 0 local \\
+	activity $activityname$ 1 \\
+	{ event 7001 14 "lfoot" } \\
+	{ event 7001 5 "rfoot" } \\
+}
+
+//================================================================================================
+//
+// Macro: SDKSprintWithWeapon
+//
+// Usage: SDKSprintWithWeapon name NE N NW filename activityname
+//	- name: unique id
+//	- filename: name of the moveN filename
+//	- frame:
+//	- aimmatrix: the name of the aimmatrix for the movement type
+//	- activity: the name of the movement activity
+//	
+
+//$cmdlist sprinttouch ikrule lfoot footstep range .. 13 1 .. contact 0 ikrule rfoot footstep range .. 6 8 .. contact 7
+$cmdlist sprinttouch ikrule lfoot touch "" ikrule rfoot touch ""
+
+$animation a_sprintNE "sprint_ne_bar"   startloop 9  LX LY origin -6 0 0	rotateto  -45  noautoik cmdlist sprinttouch 
+$animation a_sprintN  "sprint_n_bar"    startloop 9  LX LY origin -6 0 0	rotateto  0    noautoik cmdlist sprinttouch 
+$animation a_sprintNW "sprint_nw_bar"   startloop 9  LX LY origin -6 0 0	rotateto  45   noautoik cmdlist sprinttouch 
+
+$definemacro SDKSprintWithWeapon name filename filename2 frame aimmatrix activityname \\
+$sequence blend_sprintN_$name$ $filename$ { \\
+	startloop 9 \\
+	lx ly \\
+	weightlist UpperbodyBlendPose \\
+	worldspace \\
+	hidden \\
+	addlayer $aimmatrix$ \\
+} \\
+$animation a_sprintI_$name$ $filename2$ frame $frame$ $frame$ numframes 15 origin -6 0 0 loop noautoik  cmdlist sprinttouch \\
+$sequence s_$name$ { \\
+	a_runSW  a_runS a_runSW \\
+	a_runW  a_sprintI_$name$ a_runE \\
+	a_sprintNW a_sprintN a_sprintNE \\
+	blendwidth 3 blend move_y 1 -1 blend move_x -1 1 \\
+	blendlayer blend_sprintN_$name$ 0 0 0 0 local \\
+	activity $activityname$ 1 \\
+	{ event 7001 14 "lfoot" } \\
+	{ event 7001 5 "rfoot" } \\
+}
+
+//================================================================================================
+//
+// Macro: SDK Gesture Attack
+//
+// IK-Rules: Feet are locked.
+// The gesture is additive.
+//
+// Usage: SDKGestureAttack <gesturename> <filename> <activityname>
+//      - gesturename: the name of the gesture
+//	- filename: the file name of the gesture sequence
+//	- activityname: the name of the associated activity
+//
+// Example: SDKGestureAttack gesture_fire_primary "primary_fire" ACT_DOD_PRIMARYATTACK_RIFLE
+//
+$definemacro SDKGestureAttack gesturename filename activityname \\
+$sequence $gesturename$ { \\
+	$filename$ \\
+	subtract $gesturename$ 0 \\
+	delta \\
+	iklock rfoot 1 0 iklock lfoot 1 0 \\
+ 	activity $activityname$ 1 \\
+} \\
+$continue $gesturename$
+
+//For use with bolt only==================================================================
+$definemacro SDKGestureAttackIKRelease gesturename filename activityname \\
+$sequence $gesturename$ { \\
+	$filename$ \\
+	weightlist HipsUpperBody \\
+	subtract $gesturename$ 0 \\
+	delta \\
+	event 7002 24 "2" \\
+	ikrule lhand release \\
+	ikrule rhand release \\
+	iklock rfoot 1 0 iklock lfoot 1 0 \\
+ 	activity $activityname$ 1 \\
+} \\
+$continue $gesturename$
+//===============================================================================
+
+$definemacro SDKGestureAttackNoLockIKRelease gesturename filename activityname \\
+$sequence $gesturename$ { \\
+	$filename$ \\
+	subtract $gesturename$ 0 \\
+	delta \\
+ 	activity $activityname$ 1 \\
+	iklock lfoot 1 0 \\
+	ikrule lhand release \\
+	ikrule rhand release \\
+} \\
+$continue $gesturename$
+
+$definemacro SDKGestureAttackNoLock gesturename filename activityname \\
+$sequence $gesturename$ { \\
+	$filename$ \\
+	subtract $gesturename$ 0 \\
+	delta \\
+ 	activity $activityname$ 1 \\
+	iklock lfoot 1 0 \\
+	ikrule lhand touch "ValveBiped.weapon_bone" usesource \\
+} \\
+$continue $gesturename$
+
+$definemacro SDKHandSignal gesturename filename activityname \\
+$sequence $gesturename$ { \\
+	$filename$ \\
+	subtract $gesturename$ 0 \\
+	delta \\
+ 	activity $activityname$ 1 \\
+	ikrule lhand release \\
+} \\
+$continue $gesturename$
+
+
+//================================================================================================
+//
+// Macro: SDK Gesture Reload
+//
+// IK-Rules: Feet are locked and left hand to ik to right hand, waist, and back again.
+// The weapon gesture is additive on the spine, but overrides the arms.
+//
+// Usage: SDKGestureReload <gesturename> <filename> <inframe> <outframe> <lastframe> <activityname>
+//      - gesturename: the name of the gesture
+//	- filename: the file name of the gesture sequence
+//	- inframe: 0-to-inframe blend in time
+//	- outframe: inframe-to-outframe blend time
+//	- lastframe: animation length
+//	- activityname: the name of the associated activity
+//
+// Example: SDKGestureReload gesture_reload_primary "primary_reload" 5 15 30 ACT_TF_GESTURE_RELOAD_PRIMARY
+//
+// Look into this!
+//	event 3017 0	// reload sound
+//	event 3018 15	// actually reloaded, can start firing now
+//
+//
+$definemacro SDKGestureReloadLeft gesturename filename activityname \\
+$sequence $gesturename$ { \\
+	$filename$ \\
+	subtract $gesturename$ 0 \\
+	delta \\
+	ikrule lhand release \\
+	ikrule rhand release \\
+	iklock rfoot 1 0 iklock lfoot 1 0 \\
+ 	activity $activityname$ 1 \\
+} \\
+$continue $gesturename$
+
+$definemacro SDKGestureReloadPistol gesturename filename activityname start startto endto end \\
+$sequence $gesturename$ { \\
+	$filename$ \\
+	subtract $gesturename$ 0 \\
+	delta \\
+	ikrule lhand release range $start$ $startto$ $endto$ $end$ \\
+	ikrule rhand release range $start$ $startto$ $endto$ $end$ \\
+	iklock rfoot 1 0 iklock lfoot 1 0 \\
+ 	activity $activityname$ 1 \\
+} \\
+$continue $gesturename$
+
+/*
+$definemacro SDKGestureReloadLeft gesturename filename inframe outframe lastframe activityname \\
+$sequence $gesturename$spine $filename$ weightlist WeaponGestureSpine subtract $gesturename$spine 0 delta hidden \\
+$sequence $gesturename$arms  $filename$ weightlist WeaponGestureArms hidden \\
+$sequence $gesturename$ { \\
+	$filename$ noanimation numframes $lastframe$ \\
+	blendlayer $gesturename$arms  0 $inframe$ $outframe$ $lastframe$ spline \\
+	blendlayer $gesturename$spine 0 $inframe$ $outframe$ $lastframe$ spline \\
+	iklock rfoot 1 0 iklock lfoot 1 0 \\
+	ikrule lhand touch "ValveBiped.Bip01_R_Hand" range 2 4 6 8 usesource \\
+	ikrule lhand touch "ValveBiped.Bip01_Spine" range 2 4 6 8 usesource \\
+	ikrule lhand touch "ValveBiped.Bip01_R_Hand" range 2 4 6 8 usesource \\
+	activity $activityname$ 1 \\
+} \\
+$continue $gesturename$
+*/

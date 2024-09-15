@@ -4,7 +4,7 @@
     title           "HALF-LIFE ' "
     GameData	halflife2.fgd
     type		singleplayer_only
-    supportsvr	0	// Disabled otherwise it can cause error with newer Source version that depecrated this, plus it can cause SteamVR to open for no reason.
+    supportsvr	0	// Disabled to avoid SteamVR opening
 
  
  	developer	"Filip Victor"
@@ -26,23 +26,21 @@
 			// Note that this folder is scanned only when the game is booted.
 			game+mod			hl2/custom/*
 		// VPK
-		   game+mod			                                                                                hl2/hl2_sound_vo_english.vpk
-                                   game                                                                                                                                    hl2/hl2_pak.vpk
-                                   game									|gameinfo_path|.		
-                                   game									|gameinfo_path|hl2_pak.vpk
-                              
-                               
+			game+mod		hl2/hl2_sound_vo_english.vpk
+			game			hl2/hl2_pak.vpk
+			game			|gameinfo_path|.		
+			game			|gameinfo_path|hl2_pak.vpk
 
 		
-	// HL2 loose files and binaries
-                game                                                                       |gameinfo_path|custom/*
-                mod+mod_write+default_write_path	                |gameinfo_path|.
-	gamebin					|gameinfo_path|bin
+		// HL2 loose files and binaries
+			game									|gameinfo_path|custom/*
+			mod+mod_write+default_write_path		|gameinfo_path|.
+			gamebin									|gameinfo_path|bin
 
 			
 	// Platform
-	platform								|all_source_engine_paths|platform/platform_misc.vpk
-	platform								|all_source_engine_paths|platform
+			platform								|all_source_engine_paths|platform/platform_misc.vpk
+			platform								|all_source_engine_paths|platform
 		}
 	}
 }

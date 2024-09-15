@@ -1,0 +1,24 @@
+$modelname "Clips\clip_deagle.mdl"
+$cdmaterials models\weapons\w_models\w_pist_deagle
+$scale 1.0
+$staticprop
+
+$body studio clip_deagle_ref
+$sequence idle clip_deagle_ref
+
+$surfaceprop "weapon"
+
+$collisionmodel "clip_deagle_phy.smd" 
+{
+     $Mass 1.0
+}
+
+$keyvalues
+{
+"prop_data"
+{
+"base" "Metal.Tiny"
+}
+}
+
+

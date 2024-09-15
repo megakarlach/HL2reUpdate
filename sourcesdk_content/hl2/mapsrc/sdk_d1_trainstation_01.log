@@ -1,0 +1,750 @@
+
+
+
+Using shader api: shaderapiempty.dll
+materialPath: V:\Steam\steamapps\common\Half-Life 2 Update\hl2\materials
+Loading v:\steam\steamapps\common\sourcesdk_content\hl2\mapsrc\sdk_d1_trainstation_01.vmf
+ConVarRef mat_reduceparticles doesn't point to an existing ConVar
+Patching WVT material: maps/sdk_d1_trainstation_01/nature/red_grass_thin_wvt_patch
+fixing up env_cubemap materials on brush sides...
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Processing areas...done (0)
+Building Faces...done (0)
+Chop Details...done (0)
+Find Visible Detail Sides...
+Merged 734 detail faces...done (0)
+Merging details...done (0)
+FixTjuncs...
+PruneNodes...
+WriteBSP...
+done (0)
+writing v:\steam\steamapps\common\sourcesdk_content\hl2\mapsrc\sdk_d1_trainstation_01.prt...Building visibility clusters...
+done (0)
+WARNING: node without a volume
+WARNING: node without a volume
+WARNING: node without a volume
+WARNING: node without a volume
+WARNING: node without a volume
+WARNING: node without a volume
+WARNING: node without a volume
+WARNING: node without a volume
+WARNING: node without a volume
+WARNING: node without a volume
+WARNING: node without a volume
+WARNING: node without a volume
+Creating default LDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Creating default HDR cubemaps for env_cubemap using skybox materials:
+   skybox/sky_day01_01*.vmt
+ ! Run buildcubemaps in the engine to get the correct cube maps.
+Finding displacement neighbors...
+Finding lightmap sample positions...
+Displacement Alpha : 0...1...2...3...4...5...6...7...8...9...10
+Building Physics collision data...
+done (0) (1024806 bytes)
+Placing detail props : 0...1...2...3...4...5...6...7...8...9...10
+Compacting texture/material tables...
+Reduced 6604 texinfos to 2847
+Reduced 676 texdatas to 461 (37855 bytes to 25072)
+Writing v:\steam\steamapps\common\sourcesdk_content\hl2\mapsrc\sdk_d1_trainstation_01.bsp
+2 seconds elapsed
+
+
+
+12 threads
+reading v:\steam\steamapps\common\sourcesdk_content\hl2\mapsrc\sdk_d1_trainstation_01.bsp
+reading v:\steam\steamapps\common\sourcesdk_content\hl2\mapsrc\sdk_d1_trainstation_01.prt
+1095 portalclusters
+2982 numportals
+0...1...2...3...4...5...6...7...8...9...100...1...2...3...4...5...6...7...8...9...10Optimized: 382 visible clusters (0.30%)
+Total clusters visible: 127882
+Average clusters visible: 116
+Building PAS...
+Average clusters audible: 201
+visdatasize:85972  compressed from 315360
+writing v:\steam\steamapps\common\sourcesdk_content\hl2\mapsrc\sdk_d1_trainstation_01.bsp
+2 seconds elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading v:\steam\steamapps\common\sourcesdk_content\hl2\mapsrc\sdk_d1_trainstation_01.bsp
+9170 faces
+12 degenerate faces
+3185469 square feet [458707616.00 square inches]
+3 Displacements
+23751 Square Feet [3420159.75 Square Inches]
+9158 patches before subdivision
+87850 patches after subdivision
+535 direct lights
+0...1..
+WARNING: Too many light styles on a face at (-12225.415039, -10904.910156, -1522.000000)
+
+WARNING: Too many light styles on a face at (-12157.089844, -11339.415039, -1522.000000)
+
+WARNING: Too many light styles on a face at (-11722.585938, -11271.091797, -1522.000000)
+
+WARNING: Too many light styles on a face at (-11790.912109, -10836.585938, -1522.000000)
+.2...3.
+WARNING: Too many light styles on a face at (-11798.882813, -11292.845703, -1524.670532)
+
+WARNING: Too many light styles on a face at (-11797.404297, -11294.297852, -1524.000000)
+
+WARNING: Too many light styles on a face at (-12184.304688, -11260.593750, -1524.000000)
+
+WARNING: Too many light styles on a face at (-12188.826172, -10919.925781, -1524.000000)
+
+WARNING: Too many light styles on a face at (-11798.534180, -10880.570313, -1524.000000)
+
+WARNING: Too many light styles on a face at (-11810.501953, -11278.803711, -1537.752197)
+
+WARNING: Too many light styles on a face at (-11812.791016, -11283.592773, -1537.286133)
+
+WARNING: Too many light styles on a face at (-11771.146484, -11248.867188, -1534.069336)
+
+WARNING: Too many light styles on a face at (-11773.298828, -11243.174805, -1536.075317)
+
+WARNING: Too many light styles on a face at (-11813.169922, -11278.542969, -1538.164551)
+
+WARNING: Too many light styles on a face at (-11815.045898, -11284.921875, -1536.028442)
+
+WARNING: Too many light styles on a face at (-12182.845703, -11259.109375, -1524.672485)
+
+WARNING: Too many light styles on a face at (-12171.070313, -11249.757813, -1535.629395)
+
+WARNING: Too many light styles on a face at (-12174.734375, -11246.347656, -1536.207520)
+
+WARNING: Too many light styles on a face at (-12135.417969, -11283.403320, -1537.320313)
+
+WARNING: Too many light styles on a face at (-12133.175781, -11284.699219, -1536.074829)
+
+WARNING: Too many light styles on a face at (-12168.549805, -11244.829102, -1538.160645)
+
+WARNING: Too many light styles on a face at (-12174.919922, -11242.959961, -1536.027954)
+
+WARNING: Too many light styles on a face at (-12187.370117, -10921.407227, -1524.670044)
+
+WARNING: Too many light styles on a face at (-12172.196289, -10925.106445, -1534.570679)
+
+WARNING: Too many light styles on a face at (-12177.034180, -10927.349609, -1534.038574)
+
+WARNING: Too many light styles on a face at (-12137.713867, -10890.300781, -1535.158203)
+
+WARNING: Too many light styles on a face at (-12134.305664, -10890.169922, -1535.007568)
+
+WARNING: Too many light styles on a face at (-12173.077148, -10935.688477, -1538.156982)
+
+WARNING: Too many light styles on a face at (-12176.478516, -10932.329102, -1534.963623)
+
+WARNING: Too many light styles on a face at (-11800.017578, -10882.026367, -1524.674438)
+
+WARNING: Too many light styles on a face at (-11807.104492, -10893.797852, -1534.566895)
+
+WARNING: Too many light styles on a face at (-11810.500000, -10890.115234, -1535.123535)
+
+WARNING: Too many light styles on a face at (-11773.450195, -10929.434570, -1536.240723)
+
+WARNING: Too many light styles on a face at (-11771.973633, -10929.644531, -1533.965454)
+
+WARNING: Too many light styles on a face at (-11814.300781, -10896.324219, -1538.162598)
+
+WARNING: Too many light styles on a face at (-11812.779297, -10888.813477, -1533.885376)
+..4...5...6...
+WARNING: Too many light styles on a face at (-12135.676758, -10691.282227, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12055.599609, -11111.384766, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12286.441406, -11161.111328, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12030.000000, -10820.000977, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11694.000000, -11088.000977, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11902.000000, -11012.000977, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11902.000000, -11088.000977, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11592.669922, -11093.333008, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11592.666992, -11082.666992, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12040.666992, -10773.333984, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12283.474609, -10964.285156, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12287.000000, -11016.500000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12139.333008, -11024.512695, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12287.000000, -11156.500000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11962.000000, -10820.000000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11962.000000, -11168.000977, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11902.000000, -10692.000000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12281.520508, -11160.952148, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11594.953125, -10933.961914, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12054.721680, -10914.443359, -885.000000)
+7
+WARNING: Too many light styles on a face at (-12150.776367, -11170.274414, -883.172302)
+
+WARNING: Too many light styles on a face at (-11888.057617, -11262.706055, -881.971619)
+
+WARNING: Too many light styles on a face at (-12170.065430, -10977.075195, -847.215027)
+
+WARNING: Too many light styles on a face at (-12178.706055, -11113.999023, -856.707092)
+
+WARNING: Too many light styles on a face at (-11737.291992, -11047.999023, -824.706116)
+
+WARNING: Too many light styles on a face at (-12057.999023, -10867.291016, -840.706116)
+
+WARNING: Too many light styles on a face at (-11874.682617, -10873.410156, -842.025818)
+
+WARNING: Too many light styles on a face at (-11856.708008, -10822.706055, -1531.999878)
+
+WARNING: Too many light styles on a face at (-11575.000000, -11100.000000, -1514.000000)
+
+WARNING: Too many light styles on a face at (-11809.281250, -10688.090820, -1523.000000)
+
+WARNING: Too many light styles on a face at (-11902.000000, -10689.000000, -1531.000000)
+
+WARNING: Too many light styles on a face at (-11822.000000, -10689.000000, -1498.000000)
+
+WARNING: Too many light styles on a face at (-11811.865234, -10691.619141, -1532.000000)
+
+WARNING: Too many light styles on a face at (-11574.935547, -10923.478516, -1530.999878)
+
+WARNING: Too many light styles on a face at (-11576.208008, -10922.206055, -1513.999756)
+
+WARNING: Too many light styles on a face at (-11708.707031, -11205.289063, -1532.000366)
+
+WARNING: Too many light styles on a face at (-11605.064453, -11240.222656, -1523.000000)
+
+WARNING: Too many light styles on a face at (-11575.000000, -11246.353516, -1531.000000)
+
+WARNING: Too many light styles on a face at (-11577.619141, -11250.133789, -1532.000000)
+
+WARNING: Too many light styles on a face at (-11575.000000, -11246.500000, -1514.000000)
+
+WARNING: Too many light styles on a face at (-12046.000000, -10689.000000, -1514.000000)
+
+WARNING: Too many light styles on a face at (-12192.460938, -11260.468750, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12030.000000, -10726.447266, -1494.105591)
+
+WARNING: Too many light styles on a face at (-12268.529297, -10965.037109, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12187.286133, -11257.291992, -1531.999878)
+
+WARNING: Too many light styles on a face at (-12283.386719, -11214.585938, -1531.000000)
+
+WARNING: Too many light styles on a face at (-12239.292969, -10970.706055, -1531.999878)
+
+WARNING: Too many light styles on a face at (-12030.000000, -11009.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12030.000000, -11159.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12037.000000, -11056.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12037.000000, -11136.000000, -1572.000000)
+
+WARNING: Too many light styles on a face at (-12037.000000, -11152.000000, -1572.000000)
+
+WARNING: Too many light styles on a face at (-12037.000000, -11152.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12037.000000, -11020.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12030.999023, -11009.000977, -1643.000000)
+
+WARNING: Too many light styles on a face at (-11911.000000, -11152.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12287.500000, -11138.000000, -1563.000000)
+
+WARNING: Too many light styles on a face at (-12283.500000, -11143.000000, -1561.000000)
+
+WARNING: Too many light styles on a face at (-12283.000000, -11025.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12138.359375, -11026.472656, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12134.359375, -11139.990234, -1556.000000)
+
+WARNING: Too many light styles on a face at (-12406.000000, -11016.500000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12347.713867, -10935.059570, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12352.000000, -11000.799805, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12346.000000, -11161.000000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12368.114258, -11250.390625, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12406.000000, -11156.500000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12394.735352, -11261.254883, -1531.000610)
+
+WARNING: Too many light styles on a face at (-12453.176758, -10862.241211, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12289.259766, -11262.695313, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12414.000000, -11025.000000, -1544.000000)
+.
+WARNING: Too many light styles on a face at (-12314.000000, -11143.000000, -1561.000000)
+
+WARNING: Too many light styles on a face at (-12310.000000, -11138.000000, -1563.000000)
+
+WARNING: Too many light styles on a face at (-12470.405273, -11024.509766, -1563.000000)
+
+WARNING: Too many light styles on a face at (-12463.000000, -11143.000000, -1550.000000)
+
+WARNING: Too many light styles on a face at (-12171.875977, -11268.242188, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11962.000000, -11268.000977, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11864.694336, -11365.357422, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12043.331055, -11269.326172, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11934.000000, -11268.000000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11850.000000, -11545.599609, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12053.360352, -11266.873047, -882.541077)
+
+WARNING: Too many light styles on a face at (-11772.708984, -11269.291016, -1532.000366)
+
+WARNING: Too many light styles on a face at (-11535.071289, -11341.607422, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12091.289063, -11353.289063, -1531.999878)
+
+WARNING: Too many light styles on a face at (-12197.845703, -11546.771484, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12266.902344, -11480.083984, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12369.685547, -11419.997070, -1523.000000)
+..8...9..
+WARNING: Too many light styles on a face at (-11758.000000, -11076.000000, -853.000000)
+
+WARNING: Too many light styles on a face at (-11982.000000, -10868.000000, -853.000000)
+.100...1...2...3...4...5...6...7...8...9...10transfers 11787764, max 941
+transfer lists:  89.9 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(204074, 236805, 177879)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(44962, 41118, 22026)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #3 added RGB(10911, 8015, 3037)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #4 added RGB(2925, 1756, 474)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #5 added RGB(809, 397, 76)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #6 added RGB(231, 93, 13)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #7 added RGB(67, 22, 2)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #8 added RGB(20, 6, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #9 added RGB(6, 1, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #10 added RGB(2, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #11 added RGB(1, 0, 0)
+Build Patch/Sample Hash Table(s).....Done<0.0121 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+Computing detail prop lighting : 0...1...2...3...4...5...6...7...8...9...10
+304 of 465 (65% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                 163/1024         7824/49152    (15.9%) 
+brushes               2673/8192        32076/98304    (32.6%) 
+brushsides           22507/65536      180056/524288   (34.3%) 
+planes               21076/65536      421520/1310720  (32.2%) 
+vertexes             15810/65536      189720/786432   (24.1%) 
+nodes                 5344/65536      171008/2097152  ( 8.2%) 
+texinfos              2847/12288      204984/884736   (23.2%) 
+texdata                461/2048        14752/65536    (22.5%) 
+dispinfos                3/0             528/0        ( 0.0%) 
+disp_verts             243/0            4860/0        ( 0.0%) 
+disp_tris              384/0             768/0        ( 0.0%) 
+disp_lmsamples       17200/0           17200/0        ( 0.0%) 
+faces                 9170/65536      513520/3670016  (14.0%) 
+hdr faces                0/65536           0/3670016  ( 0.0%) 
+origfaces             6868/65536      384608/3670016  (10.5%) 
+leaves                5508/65536      176256/2097152  ( 8.4%) 
+leaffaces            11271/65536       22542/131072   (17.2%) 
+leafbrushes           5935/65536       11870/131072   ( 9.1%) 
+areas                   12/256            96/2048     ( 4.7%) 
+surfedges            71320/512000     285280/2048000  (13.9%) 
+edges                44039/256000     176156/1024000  (17.2%) 
+LDR worldlights        530/8192        46640/720896   ( 6.5%) 
+HDR worldlights          0/8192            0/720896   ( 0.0%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips            740/32768        7400/327680   ( 2.3%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices         14397/65536       28794/131072   (22.0%) 
+cubemapsamples          76/1024         1216/16384    ( 7.4%) 
+overlays                29/512         10208/180224   ( 5.7%) 
+LDR lightdata         [variable]     4375020/0        ( 0.0%) 
+HDR lightdata         [variable]           0/0        ( 0.0%) 
+visdata               [variable]       85972/16777216 ( 0.5%) 
+entdata               [variable]      353831/393216   (90.0%) VERY FULL!
+LDR ambient table     5508/65536       22032/262144   ( 8.4%) 
+HDR ambient table     5508/65536       22032/262144   ( 8.4%) 
+LDR leaf ambient     13359/65536      374052/1835008  (20.4%) 
+HDR leaf ambient      5508/65536      154224/1835008  ( 8.4%) 
+occluders                3/0             120/0        ( 0.0%) 
+occluder polygons        3/0              36/0        ( 0.0%) 
+occluder vert ind       12/0              48/0        ( 0.0%) 
+detail props          [variable]           1/18176    ( 0.0%) 
+dtl prp lght          [variable]           1/4        (25.0%) 
+HDR dtl prp lght      [variable]           1/4        (25.0%) 
+static props          [variable]           1/31958    ( 0.0%) 
+pakfile               [variable]     8319378/0        ( 0.0%) 
+physics               [variable]     1024806/4194304  (24.4%) 
+physics terrain       [variable]         203/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 25124
+Writing v:\steam\steamapps\common\sourcesdk_content\hl2\mapsrc\sdk_d1_trainstation_01.bsp
+2 minutes, 6 seconds elapsed
+
+
+
+[Reading texlights from 'lights.rad']
+[45 texlights parsed from 'lights.rad']
+
+Loading v:\steam\steamapps\common\sourcesdk_content\hl2\mapsrc\sdk_d1_trainstation_01.bsp
+9170 faces
+12 degenerate faces
+3185469 square feet [458707616.00 square inches]
+3 Displacements
+23751 Square Feet [3420159.75 Square Inches]
+9158 patches before subdivision
+87850 patches after subdivision
+535 direct lights
+0...1..
+WARNING: Too many light styles on a face at (-12225.415039, -10904.910156, -1522.000000)
+
+WARNING: Too many light styles on a face at (-12157.089844, -11339.415039, -1522.000000)
+
+WARNING: Too many light styles on a face at (-11722.585938, -11271.091797, -1522.000000)
+
+WARNING: Too many light styles on a face at (-11790.912109, -10836.585938, -1522.000000)
+.2...3.
+WARNING: Too many light styles on a face at (-11798.882813, -11292.845703, -1524.670532)
+
+WARNING: Too many light styles on a face at (-11797.404297, -11294.297852, -1524.000000)
+
+WARNING: Too many light styles on a face at (-12184.304688, -11260.593750, -1524.000000)
+
+WARNING: Too many light styles on a face at (-12188.826172, -10919.925781, -1524.000000)
+
+WARNING: Too many light styles on a face at (-11798.534180, -10880.570313, -1524.000000)
+
+WARNING: Too many light styles on a face at (-11810.501953, -11278.803711, -1537.752197)
+
+WARNING: Too many light styles on a face at (-11812.791016, -11283.592773, -1537.286133)
+
+WARNING: Too many light styles on a face at (-11771.146484, -11248.867188, -1534.069336)
+
+WARNING: Too many light styles on a face at (-11773.298828, -11243.174805, -1536.075317)
+
+WARNING: Too many light styles on a face at (-11813.169922, -11278.542969, -1538.164551)
+
+WARNING: Too many light styles on a face at (-11815.045898, -11284.921875, -1536.028442)
+
+WARNING: Too many light styles on a face at (-12182.845703, -11259.109375, -1524.672485)
+
+WARNING: Too many light styles on a face at (-12171.070313, -11249.757813, -1535.629395)
+
+WARNING: Too many light styles on a face at (-12174.734375, -11246.347656, -1536.207520)
+
+WARNING: Too many light styles on a face at (-12135.417969, -11283.403320, -1537.320313)
+
+WARNING: Too many light styles on a face at (-12133.175781, -11284.699219, -1536.074829)
+
+WARNING: Too many light styles on a face at (-12168.549805, -11244.829102, -1538.160645)
+
+WARNING: Too many light styles on a face at (-12174.919922, -11242.959961, -1536.027954)
+
+WARNING: Too many light styles on a face at (-12187.370117, -10921.407227, -1524.670044)
+
+WARNING: Too many light styles on a face at (-12172.196289, -10925.106445, -1534.570679)
+
+WARNING: Too many light styles on a face at (-12177.034180, -10927.349609, -1534.038574)
+
+WARNING: Too many light styles on a face at (-12137.713867, -10890.300781, -1535.158203)
+
+WARNING: Too many light styles on a face at (-12134.305664, -10890.169922, -1535.007568)
+
+WARNING: Too many light styles on a face at (-12173.077148, -10935.688477, -1538.156982)
+
+WARNING: Too many light styles on a face at (-12176.478516, -10932.329102, -1534.963623)
+
+WARNING: Too many light styles on a face at (-11800.017578, -10882.026367, -1524.674438)
+
+WARNING: Too many light styles on a face at (-11807.104492, -10893.797852, -1534.566895)
+
+WARNING: Too many light styles on a face at (-11810.500000, -10890.115234, -1535.123535)
+
+WARNING: Too many light styles on a face at (-11773.450195, -10929.434570, -1536.240723)
+
+WARNING: Too many light styles on a face at (-11771.973633, -10929.644531, -1533.965454)
+
+WARNING: Too many light styles on a face at (-11814.300781, -10896.324219, -1538.162598)
+
+WARNING: Too many light styles on a face at (-11812.779297, -10888.813477, -1533.885376)
+..4...5...6...
+WARNING: Too many light styles on a face at (-12135.676758, -10691.282227, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12055.599609, -11111.384766, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12286.441406, -11161.111328, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12030.000000, -10820.000977, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11694.000000, -11088.000977, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11902.000000, -11012.000977, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11902.000000, -11088.000977, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11592.669922, -11093.333008, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11592.666992, -11082.666992, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12040.666992, -10773.333984, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12283.474609, -10964.285156, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12287.000000, -11016.500000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12139.333008, -11024.512695, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12287.000000, -11156.500000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11962.000000, -10820.000000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11962.000000, -11168.000977, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11902.000000, -10692.000000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12281.520508, -11160.952148, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11594.953125, -10933.961914, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12054.721680, -10914.443359, -885.000000)
+7
+WARNING: Too many light styles on a face at (-12150.776367, -11170.274414, -883.172302)
+
+WARNING: Too many light styles on a face at (-11888.057617, -11262.706055, -881.971619)
+
+WARNING: Too many light styles on a face at (-12170.065430, -10977.075195, -847.215027)
+
+WARNING: Too many light styles on a face at (-12178.706055, -11113.999023, -856.707092)
+
+WARNING: Too many light styles on a face at (-12057.999023, -10867.291016, -840.706116)
+
+WARNING: Too many light styles on a face at (-11737.291992, -11047.999023, -824.706116)
+
+WARNING: Too many light styles on a face at (-11874.682617, -10873.410156, -842.025818)
+
+WARNING: Too many light styles on a face at (-11856.708008, -10822.706055, -1531.999878)
+
+WARNING: Too many light styles on a face at (-11809.281250, -10688.090820, -1523.000000)
+
+WARNING: Too many light styles on a face at (-11575.000000, -11100.000000, -1514.000000)
+
+WARNING: Too many light styles on a face at (-11822.000000, -10689.000000, -1498.000000)
+
+WARNING: Too many light styles on a face at (-11902.000000, -10689.000000, -1531.000000)
+
+WARNING: Too many light styles on a face at (-11811.865234, -10691.619141, -1532.000000)
+
+WARNING: Too many light styles on a face at (-11574.935547, -10923.478516, -1530.999878)
+
+WARNING: Too many light styles on a face at (-11576.208008, -10922.206055, -1513.999756)
+
+WARNING: Too many light styles on a face at (-11708.707031, -11205.289063, -1532.000366)
+
+WARNING: Too many light styles on a face at (-11605.064453, -11240.222656, -1523.000000)
+
+WARNING: Too many light styles on a face at (-11575.000000, -11246.353516, -1531.000000)
+
+WARNING: Too many light styles on a face at (-11577.619141, -11250.133789, -1532.000000)
+
+WARNING: Too many light styles on a face at (-11575.000000, -11246.500000, -1514.000000)
+
+WARNING: Too many light styles on a face at (-12046.000000, -10689.000000, -1514.000000)
+
+WARNING: Too many light styles on a face at (-12192.460938, -11260.468750, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12268.529297, -10965.037109, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12030.000000, -10726.447266, -1494.105591)
+
+WARNING: Too many light styles on a face at (-12187.286133, -11257.291992, -1531.999878)
+
+WARNING: Too many light styles on a face at (-12283.386719, -11214.585938, -1531.000000)
+
+WARNING: Too many light styles on a face at (-12239.292969, -10970.706055, -1531.999878)
+
+WARNING: Too many light styles on a face at (-12030.000000, -11009.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12030.000000, -11159.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12037.000000, -11056.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12037.000000, -11136.000000, -1572.000000)
+
+WARNING: Too many light styles on a face at (-12037.000000, -11152.000000, -1572.000000)
+
+WARNING: Too many light styles on a face at (-12037.000000, -11152.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12037.000000, -11020.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12030.999023, -11009.000977, -1643.000000)
+
+WARNING: Too many light styles on a face at (-11911.000000, -11152.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12287.500000, -11138.000000, -1563.000000)
+
+WARNING: Too many light styles on a face at (-12283.500000, -11143.000000, -1561.000000)
+
+WARNING: Too many light styles on a face at (-12283.000000, -11025.000000, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12138.359375, -11026.472656, -1544.000000)
+
+WARNING: Too many light styles on a face at (-12134.359375, -11139.990234, -1556.000000)
+
+WARNING: Too many light styles on a face at (-12406.000000, -11016.500000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12347.713867, -10935.059570, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12352.000000, -11000.799805, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12346.000000, -11161.000000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12368.114258, -11250.390625, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12406.000000, -11156.500000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12394.735352, -11261.254883, -1531.000610)
+
+WARNING: Too many light styles on a face at (-12453.176758, -10862.241211, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12289.259766, -11262.695313, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12414.000000, -11025.000000, -1544.000000)
+.
+WARNING: Too many light styles on a face at (-12314.000000, -11143.000000, -1561.000000)
+
+WARNING: Too many light styles on a face at (-12310.000000, -11138.000000, -1563.000000)
+
+WARNING: Too many light styles on a face at (-12470.405273, -11024.509766, -1563.000000)
+
+WARNING: Too many light styles on a face at (-12463.000000, -11143.000000, -1550.000000)
+
+WARNING: Too many light styles on a face at (-12171.875977, -11268.242188, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11962.000000, -11268.000977, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11864.694336, -11365.357422, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12043.331055, -11269.326172, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11934.000000, -11268.000000, -1539.000000)
+
+WARNING: Too many light styles on a face at (-11850.000000, -11545.599609, -1539.000000)
+
+WARNING: Too many light styles on a face at (-12053.360352, -11266.873047, -882.541077)
+
+WARNING: Too many light styles on a face at (-11772.708984, -11269.291016, -1532.000366)
+
+WARNING: Too many light styles on a face at (-11535.071289, -11341.607422, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12091.289063, -11353.289063, -1531.999878)
+
+WARNING: Too many light styles on a face at (-12197.845703, -11546.771484, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12266.902344, -11480.083984, -1523.000000)
+
+WARNING: Too many light styles on a face at (-12369.685547, -11419.997070, -1523.000000)
+..8...9..
+WARNING: Too many light styles on a face at (-11758.000000, -11076.000000, -853.000000)
+
+WARNING: Too many light styles on a face at (-11982.000000, -10868.000000, -853.000000)
+.100...1...2...3...4...5...6...7...8...9...10transfers 11787764, max 941
+transfer lists:  89.9 megs
+0...1...2...3...4...5...6...7...8...9...10	Bounce #1 added RGB(204075, 236806, 177879)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #2 added RGB(44962, 41118, 22026)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #3 added RGB(10911, 8015, 3037)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #4 added RGB(2925, 1756, 474)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #5 added RGB(809, 397, 76)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #6 added RGB(231, 93, 13)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #7 added RGB(67, 22, 2)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #8 added RGB(20, 6, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #9 added RGB(6, 1, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #10 added RGB(2, 0, 0)
+0...1...2...3...4...5...6...7...8...9...10	Bounce #11 added RGB(1, 0, 0)
+Build Patch/Sample Hash Table(s).....Done<0.0160 sec>
+0...1...2...3...4...5...6...7...8...9...10FinalLightFace Done
+Computing detail prop lighting : 0...1...2...3...4...5...6...7...8...9...10
+304 of 465 (65% of) surface lights went in leaf ambient cubes.
+0...1...2...3...4...5...6...7...8...9...10Writing leaf ambient...done
+Ready to Finish
+
+Object names       Objects/Maxobjs  Memory / Maxmem  Fullness 
+------------       ---------------  ---------------  -------- 
+models                 163/1024         7824/49152    (15.9%) 
+brushes               2673/8192        32076/98304    (32.6%) 
+brushsides           22507/65536      180056/524288   (34.3%) 
+planes               21076/65536      421520/1310720  (32.2%) 
+vertexes             15810/65536      189720/786432   (24.1%) 
+nodes                 5344/65536      171008/2097152  ( 8.2%) 
+texinfos              2847/12288      204984/884736   (23.2%) 
+texdata                461/2048        14752/65536    (22.5%) 
+dispinfos                3/0             528/0        ( 0.0%) 
+disp_verts             243/0            4860/0        ( 0.0%) 
+disp_tris              384/0             768/0        ( 0.0%) 
+disp_lmsamples       17200/0           17200/0        ( 0.0%) 
+faces                 9170/65536      513520/3670016  (14.0%) 
+hdr faces             9170/65536      513520/3670016  (14.0%) 
+origfaces             6868/65536      384608/3670016  (10.5%) 
+leaves                5508/65536      176256/2097152  ( 8.4%) 
+leaffaces            11271/65536       22542/131072   (17.2%) 
+leafbrushes           5935/65536       11870/131072   ( 9.1%) 
+areas                   12/256            96/2048     ( 4.7%) 
+surfedges            71320/512000     285280/2048000  (13.9%) 
+edges                44039/256000     176156/1024000  (17.2%) 
+LDR worldlights        530/8192        46640/720896   ( 6.5%) 
+HDR worldlights        530/8192        46640/720896   ( 6.5%) 
+leafwaterdata            0/32768           0/393216   ( 0.0%) 
+waterstrips            740/32768        7400/327680   ( 2.3%) 
+waterverts               0/65536           0/786432   ( 0.0%) 
+waterindices         14397/65536       28794/131072   (22.0%) 
+cubemapsamples          76/1024         1216/16384    ( 7.4%) 
+overlays                29/512         10208/180224   ( 5.7%) 
+LDR lightdata         [variable]     4375020/0        ( 0.0%) 
+HDR lightdata         [variable]     4375020/0        ( 0.0%) 
+visdata               [variable]       85972/16777216 ( 0.5%) 
+entdata               [variable]      353831/393216   (90.0%) VERY FULL!
+LDR ambient table     5508/65536       22032/262144   ( 8.4%) 
+HDR ambient table     5508/65536       22032/262144   ( 8.4%) 
+LDR leaf ambient     13359/65536      374052/1835008  (20.4%) 
+HDR leaf ambient     13359/65536      374052/1835008  (20.4%) 
+occluders                3/0             120/0        ( 0.0%) 
+occluder polygons        3/0              36/0        ( 0.0%) 
+occluder vert ind       12/0              48/0        ( 0.0%) 
+detail props          [variable]           1/18176    ( 0.0%) 
+dtl prp lght          [variable]           1/4        (25.0%) 
+HDR dtl prp lght      [variable]           1/4        (25.0%) 
+static props          [variable]           1/31958    ( 0.0%) 
+pakfile               [variable]     8319378/0        ( 0.0%) 
+physics               [variable]     1024806/4194304  (24.4%) 
+physics terrain       [variable]         203/1048576  ( 0.0%) 
+
+Level flags = 0
+
+Total triangle count: 25124
+Writing v:\steam\steamapps\common\sourcesdk_content\hl2\mapsrc\sdk_d1_trainstation_01.bsp
+2 minutes, 8 seconds elapsed

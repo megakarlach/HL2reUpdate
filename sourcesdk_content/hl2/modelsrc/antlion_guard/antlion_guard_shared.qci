@@ -1,0 +1,528 @@
+
+// Fire Attachments
+$attachment 0 "Antlion_Guard.finger1_L" 0 0 0
+$attachment 1 "Antlion_Guard.finger1_R" 0 0 0
+
+//$controller 0 "Antlion_Guard.head" XR -55 55
+//$controller 1 "Antlion_Guard.head" yR -15 25
+
+$attachment leftfront "Antlion_Guard.claw3_L" 60 0 0
+$attachment rightfront "Antlion_Guard.claw3_R" 60 0 0
+
+$ikchain ltftfoot "Antlion_Guard.ltftfoot" Z 0 height 36
+$ikchain rtftfoot "Antlion_Guard.rtftfoot" Z 0 height 36
+$ikchain ltbkfoot "Antlion_Guard.foot_L" Z 0 height 36
+$ikchain rtbkfoot "Antlion_Guard.foot_R" Z 0 height 36
+
+$collapsebones
+
+// COMMENTED OUT BY JAKE FOR XSI SWITCH, assuming max-specific heirarchy fixes 
+//$alwayscollapse "Antlion_Guard.claw3_L"
+//$alwayscollapse "Antlion_Guard.claw2_L"
+//$alwayscollapse "Antlion_Guard.claw1_L"
+
+
+$hierarchy "Antlion_Guard.foot_L" "Antlion_Guard.leg2_L"
+$hierarchy "Antlion_Guard.foot_R" "Antlion_Guard.leg2_R"
+
+$hierarchy  "Antlion_Guard.claw1_L" "Antlion_Guard.spine1" 
+$hierarchy  "Antlion_Guard.claw1_R" "Antlion_Guard.spine1" 
+
+$limitrotation "Antlion_Guard.claw1_L"
+$limitrotation "Antlion_Guard.claw2_L"
+$limitrotation "Antlion_Guard.pelvis"
+
+$realignbones
+
+$poseparameter "move_yaw" -180 180 wrap
+
+$cmdlist lockfeet {
+	ikrule ltftfoot footstep
+	ikrule rtftfoot footstep
+	ikrule ltbkfoot footstep
+	ikrule rtbkfoot footstep
+}
+
+//Idle states
+$sequence idle "Idle01" loop fps 30 ACT_IDLE 1 cmdlist lockfeet
+$sequence alertidle "inoutalert01" loop fps 30 ACT_IDLE 1 cmdlist lockfeet
+
+
+
+//Cover states
+$sequence cover_enter "Protect02" fps 30 frame 0 27 ACT_ANTLIONGUARD_COVER_ENTER 1 {
+	ikrule ltftfoot footstep range .. .. 11 ..
+	ikrule ltftfoot footstep range .. 16 .. ..
+	ikrule rtftfoot footstep range .. .. 10 ..
+	ikrule rtftfoot footstep range .. 19 .. ..
+	ikrule ltbkfoot footstep
+	ikrule rtbkfoot footstep
+	{ event AE_ANTLIONGUARD_VOICE_BARK 0 }
+}
+
+$sequence cover_loop  "Protect02" loop fps 1 frame 28 40 ACT_ANTLIONGUARD_COVER_LOOP 1 cmdlist lockfeet
+
+$sequence cover_exit  "Protect02" fps 30 frame 41 78 ACT_ANTLIONGUARD_COVER_EXIT 1 {
+	ikrule ltftfoot footstep range .. .. 7 ..
+	ikrule ltftfoot footstep range .. 12 .. ..
+	ikrule rtftfoot footstep range .. .. 6 ..
+	ikrule rtftfoot footstep range .. 13 .. ..
+	ikrule ltbkfoot footstep
+	ikrule rtbkfoot footstep
+	{ event AE_ANTLIONGUARD_VOICE_BARK 0 }
+}
+
+$cmdlist genericwalkik {
+	alignto idle
+	ikrule ltftfoot footstep range .. 11 1 ..
+	ikrule rtftfoot footstep range .. 1 11 ..
+	ikrule ltbkfoot footstep range .. 19 9 ..
+	ikrule rtbkfoot footstep range .. 9 0 ..
+}
+
+$animation a_walkS "Walk_S" loop LX LY rotateto -180 cmdlist genericwalkik
+$animation a_walkSE "Walk_SE" loop LX LY rotateto -135 cmdlist genericwalkik
+$animation a_walkE "Walk_E" loop LX LY rotateto -90 cmdlist genericwalkik
+$animation a_walkNE "Walk_NE" loop LX LY rotateto -45 cmdlist genericwalkik
+$animation a_walkN "Walk_N" loop LX LY rotateto 0 cmdlist genericwalkik
+$animation a_walkNW "Walk_NW" loop LX LY rotateto 45 cmdlist genericwalkik
+$animation a_walkW "Walk_W" loop LX LY rotateto 90 cmdlist genericwalkik
+$animation a_walkSW "Walk_SW" loop LX LY rotateto 135 cmdlist genericwalkik
+
+$sequence cover_creep1  "ProtectWalk01" LX loop fps 30 ACT_ANTLIONGUARD_COVER_ADVANCE 1 {
+	ikrule ltftfoot footstep range .. 2 13 ..
+	ikrule rtftfoot footstep range .. 13 3 ..
+	ikrule ltbkfoot footstep range .. 12 2 ..
+	ikrule rtbkfoot footstep range .. 2 13 ..
+}
+
+$sequence cover_creep2  "ProtectHop01" LX loop fps 30 ACT_ANTLIONGUARD_COVER_ADVANCE 1 {
+	ikrule ltftfoot footstep range .. 6 1 ..
+	ikrule rtftfoot footstep range .. 5 1 ..
+	ikrule ltbkfoot footstep range .. 10 6 ..
+	ikrule rtbkfoot footstep range .. 11 7 ..
+	{ event AE_ANTLIONGUARD_VOICE_GRUNT 0 }
+}
+
+$sequence cover_flinch "Protect01" fps 30 frame 46 47 ACT_ANTLIONGUARD_COVER_FLINCH 1 cmdlist lockfeet
+
+$sequence peek_flinch "PeakHit01" fps 30 frame 0 33 ACT_ANTLIONGUARD_PEEK_FLINCH 1 cmdlist lockfeet { 
+{ event AE_ANTLIONGUARD_VOICE_BARK 0 }
+}
+
+//Peeks
+$sequence peek_enter "peakaboo01" fps 30 frame 0 14 ACT_ANTLIONGUARD_PEEK_ENTER 1 cmdlist lockfeet
+$sequence peek_left "peakseries01" fps 30 frame 0 35 ACT_ANTLIONGUARD_PEEK1 5 cmdlist lockfeet
+$sequence peek_right "peakseries01" fps 30 frame 36 82 ACT_ANTLIONGUARD_PEEK1 5 cmdlist lockfeet
+$sequence peek_sniff "peakseries01" fps 30 frame 83 104 ACT_ANTLIONGUARD_PEEK1 4 cmdlist lockfeet
+
+$sequence peek_exit "peakaboo01" fps 30 frame 123 160 ACT_ANTLIONGUARD_PEEK_EXIT 1 { 
+	ikrule ltftfoot footstep
+	ikrule ltbkfoot footstep
+	ikrule rtbkfoot footstep
+	ikrule rtftfoot footstep range .. .. 12 ..
+	ikrule rtftfoot footstep range .. 19 .. ..
+}
+
+//Seen player
+$sequence peek_squeeze "headsqeeze01" fps 30 ACT_ANTLIONGUARD_PEEK_SIGHTED 1 cmdlist lockfeet {
+	{ event 19 0 }
+	{ event AE_ANTLIONGUARD_VOICE_SQUEEZE 0 }
+	{ event AE_ANTLIONGUARD_VOICE_BARK 124 }
+	{ event AE_ANTLIONGUARD_VOICE_BARK 172 }
+}
+
+$sequence pain "hit01" fps 30 frame 0 50 ACT_ANTLIONGUARD_PAIN 1 {
+	ikrule ltftfoot footstep range .. .. 17 ..
+	ikrule ltftfoot footstep range .. 31 .. ..
+	ikrule rtftfoot footstep range .. .. 14 ..
+	ikrule rtftfoot footstep range .. 30 .. ..
+	ikrule ltbkfoot footstep
+	ikrule rtbkfoot footstep
+	{ event AE_ANTLIONGUARD_VOICE_PAIN 0 }
+}
+
+//Movement
+$animation a_walk1 "UpWalk02" loop LX fps 30 frame 30 50 alignto idle {
+	ikrule ltftfoot footstep range .. 12 2 .. 
+	ikrule rtftfoot footstep range .. 1 12 ..
+	ikrule ltbkfoot footstep range .. 19 10 ..
+	ikrule rtbkfoot footstep range .. 10 0 ..
+}
+
+//$sequence walk1 a_walk1 ACT_WALK 1
+
+
+$sequence walk1 ACT_WALK 1 {
+	a_walkS a_walkSE a_walkE a_walkNE a_walk1 a_walkNW a_walkW a_walkSW a_walkS
+	blendwidth 9 blend move_yaw -180 180
+	{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 19 }
+	{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 10 }
+	{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 12 }
+	{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 1 }
+}
+
+
+$animation a_sneak1 "walk01" loop LX fps 30 frame 34 58 origin 0 0 -43.86 startloop 7 alignto idle {
+	ikrule ltftfoot footstep range .. 12 1 ..
+	ikrule rtftfoot footstep range .. 1 12 ..
+	ikrule ltbkfoot footstep range .. 6 16 ..
+	ikrule rtbkfoot footstep range .. 18 7 ..
+}
+
+$sequence sneak1 ACT_ANTLIONGUARD_SNEAK 1 {
+	a_walkS a_walkSE a_walkE a_walkNE a_sneak1 a_walkNW a_walkW a_walkSW a_walkS
+	blendwidth 9 blend move_yaw -180 180
+}
+
+$sequence hurtrun1 "hurtjog01" loop LX ACT_ANTLIONGUARD_RUN_HURT 1 alignto idle {
+}
+
+$sequence run1 "run01" loop LX fps 30 frame 23 36 ACT_ANTLIONGUARD_RUN_FULL 1 origin 0 0 -43.86 alignto idle {
+	ikrule ltftfoot footstep range .. 10 1 ..
+	ikrule rtftfoot footstep range .. 11 3 ..
+	ikrule ltbkfoot footstep range .. 0 2 ..
+	ikrule rtbkfoot footstep range .. 1 3 ..
+	{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 0 }
+	{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 3 }
+	{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 6 }
+	{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 9 }
+}
+
+$animation a_uprun1 "uprun01" loop LX fps 30 alignto idle {
+	ikrule ltftfoot footstep range .. 10 4 ..
+	ikrule rtftfoot footstep range .. 2 8 ..
+	ikrule ltbkfoot footstep range .. 8 1 ..
+	ikrule rtbkfoot footstep range .. 0 5 ..
+}
+
+$sequence uprun1 ACT_RUN 1  {
+	a_walkS a_walkSE a_walkE a_walkNE a_uprun1 a_walkNW a_walkW a_walkSW a_walkS
+	blendwidth 9 blend move_yaw -180 180
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 8  }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 10 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 10 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 12 }
+}
+
+$sequence turn_right "UpWalk02" loop X fps 30 frame 30 51 ACT_TURN_RIGHT 1 alignto idle {
+	ikrule ltftfoot footstep range .. 12 2 ..
+	ikrule rtftfoot footstep range .. 1 12 ..
+	ikrule ltbkfoot footstep range .. 20 10 ..
+	ikrule rtbkfoot footstep range .. 10 1 ..
+	{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 20 }
+	{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 10 }
+	{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 12 }
+	{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 1 }
+}
+
+$sequence turn_left "UpWalk02" loop X fps 30 frame 30 51 ACT_TURN_LEFT 1 alignto idle {
+	ikrule ltftfoot footstep range .. 12 2 ..
+	ikrule rtftfoot footstep range .. 1 12 ..
+	ikrule ltbkfoot footstep range .. 20 10 ..
+	ikrule rtbkfoot footstep range .. 10 1 ..
+	{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 20 }
+	{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 10 }
+	{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 12 }
+	{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 1 }
+}
+
+$sequence walkS a_walkS
+$sequence walkSE a_walkSE
+$sequence walkE a_walkE
+$sequence walkNE a_walkNE
+$sequence walkN a_walkN
+$sequence walkNW a_walkNW
+$sequence walkW a_walkW
+$sequence walkSW a_walkSW
+
+//Gestures
+$sequence search "AlertLook01" fps 30 ACT_ANTLIONGUARD_SEARCH 1 cmdlist lockfeet
+
+//Attacks
+//$sequence biteattack1 "BiteAttack01" fps 30 ACT_MELEE_ATTACK1 1 
+//$sequence biteattack2 "BiteAttack02" fps 30 ACT_MELEE_ATTACK1 1 
+
+//slowed down fps
+$sequence shove "headbutt_n01" fps 20 ACT_MELEE_ATTACK1 1 {
+	ikrule ltbkfoot footstep
+	ikrule rtbkfoot footstep
+	ikrule ltftfoot footstep range .. .. 2 ..
+	ikrule ltftfoot footstep range .. 8 .. ..
+	ikrule rtftfoot footstep range .. .. 3 ..
+	ikrule rtftfoot footstep range .. 10 .. ..
+{ event AE_ANTLIONGUARD_VOICE_GROWL 0 }
+{ event AE_ANTLIONGUARD_SHOVE 10 }
+}
+
+/*
+$sequence shovephys "headbutt_n01" fps 30 ACT_ANTLIONGUARD_SHOVE_PHYSOBJECT 1 {
+{ event AE_ANTLIONGUARD_VOICE_GROWL 0 }
+{ event AE_ANTLIONGUARD_SHOVE_PHYSOBJECT 10 }
+}
+*/
+
+$sequence fireattack "FireAttack01" fps 30 ACT_RANGE_ATTACK1 1 {
+	ikrule ltftfoot footstep range .. .. 8 ..
+	ikrule ltftfoot footstep range .. 17 58 ..
+	ikrule ltftfoot footstep range .. 63 .. ..
+	ikrule rtftfoot footstep range .. .. 6 ..
+	ikrule rtftfoot footstep range .. 16 60 ..
+	ikrule rtftfoot footstep range .. 66 .. ..
+	ikrule ltbkfoot footstep range .. .. 11 ..
+	ikrule ltbkfoot footstep range .. 20 55 ..
+	ikrule ltbkfoot footstep range .. 62 .. ..
+	ikrule rtbkfoot footstep range .. .. 19 ..
+	ikrule rtbkfoot footstep range .. 26 55 ..
+	ikrule rtbkfoot footstep range .. 60 .. ..
+{ event AE_ANTLIONGUARD_VOICE_GROWL 0 }
+{ event AE_ANTLIONGUARD_CHARGE_HIT 24 } 
+{ event AE_ANTLIONGUARD_SHOVE_PHYSOBJECT 29 } 
+{ event AE_ANTLIONGUARD_CHARGE_HIT 31 } 
+{ event AE_ANTLIONGUARD_SHOVE_PHYSOBJECT 36 } 
+{ event AE_ANTLIONGUARD_CHARGE_HIT 38 } 
+{ event AE_ANTLIONGUARD_SHOVE_PHYSOBJECT 44 } 
+{ event AE_ANTLIONGUARD_CHARGE_HIT 46 }
+}
+
+$sequence bark "Bark01" fps 30 ACT_ANTLIONGUARD_BARK 1 cmdlist lockfeet {
+{ event AE_ANTLIONGUARD_VOICE_BARK 15 }
+{ event AE_ANTLIONGUARD_VOICE_BARK 30 }
+{ event AE_ANTLIONGUARD_VOICE_BARK 45 }
+}
+
+$sequence charge_startfast "charge_start_fast" fps 30 ACT_ANTLIONGUARD_CHARGE_START 1 alignto idle {
+ frame 0 36 
+ walkframe 29 LX LY LZR
+ walkframe 36 LX LY LZR
+  { event AE_ANTLIONGUARD_VOICE_GROWL 0 }
+  { event AE_ANTLIONGUARD_CHARGE_EARLYOUT 23 }
+  { event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 35 }
+  { event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 23 }
+  { event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 35 }
+  { event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 36 }
+	ikrule ltftfoot footstep range .. .. 14 ..
+	ikrule ltftfoot footstep range .. 23 29 ..
+	ikrule ltftfoot footstep range .. 36 .. ..
+	ikrule rtftfoot footstep range .. .. 10 ..
+	ikrule rtftfoot footstep range .. 20 27 ..
+	ikrule rtftfoot footstep range .. 34 .. ..
+	ikrule ltbkfoot footstep range .. .. 27 ..
+	ikrule ltbkfoot footstep range .. 35 .. ..
+	ikrule rtbkfoot footstep range .. .. 25 ..
+	ikrule rtbkfoot footstep range .. 35 .. ..
+}
+
+//$sequence charge_start "charge_crash" fps 30 ACT_ANTLIONGUARD_CHARGE_START 1 alignto idle {
+// frame 0 57 
+// walkframe 42 LX LY LZR
+// walkframe 57 LX LY LZR
+//{ event AE_ANTLIONGUARD_VOICE_GROWL 0 }
+//{ event AE_ANTLIONGUARD_CHARGE_EARLYOUT 36 }
+//{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 38 }
+//{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 55 }
+//{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 55 }
+//{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 57 }
+//	ikrule ltftfoot footstep range .. .. 27 ..
+//	ikrule ltftfoot footstep range .. 40 52 ..
+//	ikrule ltftfoot footstep range .. 57 .. ..
+//	ikrule rtftfoot footstep range .. .. 17 ..
+//	ikrule rtftfoot footstep range .. 39 49 ..
+//	ikrule rtftfoot footstep range .. 55 .. ..
+//	ikrule ltbkfoot footstep range .. .. 46 ..
+//	ikrule ltbkfoot footstep range .. 57 .. ..
+//	ikrule rtbkfoot footstep range .. .. 46 ..
+//	ikrule rtbkfoot footstep range .. 55 .. ..
+//}
+
+
+
+$sequence charge_cancel "charge_cancel01" fps 30 ACT_ANTLIONGUARD_CHARGE_CANCEL 1 alignto idle {
+frame 37 85
+}
+
+//changing from using charge_crash frame 58 82 slowed down to fps 24
+$sequence charge_loop  "charge_start_stop"   fps 24 loop ACT_ANTLIONGUARD_CHARGE_RUN 1 alignto idle { frame 70 82 LX
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 8 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 0 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 10 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 2 }
+	ikrule ltftfoot footstep range .. .. 5 ..
+	ikrule ltftfoot footstep range .. 11 15 ..
+	ikrule ltftfoot footstep range .. 24 .. ..
+	ikrule rtftfoot footstep range .. .. 4 ..
+	ikrule rtftfoot footstep range .. 10 14 ..
+	ikrule rtftfoot footstep range .. 23 .. ..
+	ikrule ltbkfoot footstep range .. .. 2 ..
+	ikrule ltbkfoot footstep range .. 10 13 ..
+	ikrule ltbkfoot footstep range .. 23 .. ..
+	ikrule rtbkfoot footstep range .. .. 0 ..
+	ikrule rtbkfoot footstep range .. 9 12 ..
+	ikrule rtbkfoot footstep range .. 21 .. ..
+}
+
+$sequence charge_crash03  "charge_crash03" fps 30 ACT_ANTLIONGUARD_CHARGE_CRASH 6 alignto idle { 
+ LX
+{ event AE_ANTLIONGUARD_VOICE_PAIN 0 }
+{ event AE_ANTLIONGUARD_CHARGE_HIT 0 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 39 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 45 }
+}
+
+$sequence charge_crash02 "charge_crash02" fps 30 ACT_ANTLIONGUARD_CHARGE_CRASH 3 alignto idle {  
+ LX
+{ event AE_ANTLIONGUARD_VOICE_PAIN 0 }
+{ event AE_ANTLIONGUARD_CHARGE_HIT 0 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 26 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 64 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 70 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 82 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 72 }
+}
+
+$sequence charge_crash "charge_crash" fps 30 ACT_ANTLIONGUARD_CHARGE_CRASH 1 alignto idle {
+ frame 82 180  
+ LX
+{ event AE_ANTLIONGUARD_VOICE_PAIN 0 }
+{ event AE_ANTLIONGUARD_CHARGE_HIT 0 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 47 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 58 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 58 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 71 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 72 }
+}
+
+//FIXME: This isn't quite right yet -- jdw
+//$sequence charge_crash2 "charge_crash02" ACT_ANTLIONGUARD_CHARGE_CRASH 2 alignto idle {
+// frame 12 110
+// LX
+//}
+
+// charge crash alts
+$sequence charge_crash2 "charge_crash02" alignto idle
+$sequence charge_crash3 "charge_crash03" alignto idle
+
+
+//changed from chargestop smd
+$sequence charge_stop "charge_start_stop" LX frame 83 138 fps 30 ACT_ANTLIONGUARD_CHARGE_STOP 1 alignto idle {
+ walkframe 20 LX LY LZR
+ walkframe 48 LX LY LZR
+{ event AE_ANTLIONGUARD_VOICE_SQUEEZE 0 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 7 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 10 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 10 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 12 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 21 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 22 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 25 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 37 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 40 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_HEAVY 42 }
+{ event AE_ANTLIONGUARD_FOOTSTEP_LIGHT 48 }
+}
+
+$sequence death01 "death01" alignto idle ACT_DIESIMPLE 1 {
+{ event AE_NPC_RAGDOLL 85 }
+	ikrule ltftfoot footstep range 23 29 32 35
+	ikrule ltftfoot footstep range 54 56 62 64
+	ikrule rtftfoot footstep range 5 7 15 18
+	ikrule rtftfoot footstep range 34 36 41 43
+	ikrule rtftfoot footstep range 65 67 74 76
+	ikrule ltbkfoot footstep range 10 12 18 20
+	ikrule ltbkfoot footstep range 30 32 38 40
+	ikrule ltbkfoot footstep range 60 62 69 71
+	ikrule rtbkfoot footstep range 25 27 31 33
+	ikrule rtbkfoot footstep range 52 54 59 61
+}
+
+//Charge hit
+$animation charge_hit_base chargeshove frame 0 0
+$sequence charge_hit chargeshove subtract charge_hit_base 0 delta ACT_ANTLIONGUARD_CHARGE_HIT 1
+
+//Charge anticipate
+$animation charge_anticipate_base chargegesture frame 0 0
+$sequence charge_anticipate chargegesture subtract charge_anticipate_base 0 delta ACT_ANTLIONGUARD_CHARGE_ANTICIPATION 1
+
+//Roar
+$sequence roar "roar01" fps 30 ACT_ANTLIONGUARD_ROAR 1 {
+	ikrule ltftfoot footstep range .. .. 18 ..
+	ikrule ltftfoot footstep range .. 34 98 ..
+	ikrule ltftfoot footstep range .. 111 .. ..
+	ikrule rtftfoot footstep range .. .. 14 ..
+	ikrule rtftfoot footstep range .. 33 100 ..
+	ikrule rtftfoot footstep range .. 113 .. ..
+	ikrule ltbkfoot footstep
+	ikrule rtbkfoot footstep
+	{ event AE_ANTLIONGUARD_VOICE_ROAR 30 }
+}
+
+//Physics flinch
+$sequence physhit_fr "phys_hit_r01" fps 30 frame 3 75 ACT_ANTLIONGUARD_PHYSHIT_FR 1 alignto idle {
+ walkframe 32 LX LY LZR
+ walkframe 70 LX LY LZR
+{ event AE_ANTLIONGUARD_VOICE_PAIN 0 }
+}
+
+$sequence physhit_fl "phys_hit_l01" fps 30 frame 3 75 ACT_ANTLIONGUARD_PHYSHIT_FL 1 alignto idle {
+ walkframe 32 LX LY LZR
+ walkframe 70 LX LY LZR
+{ event AE_ANTLIONGUARD_VOICE_PAIN 0 }
+}
+
+$sequence physhit_rr "phys_hit_rear_r01" fps 30 frame 3 75 ACT_ANTLIONGUARD_PHYSHIT_RR 1 alignto idle {
+ walkframe 32 LX LY LZR
+ walkframe 70 LX LY LZR
+{ event AE_ANTLIONGUARD_VOICE_PAIN 0 }
+}
+
+$sequence physhit_rl "phys_hit_rear_l01" fps 30 frame 3 75 ACT_ANTLIONGUARD_PHYSHIT_RL 1 alignto idle {
+ walkframe 32 LX LY LZR
+ walkframe 70 LX LY LZR
+{ event AE_ANTLIONGUARD_VOICE_PAIN 0 }
+}
+
+//Physics throw
+$animation physthrow_right	"physthrow_rt01"
+$animation physthrow_left	"physthrow_lt01"
+$animation physthrow_middle	"headbutt_n01"
+
+$sequence physthrow { physthrow_right physthrow_left } blend throw -45 45 ACT_ANTLIONGUARD_SHOVE_PHYSOBJECT 1 {
+{ event AE_ANTLIONGUARD_VOICE_GROWL 0 }
+{ event AE_ANTLIONGUARD_SHOVE_PHYSOBJECT 15 }
+}
+
+//Light flinch
+$animation flinch_base flinchpose frame 0 0
+$sequence flinch1 flinchpose frame 1 1 subtract flinch_base 0 delta ACT_ANTLIONGUARD_FLINCH_LIGHT 4
+$sequence flinch2 flinchpose frame 2 2 subtract flinch_base 0 delta ACT_ANTLIONGUARD_FLINCH_LIGHT 4
+//$sequence flinch3 flinchpose frame 3 3 subtract flinch_base 0 delta ACT_ANTLIONGUARD_FLINCH_LIGHT 4
+//$sequence flinch4 flinchpose frame 4 4 subtract flinch_base 0 delta ACT_ANTLIONGUARD_FLINCH_LIGHT 4
+
+$sequence floor_break "bust_floor" FPS 30 snap ACT_ANTLIONGUARD_UNBURROW 1 {
+ walkframe 70 LX LY LZR
+ walkframe 114 LX LY LZR
+{ event AE_ANTLIONGUARD_BURROW_OUT 1 }
+//{ event AE_ANTLIONGUARD_CHARGE_EARLYOUT 0 }
+//{ event 17 30 }
+//{ event 18 64 }
+}
+
+//useful animations?
+
+$sequence inoutalert01 "inoutalert01" alignto idle
+$sequence bugbait "bugbait01" alignto idle
+$sequence charge_start_stop "charge_start_stop" alignto idle
+
+//Head Turn
+$weightlist head_look { "Antlion_Guard.spine2" 1.0 "Antlion_Guard.spine3" 1.0 "Antlion_Guard.head" 1.0 "Antlion_Guard.teeth1" 0.0 "Antlion_Guard.teeth2" 0.0 "Antlion_Guard.teeth3" 0.0 }
+
+$sequence headturn "headturn_poses" fps 30
+$animation head_neutral headturn_poses frame 0 0 weightlist head_look
+$animation head_up headturn_poses frame 1 1 subtract head_neutral 0 weightlist head_look
+$animation head_down headturn_poses frame 2 2 subtract head_neutral 0 weightlist head_look
+$animation head_right headturn_poses frame 3 3 subtract head_neutral 0 weightlist head_look
+$animation head_left headturn_poses frame 4 4 subtract head_neutral 0 weightlist head_look
+$sequence head_pitch { head_up head_down blend "head_pitch" -30 90 } delta autoplay
+$sequence head_yaw { head_right head_left blend "head_yaw" -80 80 } delta autoplay
+
+

@@ -1,0 +1,18 @@
+
+/*
+----------------------------
+Antlion Guard	
+----------------------------
+*/
+
+$modelname antlion_guard2.mdl
+$cdmaterials models/antlion_guard2
+
+$surfaceprop "alienflesh"
+
+$body studio "Antlion_guard2_reference.smd" 
+
+
+$sequence idle "Antlion_guard2_reference.smd" loop fps 30
+
+

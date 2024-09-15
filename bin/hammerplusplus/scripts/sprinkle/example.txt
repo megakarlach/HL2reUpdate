@@ -1,0 +1,31 @@
+"Example: Jungle Foliage" //This is what shows up in Type
+{
+	base //The base values of what you want to sprinkle. Every entity will have these values, but you do not need to put anything here
+	{
+		"classname" "prop_static"
+		grid "64 64" // The default grid size of this type, this can be overridden in Hammer
+	}
+	
+	10 //This is the chance of this set of values being used, this can be any number
+	{
+		"model" "models/props_island/island_plant01.mdl" //The values of this case
+		"ignorenormals" "1" //This is good for foilage props
+	}
+	10
+	{
+		"model" "models/props_island/island_plant02.mdl"
+		"skin" "0"
+		"ignorenormals" "1"
+	}
+	10
+	{
+		"model" "models/props_island/island_plant03.mdl"
+		"skin" "1"
+		"ignorenormals" "1"
+	}
+	10 //Since there's 4 cases with the same chance, each case has a 1/4 chance of being placed
+	{
+		"model" "models/props_island/island_plant04.mdl"
+		"ignorenormals" "1"
+	}
+}

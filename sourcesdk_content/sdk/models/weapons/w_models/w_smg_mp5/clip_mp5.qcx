@@ -1,0 +1,24 @@
+$modelname "Clips\clip_mp5.mdl"
+$cdmaterials models\weapons\w_models\w_smg_mp5
+$scale 1.0
+$staticprop
+
+$body studio clip_mp5_ref
+$sequence idle clip_mp5_ref
+
+$surfaceprop "weapon"
+
+$collisionmodel "clip_mp5_phy.smd" 
+{
+     $Mass 1.0
+}
+
+$keyvalues
+{
+"prop_data"
+{
+"base" "Metal.Tiny"
+}
+}
+
+

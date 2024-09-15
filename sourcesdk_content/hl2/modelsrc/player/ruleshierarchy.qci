@@ -1,0 +1,29 @@
+// current cs ikchains from who knows where
+//$ikchain rhand "valvebiped.Bip01_R_Hand" Z 0
+//$ikchain lhand "valvebiped.Bip01_L_Hand" Z 0
+//$ikchain rfoot "valvebiped.Bip01_R_Foot" Z 0
+//$ikchain lfoot "valvebiped.Bip01_L_Foot" Z 0
+
+// hl2 ik settings from standardikchains.qci as of 6/25
+
+$ikchain rhand "valvebiped.Bip01_R_Hand" Z 0 knee 0.707 0.707 0
+$ikchain lhand "valvebiped.Bip01_L_Hand" Z 0 knee 0.707 0.707 0
+$ikchain rfoot "valvebiped.Bip01_R_Foot" Z 0 knee 0.707 -0.707 0
+$ikchain lfoot "valvebiped.Bip01_L_Foot" Z 0 knee 0.707 -0.707 0
+
+$heirarchy "valvebiped.Bip01_Pelvis" ""
+$heirarchy "Valvebiped.bip01_Spine" "valvebiped.Bip01_Pelvis"
+$root "valvebiped.Bip01_Pelvis"
+$alwayscollapse "Valvebiped.bip01"
+$heirarchy "valvebiped.Bip01_L_Clavicle" "valvebiped.Bip01_Spine4" 
+$heirarchy "valvebiped.Bip01_R_Clavicle" "valvebiped.Bip01_Spine4" 
+$heirarchy "valvebiped.Bip01_L_Thigh" "valvebiped.Bip01_Pelvis" 
+$heirarchy "valvebiped.Bip01_R_Thigh" "valvebiped.Bip01_Pelvis" 
+
+$poseparameter "move_yaw" -180 180 wrap
+$poseparameter "body_pitch" -90 90 loop 360
+$poseparameter "body_yaw" -90 90 loop 360
+
+$weightlist upperbody "Valvebiped.bip01_spine" 1.0
+$weightlist nolowerbody "Valvebiped.bip01_Pelvis" 1.0 "ValveBiped.Bip01_L_Thigh" 0.0 "ValveBiped.Bip01_R_Thigh" 0.0 
+$weightlist lowerbody "valvebiped.bip01_pelvis" 1.0 "valvebiped.bip01_spine" 0.0

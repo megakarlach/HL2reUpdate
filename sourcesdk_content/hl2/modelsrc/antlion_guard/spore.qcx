@@ -1,0 +1,11 @@
+/*
+----------------------------
+Antlion Guard Spore
+----------------------------
+*/
+
+$modelname spore.mdl
+
+$body studio "spore.smd"
+
+$sequence idle "Idle01" loop fps 30 ACT_IDLE 1

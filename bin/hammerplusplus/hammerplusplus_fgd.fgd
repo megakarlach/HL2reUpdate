@@ -1,0 +1,133 @@
+// This FGD is mandatory for Hammer++
+// The version is compared against a hardcoded version internally to detect old FGD versions
+// A error will be shown if this is missing/mismatch
+@version(9)
+
+// The ExtendClass is a new special class type
+// It should take the name of another class in other FGDs
+// If the class is not found in other FGDs, this class will simply be ignored
+// This classes helpers+keyvalues defined will be *appended* to the actual class found in other FGDs
+// If the keyvalue/helper share names in this class and actual class, it will be overwritten with the keyvalue/helper defined here instead
+// A helper will not be appended if the exact name and parameters are already defined in the actual class (stops duplicates)
+// The class description is ignored here as well
+// Extension classes are parsed LAST, after all FGDs have been loaded first
+// The purpose of all this is to not break thirdparty FGDs, and (hopefully) keep compatibility
+
+@ExtendClass particlesystem(effect_name) = info_particle_system : ""
+[
+	effect_name(particlesystem) : "Particle System Name"
+]
+
+@ExtendClass light(point) = light : ""
+[
+]
+
+@ExtendClass light(spot) lightprop("models/editor/spot_color.mdl") = light_spot : ""
+[
+]
+
+@ExtendClass light(sun, global) light(ambient, global) direction(angles, invert_pitch) = light_environment : ""
+[
+]
+
+@ExtendClass light(sun) direction(angles, invert_pitch) = light_directional : ""
+[
+]
+
+@ExtendClass fogcontroller() direction(angles) = env_fog_controller : ""
+[
+]
+
+@ExtendClass skycamera() = sky_camera : ""
+[
+]
+
+@ExtendClass direction(spraydir) = env_blood : ""
+[
+]
+
+@ExtendClass direction(PostSpawnDirection) = env_entity_maker : ""
+[
+]
+
+@ExtendClass direction(angles) = env_physimpact : ""
+[
+]
+
+@ExtendClass direction(movedir) = func_movelinear : ""
+[
+]
+
+@ExtendClass direction(movedir) = func_button : ""
+[
+]
+
+@ExtendClass direction(movedir) = func_door : ""
+[
+]
+
+@ExtendClass direction(movedir) = func_conveyor : ""
+[
+]
+
+@ExtendClass direction(angles) = info_projecteddecal : ""
+[
+]
+
+@ExtendClass direction(angles) = phys_thruster : ""
+[
+]
+
+@ExtendClass direction(angles) = shadow_control : ""
+[
+]
+
+@ExtendClass catapult() direction(launchDirection) = trigger_catapult : ""
+[
+]
+
+@ExtendClass direction(pushdir) = trigger_push : ""
+[
+]
+
+@ExtendClass direction(angles) = trigger_wind : ""
+[
+]
+
+@ExtendClass direction(angles) = trigger_impact : ""
+[
+]
+
+@ExtendClass direction(impulse_dir) = trigger_apply_impulse : ""
+[
+]
+
+@ExtendClass ragdoll() = prop_ragdoll : ""
+[
+]
+
+@ExtendClass spotlight() = point_spotlight : ""
+[
+]
+
+@ExtendClass beam(LightningStart, LightningEnd) = env_beam : ""
+[
+]
+
+@ExtendClass laser(LaserTarget) = env_laser : ""
+[
+]
+
+@ExtendClass sun() = env_sun : ""
+[
+]
+
+@PointClass worldtext() = editor_text : 
+	"Hammer-only entity that displays a text message oriented in the world, at its origin."
+[
+	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
+
+	message(string) : "Entity Message" : "Hello World" : "Text message."
+	textsize(float) : "Text Size" : 10 : "Text Size."
+	color(color255) : "Color" : "255 255 255"
+]

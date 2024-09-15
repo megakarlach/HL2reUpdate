@@ -1,0 +1,238 @@
+//***** Weapon Idles
+
+
+
+$sequence Idle_Angry_SMG1 "Idle_Angry_SMG1" loop fps 30 activity ACT_IDLE_SMG1 1 node "standingSMG" 
+$sequence Idle_SMG1_Aim "Idle_SMG1_Aim" loop addlayer layer_Aim_all node "shooting" activity ACT_IDLE_ANGRY_SMG1 1
+$sequence shoot_smg1 "shootSMG1" fps 25 addlayer layer_Aim_all node "shooting" activity ACT_RANGE_ATTACK_SMG1 1
+$sequence reload_smg1 "SMG1_reload" fps 40 node "standingSMG" activity ACT_RELOAD_SMG1 1  { event 3015 60 }
+$sequence gesture_shoot_smg1 "shootSMG1" fps 25 subtract gesture_shoot_smg1 0 delta activity ACT_GESTURE_RANGE_ATTACK_SMG1 1 hidden
+
+
+//*** Shoot<-->Idle Transition anims
+$sequence IdleAngryToShoot Idle_Angry_SMG1_to_Aim fps 30 transition "standingSMG" "shooting" ACT_TRANSITION 1
+$sequence ShootToIdleAngry Idle_SMG1_Aim_to_Idle fps 30 transition "shooting" "standingSMG" ACT_TRANSITION 1
+
+
+//*** Shoot<-->CrouchIdle Transition anims
+
+$sequence CrouchDToShoot CrouchIdle_D_toShoot fps 30 transition "crouching" "shooting" ACT_TRANSITION 1
+$sequence ShootToCrouchD Shoot_toCrouchIdle_D fps 30 transition "shooting" "crouching" ACT_TRANSITION 1
+
+
+//*** CrouchShoot<-->CrouchIdle Transition anims
+
+$sequence CrouchDToCrouchShoot CrouchIdle_D_to_CrouchAim fps 30 transition "crouching" "crouchShooting" ACT_TRANSITION 1
+$sequence CrouchShootToCrouchD Crouch_Idle_SMG1_Aim_B_to_CrouchIdle transition "crouchShooting" "crouching" ACT_TRANSITION 1
+
+
+$skiptransition "standing" "shooting"
+
+
+$sequence crouch_shoot_smg1 "Crouch_shootSMG1_B" fps 25 addlayer layer_Aim_all node "crouchShooting" activity ACT_RANGE_ATTACK_SMG1_LOW 1 { event 3002 0 }
+$sequence crouch_aim_smg1 "Crouch_Idle_SMG1_Aim_B" loop fps 30 addlayer layer_Aim_all node "crouchShooting" activity ACT_RANGE_AIM_SMG1_LOW 1
+$sequence crouch_reload_smg1 "Crouch_SMG1_reload" fps 40 node "Crouching" activity ACT_RELOAD_SMG1_LOW 1  { event 3015 60 }
+
+
+//**** Weapon Pickup
+
+$sequence pickup "Weapon_pickup" fps 30 activity ACT_PICKUP_GROUND 1 { event 2040 13 }
+
+
+
+
+$poseparameter "aim_pitch" -90 90 loop 360
+$poseparameter "aim_yaw" -90 90 loop 360
+
+$Weightlist HipsUpperbodyReplace "valvebiped.bip01_Pelvis" 1.0 "ValveBiped.Bip01_L_Thigh" 0.0 "ValveBiped.Bip01_R_Thigh" 0.0 
+
+$animation a_aim_neutral "aim_9_directions" frame 4 4 weightlist HipsUpperbodyReplace
+
+$animation a_run_aim_down_left Aim_9_directions frame 0 0 subtract a_aim_neutral 0 weightlist HipsUpperbodyReplace
+$animation a_run_aim_down_center Aim_9_directions frame 1 1 subtract a_aim_neutral 0 weightlist HipsUpperbodyReplace
+$animation a_run_aim_down_right Aim_9_directions frame 2 2 subtract a_aim_neutral 0 weightlist HipsUpperbodyReplace
+$animation a_run_aim_mid_left Aim_9_directions frame 3 3 subtract a_aim_neutral 0 weightlist HipsUpperbodyReplace
+$animation a_run_aim_mid_center Aim_9_directions frame 4 4 subtract a_aim_neutral 0 weightlist HipsUpperbodyReplace
+$animation a_run_aim_mid_right Aim_9_directions frame 5 5 subtract a_aim_neutral 0 weightlist HipsUpperbodyReplace
+$animation a_run_aim_up_left Aim_9_directions frame 6 6 subtract a_aim_neutral 0 weightlist HipsUpperbodyReplace 
+$animation a_run_aim_up_center Aim_9_directions frame 7 7 subtract a_aim_neutral 0 weightlist HipsUpperbodyReplace
+$animation a_run_aim_up_right Aim_9_directions frame 8 8 subtract a_aim_neutral 0 weightlist HipsUpperbodyReplace
+$animation a_run_aim_straight_up aim_straight_up frame 0 0 subtract a_aim_neutral 0 weightlist HipsUpperbodyReplace
+
+$sequence aimup aim_straight_up hidden
+
+$sequence layer_Aim_all  {
+			a_run_aim_straight_up a_run_aim_straight_up a_run_aim_straight_up
+			a_run_aim_up_right a_run_aim_up_center a_run_aim_up_left 
+		     	a_run_aim_mid_right a_run_aim_mid_center a_run_aim_mid_left 
+			a_run_aim_down_right a_run_aim_down_center a_run_aim_down_left 
+			blendwidth 3 blend aim_yaw -45 45 blend aim_pitch -90 45 delta hidden } iklock rfoot 1 0 iklock lfoot 1 0
+
+// walk N, aiming a SMG
+$sequence layer_walk_aiming "WalkN_Aim" weightlist upperbodyreplace addlayer layer_Aim_all hidden
+
+// Walk N, holding a SMG
+$sequence layer_walk_holding "WalkN_SMG1" weightlist upperbodyreplace hidden
+
+// Run N, aiming a SMG
+$sequence layer_run_aiming "RunN_smg1_Aim" weightlist upperbodyreplace addlayer layer_Aim_all hidden
+
+// crouch Run N, aiming a SMG
+$sequence layer_crouch_run_aiming "Crouch_RunN_SMG1_Aim" weightlist upperbodyreplace addlayer layer_Aim_all hidden
+
+//Crouch walk N, aiming a SMG
+$sequence layer_crouch_walk_aiming "Crouch_WalkN_Aim" weightlist upperbodyreplace addlayer layer_Aim_all hidden
+
+
+$animation a_RunN_aim RunN_smg1_Aim loop LX LY rotateto 0 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range .. 8 10 ..
+	// ikrule rfoot footstep 1 range .. 17 1 ..
+}
+
+
+$animation a_WalkN_SMG WalkN_SMG1 loop LX LY rotateto 0 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range  4 10 19 25
+	// ikrule rfoot footstep 1 range 18 26 3 10
+}
+
+$weightlist pelvisonly "Valvebiped.bip01_Pelvis" 1.0 "Valvebiped.bip01_Spine" 0.0 "ValveBiped.Bip01_L_Thigh" 0.0 "ValveBiped.Bip01_R_Thigh" 0.0 
+
+$animation a_walkS_aim_delta WalkN_SMG1 frame 0 0 weightlist pelvisonly alignto a_walkS subtract a_walkS 0
+$animation a_walkSE_aim_delta WalkN_SMG1 frame 0 0 weightlist pelvisonly alignto a_walkSE subtract a_walkSE 0
+$animation a_walkE_aim_delta WalkN_SMG1 frame 0 0 weightlist pelvisonly alignto a_walkE subtract a_walkE 0
+$animation a_walkNE_aim_delta WalkN_SMG1 frame 0 0 weightlist pelvisonly alignto a_walkNE subtract a_walkNE 0
+$animation a_walkN_aim_delta WalkN_SMG1 frame 0 0 weightlist pelvisonly alignto a_walkN_SMG subtract a_walkN_SMG 0
+$animation a_walkNW_aim_delta WalkN_SMG1 frame 0 0 weightlist pelvisonly alignto a_walkNW subtract a_walkNW 0
+$animation a_walkW_aim_delta WalkN_SMG1 frame 0 0 weightlist pelvisonly alignto a_walkW subtract a_walkW 0
+$animation a_walkSW_aim_delta WalkN_SMG1 frame 0 0 weightlist pelvisonly alignto a_walkSW subtract a_walkSW 0
+
+$sequence aim_walk_all_delta {
+	a_walkS_aim_delta a_walkSE_aim_delta a_walkE_aim_delta 
+	a_walkNE_aim_delta a_walkN_aim_delta a_walkNW_aim_delta 
+	a_walkW_aim_delta a_walkSW_aim_delta a_walkS_aim_delta 
+	weightlist pelvisonly
+	blendwidth 9 blend move_yaw -180 180
+	iklock lfoot 1 1 iklock rfoot 1 1
+	delta
+	hidden
+}
+
+$sequence walkAIMALL1 {
+	a_walkS a_walkSE a_walkE
+	a_walkNE a_walkN_SMG a_walkNW
+	a_walkW a_walkSW a_walkS
+	blendwidth 9 blend move_yaw -180 180
+	addlayer aim_walk_all_delta
+	addlayer layer_walk_aiming
+	ACT_WALK_AIM_RIFLE 1
+	node "walking"
+}
+
+$sequence walkHOLDALL1 {
+	a_walkS a_walkSE a_walkE
+	a_walkNE a_walkN_SMG a_walkNW
+	a_walkW a_walkSW a_walkS
+	blendwidth 9 blend move_yaw -180 180
+	addlayer aim_walk_all_delta
+	addlayer layer_walk_holding
+	ACT_WALK_RIFLE 1
+	node "walking"
+}
+
+
+$sequence run_holding_all {
+	a_runS a_runSE a_runE a_runNE a_runN_SMG a_runNW a_runW a_runSW a_runS
+	blendwidth 9 blend move_yaw -180 180 addlayer layer_run_holding ACT_RUN_RIFLE 1 node "running"
+}
+
+$sequence run_aiming_all {
+	a_runS a_runSE a_runE a_runNE a_runN_SMG a_runNW a_runW a_runSW a_runS
+	blendwidth 9 blend move_yaw -180 180 addlayer layer_run_aiming ACT_RUN_AIM_RIFLE 1 node "running"
+}
+
+$sequence crouchRUNHOLDINGALL1 {
+	a_runS a_runSE a_runE
+	a_runNE a_crouch_runN a_runNW
+	a_runW a_runSW a_runS
+	blendwidth 9 blend move_yaw -180 180
+	addlayer crouch_run_all_delta 
+	addlayer layer_crouch_run_holding 
+	ACT_RUN_CROUCH_RIFLE 1 
+	node "run_crouching"
+}
+
+$sequence crouchRUNAIMINGALL1 {
+	a_runS a_runSE a_runE
+	a_runNE a_crouch_runN a_runNW
+	a_runW a_runSW a_runS
+	blendwidth 9 blend move_yaw -180 180
+	addlayer crouch_run_all_delta 
+	addlayer layer_crouch_run_aiming 
+	ACT_RUN_CROUCH_AIM_RIFLE 1 
+	node "run_crouching"
+}
+
+
+$sequence Crouch_walk_holding_all {
+	a_Crouch_walkS a_Crouch_walkSE a_Crouch_walkE 
+	a_Crouch_walkNE a_Crouch_walkN a_Crouch_walkNW 
+	a_Crouch_walkW a_Crouch_walkSW a_Crouch_walkS 
+	blendwidth 9 blend move_yaw -180 180 addlayer layer_crouch_walk_holding ACT_WALK_CROUCH_RIFLE 1 node "walk_crouching"
+}
+
+$sequence Crouch_walk_aiming_all {
+	a_Crouch_walkS a_Crouch_walkSE a_Crouch_walkE 
+	a_Crouch_walkNE a_Crouch_walkN a_Crouch_walkNW 
+	a_Crouch_walkW a_Crouch_walkSW a_Crouch_walkS 
+	blendwidth 9 blend move_yaw -180 180 addlayer layer_crouch_walk_aiming ACT_WALK_CROUCH_AIM_RIFLE 1 node "walk_crouching" 
+}
+
+
+//___________________________________________________________________________________________
+
+//___________________________________________________________________________________________
+
+
+//___________________________________SMG1 RELAXED____________________________________________
+
+//--SMG1 Idles_Relaxed
+
+$sequence Idle_SMG1_Relaxed "Idle_SMG1_Relaxed" loop fps 30 activity ACT_IDLE_SMG1_RELAXED 1 node "StandingSMGRelaxed"
+
+
+//--SMG1 Walk_Relaxed
+
+$sequence layer_walk_holding_SMG1_Relaxed "WalkN_SMG1_Relaxed" weightlist upperbodyreplace hidden
+$sequence walk_SMG1_Relaxed_all {
+	a_walkS a_walkSE a_walkE 
+	a_walkNE a_walkN a_walkNW 
+	a_walkW a_walkSW a_walkS
+	blendwidth 9 blend move_yaw -180 180 
+	addlayer layer_walk_holding_SMG1_Relaxed 
+	ACT_WALK_SMG1_RELAXED 1 
+	node "walking"
+	{ event 2051 9 }
+	{ event 2050 23 }
+	}
+
+
+//--SMG1 Run_Relaxed
+
+$sequence layer_run_holding_SMG1_Relaxed "RunN_SMG1_Relaxed" weightlist upperbodyreplace hidden
+$animation a_RunN_SMG1_Relaxed RunN_SMG1_Relaxed loop LX LY rotateto 0 { alignto idle01 }
+$sequence run_SMG1_Relaxed_all {
+	a_runS a_runSE a_runE 
+	a_runNE a_runN_SMG1_Relaxed a_runNW 
+	a_runW a_runSW a_runS
+	blendwidth 9 blend move_yaw -180 180 
+	addlayer layer_run_holding_SMG1_Relaxed 
+	ACT_RUN_SMG1_RELAXED 1 
+	node "running"}
+
+//___________________________________________________________________________________________
+
+//___________________________________________________________________________________________
+
+

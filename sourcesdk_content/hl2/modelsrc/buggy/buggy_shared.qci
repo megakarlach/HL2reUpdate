@@ -1,0 +1,220 @@
+
+//----- KeyValues -----
+
+$keyvalues
+{
+	"vehicle_entry"
+	{
+		// Entries are: Key = enter animation, Value = Hitbox group
+		"enter1"	"1"
+		"enter2"	"2"
+		"enter3"	"3"
+		//"enter4"	"4"		// Disabled entry from the rear for now
+	}
+
+	"vehicle_exit"
+	{
+		// Entries are: Key = exit animation, Value = "upright" or "upsidedown"
+		"exit1"	"upright"
+		"exit2"	"upright"
+		"exit7"	"upsidedown"
+		"exit8"	"upsidedown"
+	}
+
+	// This list contains exits which you don't want to exit from unless everything else is blocked
+	"vehicle_escape_exit"
+	{
+		"exit3"	"upright"
+		"exit4"	"upright"
+		"exit5"	"upsidedown"		
+		"exit6"	"upsidedown"
+	}
+}
+
+//----- Attachments -----
+$attachment levitate_target "Rig_Buggy.Gun_Parent" 0 0 0
+$attachment gun_ref "Rig_Buggy.Gun" 0 0 0
+$attachment wheel_fl "Rig_Buggy.Wheel_FL_Rotate" 0 0 0
+$attachment wheel_fr "Rig_Buggy.Wheel_FR_Rotate" 0 0 0
+$attachment wheel_rl "Rig_Buggy.Wheel_RL" 0 0 0
+$attachment wheel_rr "Rig_Buggy.Wheel_RR" 0 0 0
+$attachment "vehicle_driver_eyes" "Rig_Buggy.view" 5.00 0.00 0.00
+$attachment vehicle_feet_passenger0 "Rig_Buggy.view" 0 0 -32
+$attachment "vehicle_engine" "Rig_Buggy.Frame" 0.00 0.00 -40.00 rigid
+$attachment exit1 "Rig_Buggy.exit1" 0 0 8 rigid
+$attachment exit2 "Rig_Buggy.exit2" 0 0 8 rigid
+$attachment exit3 "Rig_Buggy.exit3" 0 0 8 rigid
+$attachment exit4 "Rig_Buggy.exit4" 0 0 8 rigid
+$attachment exit5 "Rig_Buggy.exit5" 0 0 0 rigid
+$attachment exit6 "Rig_Buggy.exit6" 0 0 0 rigid
+$attachment exit7 "Rig_Buggy.exit7" 0 0 0 rigid
+$attachment exit8 "Rig_Buggy.exit8" 0 0 0 rigid
+$attachment enter1 "Rig_Buggy.enter1" 0 0 0 rigid
+$attachment enter2 "Rig_Buggy.enter2" 0 0 0 rigid
+$attachment enter3 "Rig_Buggy.enter3" 0 0 0 rigid
+$attachment enter4 "Rig_Buggy.enter4" 0 0 0 rigid
+$attachment "beam_damage" "Rig_Buggy.Frame" 10.00 7.00 29.00 rigid
+$attachment "seagull_perch1" "Rig_Buggy.Frame" -18.00 20.00 53.00 rotate -0 -180 90
+$attachment "seagull_perch2" "Rig_Buggy.Frame" 10.00 5.00 88.00 rotate -90 -90 0
+$attachment "seagull_perch3" "Rig_Buggy.Frame" -8.00 50.00 -46.00 rotate 90 90 0
+$attachment "taucannon" "Rig_Buggy.Frame" -18.00 10.00 53.00 rotate 90 90 0
+
+$attachment "headlight" "Rig_Buggy.Frame" 0.00 5.00 100.00 rotate -90 -90 0
+
+$attachment "Muzzle" "Rig_Buggy.Muzzle" 0 0 0 rigid
+
+//----- Hitbox -----
+
+$hboxset "default"
+
+$hbox 0 "Rig_Buggy.Frame"	   -30.00  -15.50   15.50    30.00    9.50  100.50
+$hbox 0 "Rig_Buggy.Frame"	    -3.00  -17.00  -18.00    21.00   25.00   14.00
+$hbox 0 "Rig_Buggy.Frame"	   -30.00   -6.00  -58.00    30.00   56.00  -22.00
+// Ammocrate hitbox
+$hbox 5 "Rig_Buggy.Frame"	   -30.00  -15.00  -67.50    30.00   35.00  -32.50
+
+$hboxset "entryboxes"
+
+$hbox 1 "Rig_Buggy.Frame"	    25.00  -35.00  -50.00   105.00   55.00   50.00
+$hbox 2 "Rig_Buggy.Frame"	  -105.00  -35.00  -50.00   -25.00   55.00   50.00
+$hbox 3 "Rig_Buggy.Frame"	   -40.00  -20.00   40.00    40.00   70.00  150.00
+
+//----- Pose Parameters -----
+
+$poseparameter "vehicle_weapon_yaw" 0 1
+$poseparameter "vehicle_weapon_pitch" 0 1
+$poseparameter "vehicle_guage" 0 1
+$poseparameter "vehicle_steer" -1 1
+$poseparameter "vehicle_wheel_fl_height" 0 1
+$poseparameter "vehicle_wheel_fr_height" 0 1
+$poseparameter "vehicle_wheel_rl_height" 0 1
+$poseparameter "vehicle_wheel_rr_height" 0 1
+
+$poseparameter "vehicle_wheel_fl_spin" -180 180 wrap
+$poseparameter "vehicle_wheel_fr_spin" -180 180 wrap
+$poseparameter "vehicle_wheel_rl_spin" -180 180 wrap
+$poseparameter "vehicle_wheel_rr_spin" -180 180 wrap
+$poseparameter "gun_spin" -180 180 wrap
+
+// --------- Animation sequences -------
+
+$sequence "idle" "buggy_reference" fps 30 ACT_IDLE 1 //addlayer aim_all
+$sequence "turn" "buggy_turn" fps 30
+$sequence "suspension" "buggy_suspension" fps 30
+$sequence "spin" "buggy_wheelspin" fps 30
+$sequence "aim" "buggy_aim" fps 30
+$sequence "gun_spin" "buggy_gun_cyl" fps 30
+$sequence "speedo" "buggy_speedo" fps 30
+$sequence "enter1" "buggy_enter" fps 30 snap
+$sequence "exit1" "buggy_exit" fps 30 fadeout 0
+$sequence "enter2" "buggy_enter2" fps 30 snap
+$sequence "exit2" "buggy_exit2" fps 30 fadeout 0
+$sequence "enter3" "buggy_enter3" fps 30 snap
+$sequence "exit3" "buggy_exit3" fps 30 fadeout 0
+$sequence "enter4" "buggy_enter4" fps 30 snap
+$sequence "exit4" "buggy_exit4" fps 30 fadeout 0
+$sequence "exit5" "buggy_exit5" fps 30 fadeout 0
+$sequence "exit6" "buggy_exit6" fps 30 fadeout 0
+$sequence "exit7" "buggy_exit7" fps 30 fadeout 0
+$sequence "exit8" "buggy_exit8" fps 30 fadeout 0
+$sequence "ammo_open" "buggy_ammo_open" fps 30
+$sequence "ammo_close" "buggy_ammo_close" fps 30
+$sequence "tau_levitate" "tau_levitate" fps 30
+$weightlist tau { "Rig_Buggy.Gun_Parent" 1.0 } 
+$animation "a_tau_removed" "tau_levitate" frame 59 59 weightlist tau
+$sequence "tau_removed" "a_tau_removed" fps 30 hidden
+$sequence "exit_tauremoved" "buggy_exit" fps 30 addlayer tau_removed
+
+$animation neutral "buggy_reference" frames 0 0
+
+//aim_weapon
+$weightlist weapon { "Rig_Buggy.Gun_Base" 1.0 "Rig_Buggy.Gun_Parent" 0.0 "Rig_Buggy.Gun" 1.0 "Rig_Buggy.gun_cylinders" 0.0 }
+$animation down_left "buggy_aim" frame 0 0 weightlist weapon
+$animation down_center "buggy_aim" frame 1 1 weightlist weapon
+$animation down_right "buggy_aim" frame 2 2 weightlist weapon
+$animation mid_left "buggy_aim" frame 3 3 weightlist weapon
+$animation mid_center "buggy_aim" frame 4 4 weightlist weapon
+$animation mid_right "buggy_aim" frame 5 5 weightlist weapon
+$animation up_left "buggy_aim" frame 6 6 weightlist weapon
+$animation up_center "buggy_aim" frame 7 7 weightlist weapon
+$animation up_right "buggy_aim" frame 8 8 weightlist weapon
+$sequence aim_all { 	down_left down_center down_right 
+			mid_left mid_center mid_right 
+			up_left up_center up_right 
+			blend vehicle_weapon_yaw -120 120 blend vehicle_weapon_pitch -60 60 weightlist weapon autoplay }
+
+// gun cylinders spinning
+$weightlist gunspin { "Rig_Buggy.gun_cylinders" 1.0 }
+$animation gun_spin0 "buggy_gun_cyl" frame 0 0 subtract neutral 0 weightlist gunspin 
+$animation gun_spin120 "buggy_gun_cyl" frame 3 3 subtract neutral 0 weightlist gunspin
+$animation gun_spin240 "buggy_gun_cyl" frame 6 6 subtract neutral 0 weightlist gunspin 
+$sequence gun_spinning { gun_spin0 gun_spin120 gun_spin240 gun_spin0 blendwidth 4 blend "gun_spin" -180 180 } weightlist gunspin delta autoplay
+
+//speedometer
+$weightlist speedo { "Rig_Buggy.Speedo" 1.0 }
+$animation slow "buggy_speedo" frame 0 0 subtract neutral 0 weightlist speedo
+$animation mid "buggy_speedo" frame 1 1 subtract neutral 0 weightlist speedo
+$animation fast "buggy_speedo" frame 2 2 subtract neutral 0 weightlist speedo
+$sequence speedometer { slow mid fast blend vehicle_guage 0 1 } weightlist speedo delta autoplay
+
+// front steering sequence
+$weightlist front_wheels { "Rig_Buggy.Wheel_FL_Turn" 1.0 "Rig_Buggy.Wheel_FR_Turn" 1.0 "Rig_Buggy.Steer_Wheel" 1.0 "Rig_Buggy.Steer_Arm" 1.0 }
+$animation turn_left "buggy_turn" frame 0 0 subtract neutral 0 weightlist front_wheels 
+$animation turn_right "buggy_turn" frame 2 2 subtract neutral 0 weightlist front_wheels 
+$sequence turning { turn_left turn_right blend vehicle_steer -1 1 } weightlist front_wheels delta autoplay
+
+// front right
+$weightlist wheel_fr { "Rig_Buggy.Axel_FR" 1.0 "Rig_Buggy.Shock_FR_Sleeve" 1.0 "Rig_Buggy.Wheel_FR_Turn_parent" 1.0 "Rig_Buggy.Wheel_FR_Turn" 0.0  }
+$animation wheel_fr_low "buggy_suspension" frame 0 0 subtract neutral 0 weightlist wheel_fr 
+$animation wheel_fr_high "buggy_suspension" frame 2 2 subtract neutral 0 weightlist wheel_fr 
+$sequence wheel_fr_suspension { wheel_fr_low wheel_fr_high blend "vehicle_wheel_fr_height" 0 1.0 } weightlist wheel_fr delta autoplay
+
+$weightlist wheel_fr_spin { "Rig_Buggy.Wheel_FR_Rotate" 1.0 }
+$animation wheel_fr_spin0 "buggy_wheelspin" frame 0 0 subtract neutral 0 weightlist wheel_fr_spin 
+$animation wheel_fr_spin120 "buggy_wheelspin" frame 3 3 subtract neutral 0 weightlist wheel_fr_spin
+$animation wheel_fr_spin240 "buggy_wheelspin" frame 6 6 subtract neutral 0 weightlist wheel_fr_spin
+$sequence wheel_fr_spin { wheel_fr_spin0 wheel_fr_spin120 wheel_fr_spin240 wheel_fr_spin0 blendwidth 4 blend "vehicle_wheel_fr_spin" -180 180 } weightlist wheel_fr_spin delta autoplay
+
+// front left
+$weightlist wheel_fl { "Rig_Buggy.Axel_FL" 1.0 "Rig_Buggy.Shock_FL_Sleeve" 1.0 "Rig_Buggy.Wheel_FL_Turn_parent" 1.0 "Rig_Buggy.Wheel_FL_Turn" 0.0 }
+$animation wheel_fl_low "buggy_suspension" frame 0 0 subtract neutral 0 weightlist wheel_fl 
+$animation wheel_fl_high "buggy_suspension" frame 2 2 subtract neutral 0 weightlist wheel_fl 
+$sequence wheel_fl_suspension { wheel_fl_low wheel_fl_high blend "vehicle_wheel_fl_height" 0 1.0 } weightlist wheel_fl delta autoplay
+
+$weightlist wheel_fl_spin { "Rig_Buggy.Wheel_FL_Rotate" 1.0 } 
+$animation wheel_fl_spin0 "buggy_wheelspin" frame 0 0 subtract neutral 0 weightlist wheel_fl_spin 
+$animation wheel_fl_spin120 "buggy_wheelspin" frame 3 3 subtract neutral 0 weightlist wheel_fl_spin 
+$animation wheel_fl_spin240 "buggy_wheelspin" frame 6 6 subtract neutral 0 weightlist wheel_fl_spin 
+$sequence wheel_fl_spin { wheel_fl_spin0 wheel_fl_spin120 wheel_fl_spin240 wheel_fl_spin0 blendwidth 4 blend "vehicle_wheel_fl_spin" -180 180 } weightlist wheel_fl_spin delta autoplay
+
+// rear right
+$weightlist wheel_rr { "Rig_Buggy.Axel_RR" 1.0 "Rig_Buggy.Wheel_RR" 0.0 "Rig_Buggy.Shock_RR_Sleeve" 1.0 }
+$animation wheel_rr_low "buggy_suspension" frame 0 0 subtract neutral 0 weightlist wheel_rr 
+$animation wheel_rr_high "buggy_suspension" frame 2 2 subtract neutral 0 weightlist wheel_rr 
+$sequence wheel_rr_suspension { wheel_rr_low wheel_rr_high blend "vehicle_wheel_rr_height" 0 1.0 } weightlist wheel_rr delta autoplay
+
+$weightlist wheel_rr_spin { "Rig_Buggy.Wheel_RR" 1.0 } 
+$animation wheel_rr_spin0 "buggy_wheelspin" frame 0 0 subtract neutral 0 weightlist wheel_rr_spin 
+$animation wheel_rr_spin120 "buggy_wheelspin" frame 3 3 subtract neutral 0 weightlist wheel_rr_spin 
+$animation wheel_rr_spin240 "buggy_wheelspin" frame 6 6 subtract neutral 0 weightlist wheel_rr_spin 
+$sequence wheel_rr_spin { wheel_rr_spin0 wheel_rr_spin120 wheel_rr_spin240 wheel_rr_spin0 blendwidth 4 blend "vehicle_wheel_rr_spin" -180 180 } weightlist wheel_rr_spin delta autoplay
+
+// rear left
+$weightlist wheel_rl { "Rig_Buggy.Axel_RL" 1.0 "Rig_Buggy.Wheel_RL" 0.0 "Rig_Buggy.Shock_RL_Sleeve" 1.0 }
+$animation wheel_rl_low "buggy_suspension" frame 0 0 subtract neutral 0 weightlist wheel_rl 
+$animation wheel_rl_high "buggy_suspension" frame 2 2 subtract neutral 0 weightlist wheel_rl 
+$sequence wheel_rl_suspension { wheel_rl_low wheel_rl_high blend "vehicle_wheel_rl_height" 0 1.0 } weightlist wheel_rl delta autoplay
+
+$weightlist wheel_rl_spin { "Rig_Buggy.Wheel_RL" 1.0 }
+$animation wheel_rl_spin0 "buggy_wheelspin" frame 0 0 subtract neutral 0 weightlist wheel_rl_spin 
+$animation wheel_rl_spin120 "buggy_wheelspin" frame 3 3 subtract neutral 0 weightlist wheel_rl_spin 
+$animation wheel_rl_spin240 "buggy_wheelspin" frame 6 6 subtract neutral 0 weightlist wheel_rl_spin 
+$sequence wheel_rl_spin { wheel_rl_spin0 wheel_rl_spin120 wheel_rl_spin240 wheel_rl_spin0 blendwidth 4 blend "vehicle_wheel_rl_spin" -180 180 } weightlist wheel_rl_spin delta autoplay
+
+//----- Physbox -----
+
+$collisionmodel "buggy_physbox.smd" {
+     // Mass in kilograms
+     	$Mass 800
+	$concave
+}

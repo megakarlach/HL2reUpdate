@@ -1,0 +1,83 @@
+//---------------------------------------
+// Head/chest/body posture animations
+
+$weightlist fullbody "ValveBiped.Bip01_Pelvis" 1.0 "ValveBiped.Bip01_L_Clavicle" 0.0 "ValveBiped.Bip01_R_Clavicle" 0.0
+$weightlist fullspine "ValveBiped.Bip01_Pelvis" 1.0 "ValveBiped.Bip01_L_Clavicle" 0.0 "ValveBiped.Bip01_R_Clavicle" 0.0 "ValveBiped.Bip01_L_Thigh" 0.0 "ValveBiped.Bip01_R_Thigh" 0.0 
+$weightlist fullspinenohead "ValveBiped.Bip01_Pelvis" 1.0 "ValveBiped.Bip01_L_Clavicle" 0.0 "ValveBiped.Bip01_R_Clavicle" 0.0 "ValveBiped.Bip01_L_Thigh" 0.0 "ValveBiped.Bip01_R_Thigh" 0.0 "ValveBiped.Bip01_Head1" 0.0
+$weightlist upperspine "ValveBiped.Bip01_Pelvis" 1.0 "ValveBiped.Bip01_R_Thigh" 0.0 "ValveBiped.Bip01_L_Thigh" 0.0 "ValveBiped.Bip01_L_Clavicle" 0.0 "ValveBiped.Bip01_R_Clavicle" 0.0
+$weightlist upperspinenohead "ValveBiped.Bip01_Pelvis" 1.0 "ValveBiped.Bip01_R_Thigh" 0.0 "ValveBiped.Bip01_L_Thigh" 0.0 "ValveBiped.Bip01_L_Clavicle" 0.0 "ValveBiped.Bip01_R_Clavicle" 0.0 "ValveBiped.Bip01_Head1" 0.0
+
+// $sequence pose_neutral "body_poses_lean"
+
+$ikautoplaylock rhand 0.5 0.8
+$ikautoplaylock lhand 0.5 0.8
+$ikautoplaylock rfoot 1.0 0.1
+$ikautoplaylock lfoot 1.0 0.1
+
+$animation a_pose_neutral "body_poses_lean" frames 0 0
+
+//$sequence body_poses_lean "body_poses_lean"
+
+//$sequence spine_rot_fwd "body_poses_lean" frame 68 68
+//$sequence spine_rot_back "body_poses_lean" frame 77 77
+
+//$sequence body_rot_back "body_poses_lean" frame 38 38
+//$sequence body_rot_fwd "body_poses_lean" frame 47 47
+
+//$animation a_body_trans "body_poses_lean" frame 0 0 subtract a_pose_neutral 0 weightlist fullspine 
+//$animation a_body_trans_rt "body_poses_lean" frame 8 8 subtract a_pose_neutral 0 weightlist fullspine 
+//$animation a_body_trans_lt "body_poses_lean" frame 17 17 subtract a_pose_neutral 0 weightlist fullspine 
+//$animation a_body_trans_fwd "body_poses_lean" frame 18 18 subtract a_pose_neutral 0 weightlist fullspinenohead 
+//$animation a_body_trans_bwd "body_poses_lean" frame 27 27 subtract a_pose_neutral 0 weightlist fullspinenohead 
+//$animation a_body_trans_dwn "body_poses_lean" frame 28 28 subtract a_pose_neutral 0 weightlist fullspine 
+//$animation a_body_trans_up "body_poses_lean" frame 37 37 subtract a_pose_neutral 0 weightlist fullspine 
+$animation a_body_rot "body_poses_lean" frame 0 0 subtract a_pose_neutral 0 weightlist fullspinenohead 
+//$animation a_body_rot_back "body_poses_lean" frame 38 38 subtract a_pose_neutral 0 weightlist fullspinenohead 
+//$animation a_body_rot_fwd "body_poses_lean" frame 47 47 subtract a_pose_neutral 0 weightlist fullspinenohead 
+//$animation a_body_rot_rt "body_poses_lean" frame 48 48 subtract a_pose_neutral 0 weightlist fullspinenohead 
+//$animation a_body_rot_lt "body_poses_lean" frame 57 57 subtract a_pose_neutral 0 weightlist fullspinenohead 
+$animation a_body_rot_z_rt "body_poses_lean" frame 58 58 subtract a_pose_neutral 0 weightlist fullspinenohead 
+$animation a_body_rot_z_lt "body_poses_lean" frame 67 67 subtract a_pose_neutral 0 weightlist fullspinenohead 
+$animation a_spine_rot "body_poses_lean" frame 0 0 subtract a_pose_neutral 0 weightlist upperspinenohead
+//$animation a_spine_rot_fwd "body_poses_lean" frame 68 68 subtract a_pose_neutral 0 weightlist upperspinenohead
+//$animation a_spine_rot_back "body_poses_lean" frame 77 77 subtract a_pose_neutral 0 weightlist upperspinenohead
+//$animation a_spine_rot_lt "body_poses_lean" frame 78 78 subtract a_pose_neutral 0 weightlist upperspinenohead
+//$animation a_spine_rot_rt "body_poses_lean" frame 87 87 subtract a_pose_neutral 0 weightlist upperspinenohead
+$animation a_spine_rot_z_rt "body_poses_lean" frame 88 88 subtract a_pose_neutral 0 weightlist upperspinenohead
+$animation a_spine_rot_z_lt "body_poses_lean" frame 96 96 subtract a_pose_neutral 0 weightlist upperspinenohead
+$animation a_head_rot "body_poses_lean" frame 0 0 subtract a_pose_neutral 0 weightlist upperspine 
+$animation a_head_rot_lt "body_poses_lean" frame 97 97 subtract a_pose_neutral 0 weightlist upperspine 
+$animation a_head_rot_rt "body_poses_lean" frame 98 98 subtract a_pose_neutral 0 weightlist upperspine 
+$animation a_neck_trans "body_poses_lean" frame 0 0 subtract a_pose_neutral 0 weightlist upperspine 
+$animation a_neck_trans_fwd "body_poses_lean" frame 99 99 subtract a_pose_neutral 0 weightlist upperspine 
+$animation a_neck_trans_back "body_poses_lean" frame 100 100 subtract a_pose_neutral 0 weightlist upperspine 
+$animation a_head_rot_dwn "body_poses_lean" frame 101 101 subtract a_pose_neutral 0 weightlist upperspine 
+$animation a_head_rot_up "body_poses_lean" frame 102 102 subtract a_pose_neutral 0 weightlist upperspine 
+//$animation a_shoulder_shrug "body_poses_lean" frame 103 103 subtract a_pose_neutral 0 weightlist upperspine 
+$animation a_head_rot_z_rt "body_poses_lean" frame 104 104 subtract a_pose_neutral 0 weightlist upperspine 
+$animation a_head_rot_z_lt "body_poses_lean" frame 106 106 subtract a_pose_neutral 0 weightlist upperspine 
+
+//$sequence body_trans_y { a_body_trans_lt a_body_trans a_body_trans_rt calcblend body_trans_Y "eyes" Y } delta autoplay hidden
+//$sequence body_trans_x { a_body_trans_fwd a_body_trans a_body_trans_bwd calcblend body_trans_X "eyes" X } delta autoplay hidden
+//$sequence body_trans_z { a_body_trans_dwn a_body_trans a_body_trans_up calcblend body_lift "eyes" Z } delta autoplay hidden
+
+$sequence body_rot_z { a_body_rot_z_lt a_body_rot a_body_rot_z_rt calcblend body_yaw "eyes" ZR } delta autoplay hidden
+//$sequence body_rot_y { a_body_rot_back a_body_rot a_body_rot_fwd blendwidth 3 calcblend body_pitch "eyes" YR } delta autoplay hidden
+//$sequence body_rot_x { a_body_rot_lt a_body_rot a_body_rot_rt calcblend body_roll "eyes" XR } delta autoplay hidden
+
+$sequence spine_rot_z { a_spine_rot_z_lt a_spine_rot a_spine_rot_z_rt calcblend spine_yaw "eyes" ZR } delta autoplay hidden
+//$sequence spine_rot_y { a_spine_rot_back a_spine_rot a_spine_rot_fwd calcblend spine_pitch "eyes" YR } delta autoplay hidden
+//$sequence spine_rot_x { a_spine_rot_lt a_spine_rot a_spine_rot_rt calcblend spine_roll "eyes" XR } delta autoplay hidden
+
+$sequence neck_trans_x { a_neck_trans_back a_neck_trans a_neck_trans_fwd calcblend neck_trans "eyes" X } delta autoplay hidden
+
+$sequence head_rot_z { a_head_rot_z_lt a_head_rot a_head_rot_z_rt calcblend head_yaw "eyes" ZR } delta autoplay hidden
+$sequence head_rot_y { a_head_rot_dwn a_head_rot a_head_rot_up calcblend head_pitch "eyes" YR } delta autoplay hidden
+$sequence head_rot_x { a_head_rot_lt a_head_rot a_head_rot_rt calcblend head_roll "eyes" XR } delta autoplay hidden
+
+//$sequence head_look_yaw { a_head_L a_head_M a_head_R blend head_yaw 55 -55 } delta autoplay hidden
+//$sequence body_look_yaw { a_body_LL a_body_L a_body_M a_body_R a_body_RR blendwidth 5 blend body_yaw 90 -90 } delta autoplay hidden
+//$sequence head_look_pitch { a_head_U a_head_D blend head_pitch -45 22 } delta autoplay hidden
+//$sequence body_look_pitch { a_body_U a_body_M a_body_D blend body_pitch -90 90 } delta autoplay hidden
+//$sequence head_look_roll { a_head_TL a_head_M a_head_TR blend head_roll -40 40 } delta autoplay hidden
+//$sequence head_look_shift { a_head_B a_head_M a_head_F blend head_shift -1 1 } delta autoplay hidden

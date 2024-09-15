@@ -1,0 +1,203 @@
+
+$poseparameter "move_yaw" -180 180 wrap
+$poseparameter "aim_pitch"
+$poseparameter "aim_yaw"
+
+$ikchain rhand "valvebiped.Bip01_R_Hand" Z 0 knee 0.707 0.707 0
+$ikchain lhand "valvebiped.Bip01_L_Hand" Z 0 knee 0.707 0.707 0
+$ikchain rfoot "valvebiped.Bip01_R_Foot" Z 0 knee 0.707 -0.707 0
+$ikchain lfoot "valvebiped.Bip01_L_Foot" Z 0 knee 0.707 -0.707 0
+
+//====================  WEIGHTLIST =============================================
+
+$weightlist upperbody "Valvebiped.bip01_spine" 1.0 
+$weightlist nolowerbody "Valvebiped.bip01_Pelvis" 1.0 "ValveBiped.Bip01_L_Thigh" 0.0 "ValveBiped.Bip01_R_Thigh" 0.0 
+$weightlist pelvisonly "Valvebiped.bip01_Pelvis" 1.0 "Valvebiped.bip01_Spine" 0.0 "ValveBiped.Bip01_L_Thigh" 0.0 "ValveBiped.Bip01_R_Thigh" 0.0 
+
+//====================================================
+//
+//	LOWER BODY MOVEMENT ANIMATION
+//
+//====================================================
+
+	//-----------------
+	//	Idles
+	//-----------------
+
+		$sequence Idle_lower "Lowerbody_Idle" loop FPS 30 activity ACT_IDLE 1
+
+	//-----------------
+	//	Walk
+	//-----------------
+
+		$animation a_WalkS RunS startloop 0 LX LY alignto Idle_lower rotateto -180
+		$animation a_WalkSE RunSE startloop 0 LX LY alignto Idle_lower rotateto -135
+		$animation a_WalkE RunE startloop 0 LX LY alignto Idle_lower rotateto -90
+		$animation a_WalkNE RunNE startloop 0 LX LY alignto Idle_lower rotateto -45
+		$animation a_WalkN RunN startloop 0 LX LY alignto Idle_lower rotateto 0
+		$animation a_WalkNW RunNW startloop 0 LX LY alignto Idle_lower rotateto 45
+		$animation a_WalkW RunW startloop 0 LX LY alignto Idle_lower rotateto 90
+		$animation a_WalkSW RunSW startloop 0 LX LY alignto Idle_lower rotateto 135
+		$animation a_WalkZero "MP5_run_Zero" loop
+
+		$sequence Walk_lower {
+			a_WalkNW a_WalkN a_WalkNE 
+			a_WalkW a_WalkZero a_WalkE 
+			a_WalkSW a_WalkS a_WalkSE 
+			blendwidth 3 blend move_y -1 1 blend move_x 1 -1 loop
+			ACT_WALK 1
+			{ event 7001 14 "lfoot" }
+			{ event 7001 5 "rfoot" }
+		}
+
+	//-----------------
+	//	Run
+	//-----------------
+
+		$animation a_RunS RunS startloop 0 LX LY alignto Idle_lower rotateto -180
+		$animation a_RunSE RunSE startloop 0 LX LY alignto Idle_lower rotateto -135
+		$animation a_RunE RunE startloop 0 LX LY alignto Idle_lower rotateto -90
+		$animation a_RunNE RunNE startloop 0 LX LY alignto Idle_lower rotateto -45
+		$animation a_RunN RunN startloop 0 LX LY alignto Idle_lower rotateto 0
+		$animation a_RunNW RunNW startloop 0 LX LY alignto Idle_lower rotateto 45
+		$animation a_RunW RunW startloop 0 LX LY alignto Idle_lower rotateto 90
+		$animation a_RunSW RunSW startloop 0 LX LY alignto Idle_lower rotateto 135
+		$animation a_RunZero "MP5_run_Zero" loop
+
+		$sequence Run_lower {
+			a_RunNW a_RunN a_RunNE 
+			a_RunW a_RunZero a_RunE 
+			a_RunSW a_RunS a_RunSE 
+			blendwidth 3 blend move_y -1 1 blend move_x 1 -1 loop
+			ACT_RUN 1
+			{ event 7001 14 "lfoot" }
+			{ event 7001 5 "rfoot" }
+		}
+
+
+//====================================================
+//
+//	Weapon Animation
+//
+//====================================================
+
+
+	//-----------------
+	//	MP5
+	//-----------------
+
+		$animation Walk_MP5_aim_neutral MP5_RunN_aim frame 4 4
+		$animation Walk_MP5_aim_up_left MP5_RunN_aim frame 0 0 subtract Walk_MP5_aim_neutral 0
+		$animation Walk_MP5_aim_up_center MP5_RunN_aim frame 1 1 subtract Walk_MP5_aim_neutral 0
+		$animation Walk_MP5_aim_up_right MP5_RunN_aim frame 2 2 subtract Walk_MP5_aim_neutral 0
+		$animation Walk_MP5_aim_mid_left MP5_RunN_aim frame 3 3 subtract Walk_MP5_aim_neutral 0
+		$animation Walk_MP5_aim_mid_center MP5_RunN_aim frame 4 4 subtract Walk_MP5_aim_neutral 0
+		$animation Walk_MP5_aim_mid_right MP5_RunN_aim frame 5 5 subtract Walk_MP5_aim_neutral 0
+		$animation Walk_MP5_aim_down_left MP5_RunN_aim frame 6 6 subtract Walk_MP5_aim_neutral 0
+		$animation Walk_MP5_aim_down_center MP5_RunN_aim frame 7 7 subtract Walk_MP5_aim_neutral 0
+		$animation Walk_MP5_aim_down_right MP5_RunN_aim frame 8 8 subtract Walk_MP5_aim_neutral 0
+
+		$sequence Walk_Aim_MP5  { 
+			Walk_MP5_aim_up_right Walk_MP5_aim_up_center Walk_MP5_aim_up_left 
+			Walk_MP5_aim_mid_right Walk_MP5_aim_mid_center Walk_MP5_aim_mid_left 
+			Walk_MP5_aim_down_right Walk_MP5_aim_down_center Walk_MP5_aim_down_left 
+			weightlist upperbody
+			blendwidth 3 blend body_yaw -90 90 blend body_pitch -65 65
+			iklock lfoot 1 0 iklock rfoot 1 0
+			delta
+		}
+
+		$animation Run_MP5_aim_neutral MP5_RunN_aim frame 4 4
+		$animation Run_MP5_aim_up_left MP5_RunN_aim frame 0 0 subtract Run_MP5_aim_neutral 0
+		$animation Run_MP5_aim_up_center MP5_RunN_aim frame 1 1 subtract Run_MP5_aim_neutral 0
+		$animation Run_MP5_aim_up_right MP5_RunN_aim frame 2 2 subtract Run_MP5_aim_neutral 0
+		$animation Run_MP5_aim_mid_left MP5_RunN_aim frame 3 3 subtract Run_MP5_aim_neutral 0
+		$animation Run_MP5_aim_mid_center MP5_RunN_aim frame 4 4 subtract Run_MP5_aim_neutral 0
+		$animation Run_MP5_aim_mid_right MP5_RunN_aim frame 5 5 subtract Run_MP5_aim_neutral 0
+		$animation Run_MP5_aim_down_left MP5_RunN_aim frame 6 6 subtract Run_MP5_aim_neutral 0
+		$animation Run_MP5_aim_down_center MP5_RunN_aim frame 7 7 subtract Run_MP5_aim_neutral 0
+		$animation Run_MP5_aim_down_right MP5_RunN_aim frame 8 8 subtract Run_MP5_aim_neutral 0
+
+		$sequence Run_Aim_MP5  { 
+			Run_MP5_aim_up_right Run_MP5_aim_up_center Run_MP5_aim_up_left 
+			Run_MP5_aim_mid_right Run_MP5_aim_mid_center Run_MP5_aim_mid_left 
+			Run_MP5_aim_down_right Run_MP5_aim_down_center Run_MP5_aim_down_left 
+			weightlist upperbody
+			blendwidth 3 blend body_yaw -90 90 blend body_pitch -65 65
+			iklock lfoot 1 0 iklock rfoot 1 0
+			delta
+		}
+
+		$sequence Idle_Upper_MP5 "MP5_Idle01" FPS 30 weightlist upperbody addlayer Run_Aim_MP5
+		$sequence Walk_Upper_MP5 "MP5_RunN" FPS 30 weightlist upperbody addlayer Walk_Aim_MP5
+		$sequence Run_Upper_MP5 "MP5_RunN" FPS 30 weightlist upperbody addlayer Run_Aim_MP5
+
+		$animation Shoot_MP5_layer "MP5_Shoot_01" FPS 30 subtract Shoot_MP5_layer 0 weightlist upperbody
+		$sequence Idle_Shoot_MP5 "Shoot_MP5_layer" delta
+		$sequence Walk_Shoot_MP5 "Shoot_MP5_layer" delta
+		$sequence Run_Shoot_MP5 "Shoot_MP5_layer" delta
+
+
+	//-----------------
+	//	M3Super90
+	//-----------------
+
+		$animation Walk_M3s90_aim_neutral M3Super90_RunN_aim frame 4 4
+		$animation Walk_M3s90_aim_up_left M3Super90_RunN_aim frame 0 0 subtract Walk_M3s90_aim_neutral 0
+		$animation Walk_M3s90_aim_up_center M3Super90_RunN_aim frame 1 1 subtract Walk_M3s90_aim_neutral 0
+		$animation Walk_M3s90_aim_up_right M3Super90_RunN_aim frame 2 2 subtract Walk_M3s90_aim_neutral 0
+		$animation Walk_M3s90_aim_mid_left M3Super90_RunN_aim frame 3 3 subtract Walk_M3s90_aim_neutral 0
+		$animation Walk_M3s90_aim_mid_center M3Super90_RunN_aim frame 4 4 subtract Walk_M3s90_aim_neutral 0
+		$animation Walk_M3s90_aim_mid_right M3Super90_RunN_aim frame 5 5 subtract Walk_M3s90_aim_neutral 0
+		$animation Walk_M3s90_aim_down_left M3Super90_RunN_aim frame 6 6 subtract Walk_M3s90_aim_neutral 0
+		$animation Walk_M3s90_aim_down_center M3Super90_RunN_aim frame 7 7 subtract Walk_M3s90_aim_neutral 0
+		$animation Walk_M3s90_aim_down_right M3Super90_RunN_aim frame 8 8 subtract Walk_M3s90_aim_neutral 0
+
+		$sequence Walk_Aim_M3s90  { 
+			Walk_M3s90_aim_up_right Walk_M3s90_aim_up_center Walk_M3s90_aim_up_left 
+			Walk_M3s90_aim_mid_right Walk_M3s90_aim_mid_center Walk_M3s90_aim_mid_left 
+			Walk_M3s90_aim_down_right Walk_M3s90_aim_down_center Walk_M3s90_aim_down_left 
+			weightlist upperbody
+			blendwidth 3 blend body_yaw -90 90 blend body_pitch -65 65
+			iklock lfoot 1 0 iklock rfoot 1 0
+			delta
+		}
+
+		$animation Run_M3s90_aim_neutral M3Super90_RunN_aim frame 4 4
+		$animation Run_M3s90_aim_up_left M3Super90_RunN_aim frame 0 0 subtract Run_M3s90_aim_neutral 0
+		$animation Run_M3s90_aim_up_center M3Super90_RunN_aim frame 1 1 subtract Run_M3s90_aim_neutral 0
+		$animation Run_M3s90_aim_up_right M3Super90_RunN_aim frame 2 2 subtract Run_M3s90_aim_neutral 0
+		$animation Run_M3s90_aim_mid_left M3Super90_RunN_aim frame 3 3 subtract Run_M3s90_aim_neutral 0
+		$animation Run_M3s90_aim_mid_center M3Super90_RunN_aim frame 4 4 subtract Run_M3s90_aim_neutral 0
+		$animation Run_M3s90_aim_mid_right M3Super90_RunN_aim frame 5 5 subtract Run_M3s90_aim_neutral 0
+		$animation Run_M3s90_aim_down_left M3Super90_RunN_aim frame 6 6 subtract Run_M3s90_aim_neutral 0
+		$animation Run_M3s90_aim_down_center M3Super90_RunN_aim frame 7 7 subtract Run_M3s90_aim_neutral 0
+		$animation Run_M3s90_aim_down_right M3Super90_RunN_aim frame 8 8 subtract Run_M3s90_aim_neutral 0
+
+		$sequence Run_Aim_M3s90  { 
+			Run_M3s90_aim_up_right Run_M3s90_aim_up_center Run_M3s90_aim_up_left 
+			Run_M3s90_aim_mid_right Run_M3s90_aim_mid_center Run_M3s90_aim_mid_left 
+			Run_M3s90_aim_down_right Run_M3s90_aim_down_center Run_M3s90_aim_down_left 
+			weightlist upperbody
+			blendwidth 3 blend body_yaw -90 90 blend body_pitch -65 65
+			iklock lfoot 1 0 iklock rfoot 1 0
+			delta
+		}
+
+		$sequence Idle_Upper_M3s90 "M3Super90_Idle01" FPS 30 weightlist upperbody addlayer Run_Aim_MP5
+		$sequence Walk_Upper_M3s90 "M3Super90_RunN" FPS 30 weightlist upperbody addlayer Walk_Aim_MP5
+		$sequence Run_Upper_M3s90 "M3Super90_RunN" FPS 30 weightlist upperbody addlayer Run_Aim_MP5
+
+		$animation Shoot_M3s90_layer "M3Super90_Shoot_01" FPS 30 subtract Shoot_M3s90_layer 0 weightlist upperbody
+		$sequence Idle_Shoot_M3s90 "Shoot_M3s90_layer" delta
+		$sequence Walk_Shoot_M3s90 "Shoot_M3s90_layer" delta
+		$sequence Run_Shoot_M3s90 "Shoot_M3s90_layer" delta
+
+
+
+
+
+
+
+
+

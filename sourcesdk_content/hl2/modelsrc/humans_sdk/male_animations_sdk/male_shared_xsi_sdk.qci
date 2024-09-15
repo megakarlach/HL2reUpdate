@@ -1,0 +1,245 @@
+$surfaceprop "flesh"
+
+$bbox -13 -13 0  13 13 72
+
+$poseparameter "move_yaw" -180 180 wrap
+
+$ikchain rhand "valvebiped.Bip01_R_Hand" Z 0
+$ikchain lhand "valvebiped.Bip01_L_Hand" Z 0
+$ikchain rfoot "valvebiped.Bip01_R_Foot" Z 0
+$ikchain lfoot "valvebiped.Bip01_L_Foot" Z 0
+
+$heirarchy "valvebiped.Bip01_L_Clavicle" "valvebiped.Bip01_Spine4" 
+$heirarchy "valvebiped.Bip01_R_Clavicle" "valvebiped.Bip01_Spine4" 
+$heirarchy "valvebiped.Bip01_L_Thigh" "valvebiped.Bip01_Pelvis" 
+$heirarchy "valvebiped.Bip01_R_Thigh" "valvebiped.Bip01_Pelvis" 
+
+$weightlist upperbodyreplace "Valvebiped.bip01_spine" 1.0
+$weightlist pelvisonly "Valvebiped.bip01_Pelvis" 1.0 "Valvebiped.bip01_Spine" 0.0 "ValveBiped.Bip01_L_Thigh" 0.0 "ValveBiped.Bip01_R_Thigh" 0.0 
+
+$sequence idle_subtle idle_subtle loop activity ACT_IDLE 1 node "standing"
+$sequence idle_angry idle_angry loop activity ACT_IDLE_ANGRY 1 node "standing"
+$sequence idle01 idle01 loop frames 0 358 fixuploop -15 0 activity ACT_IDLE 1 node "standing"
+$sequence Idle02 Idle02 loop activity ACT_IDLE 1 node "standing"
+$sequence Idle03 Idle03 loop activity ACT_IDLE 1 node "standing"
+
+
+$sequence Crouch_idleD Crouchidle_D fps 30 loop activity ACT_COVER_LOW -1 node "crouching"
+
+
+//---------------------------------------------------------------
+
+
+// all movement cycles begin right-foot-planted, left-foot-nearest-to-right
+
+
+// walking, no weapon
+$animation a_WalkS WalkS loop LX LY startloop 0 rotateto -180 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range  5 11 25 30
+	// ikrule rfoot footstep 1 range 22 28  6 11
+}
+$animation a_WalkSE WalkSE loop LX LY startloop 0 rotateto -135 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range  5  8 22 27
+	// ikrule rfoot footstep 1 range 20 25 6 11
+}
+$animation a_WalkE WalkE loop LX LY startloop 0 rotateto -90 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range  2  9 19 28
+	// ikrule rfoot footstep 1 range 19 24  4  8
+}
+$animation a_WalkNE WalkNE loop LX LY startloop 0 rotateto -45 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range  4 11 23  0
+	// ikrule rfoot footstep 1 range 18 25  8 13
+}
+$animation a_WalkN WalkN loop LX LY startloop 0 rotateto 0 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range  4 10 19 25
+	// ikrule rfoot footstep 1 range 18 26 3 10
+}
+$animation a_WalkNW WalkNW loop LX LY startloop 0 rotateto 45 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range  2  9 21 27
+	// ikrule rfoot footstep 1 range 18 25  7 13
+}
+$animation a_WalkW WalkW loop LX LY startloop 0 rotateto 90 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range  2 11 22 28
+	// ikrule rfoot footstep 1 range 18 27  6 13
+}
+$animation a_WalkSW WalkSW loop LX LY startloop 0 rotateto 135 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range  2 10 18 25
+	// ikrule rfoot footstep 1 range 16 22  7 12
+}
+
+
+// running, no weapon
+$animation a_RunS RunS loop LX LY startloop 0 rotateto -180 fps 31 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range .. 9 12 ..
+	// ikrule rfoot footstep 1 range .. 0 3 ..
+}
+$animation a_RunSE RunSE loop LX LY startloop 0 rotateto -135 fps 29 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range .. 7 11 ..
+	// ikrule rfoot footstep 1 range .. 17 1 ..
+}
+$animation a_RunE RunE loop LX LY startloop 0 rotateto -90 fps 31 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range .. 7 9 ..
+	// ikrule rfoot footstep 1 range .. 14 0 ..
+}
+$animation a_RunNE RunNE loop LX LY startloop 0 rotateto -45 fps 29 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range .. 6 10 ..
+	// ikrule rfoot footstep 1 range .. 17 19 ..
+}
+$animation a_RunN RunN loop LX LY startloop 0 rotateto 0 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range .. 8 10 ..
+	// ikrule rfoot footstep 1 range .. 17 1 ..
+}
+$animation a_RunNW RunNW loop LX LY startloop 0 rotateto 45 fps 28 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range .. 9 11 ..
+	// ikrule rfoot footstep 1 range .. 18 1 ..
+}
+$animation a_RunW RunW loop LX LY startloop 0 rotateto 90 fps 32 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range .. 7 9 ..
+	// ikrule rfoot footstep 1 range .. 16 0 ..
+}
+$animation a_RunSW RunSW loop LX LY startloop 0 rotateto 135 fps 31 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range .. 8 11 ..
+	// ikrule rfoot footstep 1 range .. 16 1 ..
+}
+
+
+
+
+// crouch run N, holding a SMG
+$animation a_Crouch_runN_smg1 "Crouch_runN_smg1" loop LX LY fps 30 rotateto 0
+
+$sequence layer_crouch_run_holding "Crouch_runN_smg1" weightlist upperbodyreplace hidden
+
+// crouch walk, no weapon
+$sequence layer_crouch_walk_no_weapon "Crouch_walkN" weightlist upperbodyreplace hidden
+
+// crouch walk, holding an smg
+$sequence layer_crouch_walk_holding "Crouch_walkN_smg1" weightlist upperbodyreplace hidden
+
+// crouch run, no weapon
+$sequence layer_crouch_run_no_weapon "Crouch_runN" weightlist upperbodyreplace hidden
+
+// run N holding a SMG
+$sequence layer_run_holding "RunN_SMG1" weightlist upperbodyreplace hidden
+
+$animation a_RunN_SMG RunN_smg1 loop LX LY rotateto 0 {
+	alignto idle01
+	// ikrule lfoot footstep 0 range .. 8 10 ..
+	// ikrule rfoot footstep 1 range .. 17 1 ..
+}
+
+
+
+$sequence walk_all {
+	a_walkS a_walkSE a_walkE a_walkNE a_walkN a_walkNW a_walkW a_walkSW a_walkS
+	blendwidth 9 blend move_yaw -180 180 ACT_WALK 1 node "walking"
+{ event 2051 9 }
+{ event 2050 23 }
+}
+
+
+$sequence run_all {
+	a_runS a_runSE a_runE a_runNE a_runN a_runNW a_runW a_runSW a_runS
+	blendwidth 9 blend move_yaw -180 180 ACT_RUN 1 node "running"
+}
+
+
+
+
+// crouch walking, no weapon
+$animation a_Crouch_walkS Crouch_walkS loop LX LY rotateto -180 {
+	alignto idle01
+}
+$animation a_Crouch_walkSE Crouch_walkSE loop LX LY rotateto -135 {
+	alignto idle01
+}
+$animation a_Crouch_walkE Crouch_walkE loop LX LY rotateto -90 {
+	alignto idle01
+}
+$animation a_Crouch_walkNE Crouch_walkNE loop LX LY rotateto -45 {
+	alignto idle01
+}
+$animation a_Crouch_walkN crouch_walkN loop LX LY rotateto 0 {
+	alignto idle01
+}
+$animation a_Crouch_walkNW Crouch_walkNW loop LX LY rotateto 45 {
+	alignto idle01
+}
+$animation a_Crouch_walkW Crouch_walkW loop LX LY rotateto 90 {
+	alignto idle01
+}
+$animation a_Crouch_walkSW Crouch_walkSW loop LX LY rotateto 135 {
+	alignto idle01
+}
+
+
+$sequence Crouch_walk_all {
+	a_Crouch_walkS a_Crouch_walkSE a_Crouch_walkE 
+	a_Crouch_walkNE a_Crouch_walkN a_Crouch_walkNW 
+	a_Crouch_walkW a_Crouch_walkSW a_Crouch_walkS 
+	blendwidth 9 blend move_yaw -180 180 ACT_WALK_CROUCH 1 node "walk_crouching"
+}
+
+
+
+$animation a_Crouch_runN crouch_runN loop LX LY fps 30 rotateto 0 {
+	alignto idle01
+}
+
+$animation a_crouch_runS_delta Crouch_runN frame 0 0 weightlist pelvisonly alignto a_runS subtract a_runS 0
+$animation a_crouch_runSE_delta Crouch_runN frame 0 0 weightlist pelvisonly alignto a_runSE subtract a_runSE 0
+$animation a_crouch_runE_delta Crouch_runN frame 0 0 weightlist pelvisonly alignto a_runE subtract a_runE 0
+$animation a_crouch_runNE_delta Crouch_runN frame 0 0 weightlist pelvisonly alignto a_runNE subtract a_runNE 0
+$animation a_crouch_runN_delta Crouch_runN frame 0 0 weightlist pelvisonly alignto a_crouch_runN subtract a_crouch_runN 0
+$animation a_crouch_runNW_delta Crouch_runN frame 0 0 weightlist pelvisonly alignto a_runNW subtract a_runNW 0
+$animation a_crouch_runW_delta Crouch_runN frame 0 0 weightlist pelvisonly alignto a_runW subtract a_runW 0
+$animation a_crouch_runSW_delta Crouch_runN frame 0 0 weightlist pelvisonly alignto a_runSW subtract a_runSW 0
+
+$sequence crouch_run_all_delta {
+	a_crouch_runS_delta a_crouch_runSE_delta a_crouch_runE_delta 
+	a_crouch_runNE_delta a_crouch_runN_delta a_crouch_runNW_delta 
+	a_crouch_runW_delta a_crouch_runSW_delta a_crouch_runS_delta 
+	weightlist pelvisonly
+	blendwidth 9 blend move_yaw -180 180
+	iklock lfoot 1 1 iklock rfoot 1 1
+	delta
+ 	hidden
+}
+
+$sequence crouchRUNALL1 {
+	a_runS a_runSE a_runE
+	a_runNE a_crouch_runN a_runNW
+	a_runW a_runSW a_runS
+	blendwidth 9 blend move_yaw -180 180
+	addlayer crouch_run_all_delta 
+	addlayer layer_crouch_run_no_weapon
+	ACT_RUN_CROUCH 1 
+	node "run_crouching"
+}
+
+
+//---------------------------------------------------------------
+
+$skiptransition "running" "walking" "walk_crouching" "run_crouching"
+
+
+
+
+
+

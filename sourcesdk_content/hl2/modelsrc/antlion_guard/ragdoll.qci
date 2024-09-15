@@ -1,0 +1,91 @@
+$collisionjoints ragdoll {
+
+	$mass 1000.0
+	$inertia 10.00
+	$damping 0.01
+	$rotdamping 1.00
+	$rootbone "antlion_guard.body"
+
+	$jointconstrain "antlion_guard.arm1_r" x limit -5.00 5.00 1.00
+	$jointconstrain "antlion_guard.arm1_r" y limit -10.00 10.00 1.00
+	$jointconstrain "antlion_guard.arm1_r" z limit -45.00 20.00 1.00
+
+	$jointconstrain "antlion_guard.finger1_r" x limit -5.00 5.00 1.00
+	$jointconstrain "antlion_guard.finger1_r" y limit -15.00 15.00 1.00
+	$jointconstrain "antlion_guard.finger1_r" z limit -5.00 5.00 1.00
+
+	$jointconstrain "antlion_guard.pelvis" x limit -10.00 10.00 1.00
+	$jointconstrain "antlion_guard.pelvis" y limit -10.00 10.00 1.00
+	$jointconstrain "antlion_guard.pelvis" z limit -20.00 20.00 1.00
+
+	$jointrotdamping "antlion_guard.leg1_r" 2.00
+	$jointconstrain "antlion_guard.leg1_r" x limit -15.00 15.00 1.00
+	$jointconstrain "antlion_guard.leg1_r" y limit -15.00 15.00 1.00
+	$jointconstrain "antlion_guard.leg1_r" z limit -15.00 50.00 1.00
+
+	$jointrotdamping "antlion_guard.leg1_l" 2.00
+	$jointconstrain "antlion_guard.leg1_l" x limit -15.00 15.00 1.00
+	$jointconstrain "antlion_guard.leg1_l" y limit -15.00 15.00 1.00
+	$jointconstrain "antlion_guard.leg1_l" z limit -15.00 50.00 1.00
+
+	$jointrotdamping "antlion_guard.leg2_l" 2.00
+	$jointconstrain "antlion_guard.leg2_l" x limit 0.00 0.00 1.00
+	$jointconstrain "antlion_guard.leg2_l" y limit 0.00 0.00 1.00
+	$jointconstrain "antlion_guard.leg2_l" z limit -50.00 30.00 1.00
+
+	$jointconstrain "antlion_guard.arm1_l" x limit -5.00 5.00 1.00
+	$jointconstrain "antlion_guard.arm1_l" y limit -10.00 10.00 1.00
+	$jointconstrain "antlion_guard.arm1_l" z limit -45.00 20.00 1.00
+
+	$jointconstrain "antlion_guard.finger1_l" x limit -5.00 5.00 1.00
+	$jointconstrain "antlion_guard.finger1_l" y limit -15.00 15.00 1.00
+	$jointconstrain "antlion_guard.finger1_l" z limit -5.00 5.00 1.00
+
+	$jointconstrain "antlion_guard.spine1" x limit -15.00 15.00 1.00
+	$jointconstrain "antlion_guard.spine1" y limit -10.00 10.00 1.00
+	$jointconstrain "antlion_guard.spine1" z limit -30.00 20.00 1.00
+
+	$jointrotdamping "antlion_guard.claw1_r" 2.00
+	$jointconstrain "antlion_guard.claw1_r" x limit -40.00 20.00 1.00
+	$jointconstrain "antlion_guard.claw1_r" y limit -30.00 30.00 1.00
+	$jointconstrain "antlion_guard.claw1_r" z limit -50.00 25.00 1.00
+
+	$jointrotdamping "antlion_guard.claw2_r" 2.00
+	$jointconstrain "antlion_guard.claw2_r" x limit 0.00 0.00 1.00
+	$jointconstrain "antlion_guard.claw2_r" y limit 0.00 0.00 1.00
+	$jointconstrain "antlion_guard.claw2_r" z limit -30.00 40.00 1.00
+
+	$jointrotdamping "antlion_guard.claw1_l" 2.00
+	$jointconstrain "antlion_guard.claw1_l" x limit -20.00 40.00 1.00
+	$jointconstrain "antlion_guard.claw1_l" y limit -30.00 30.00 1.00
+	$jointconstrain "antlion_guard.claw1_l" z limit -50.00 25.00 1.00
+
+	$jointrotdamping "antlion_guard.claw2_l" 2.00
+	$jointconstrain "antlion_guard.claw2_l" x limit 0.00 0.00 1.00
+	$jointconstrain "antlion_guard.claw2_l" y limit 0.00 0.00 1.00
+	$jointconstrain "antlion_guard.claw2_l" z limit -30.00 40.00 1.00
+
+	$jointrotdamping "antlion_guard.claw3_l" 2.00
+	$jointconstrain "antlion_guard.claw3_l" x limit 0.00 0.00 1.00
+	$jointconstrain "antlion_guard.claw3_l" y limit 0.00 0.00 1.00
+	$jointconstrain "antlion_guard.claw3_l" z limit -30.00 50.00 1.00
+
+	$jointconstrain "antlion_guard.spine3" x limit -10.00 10.00 1.00
+	$jointconstrain "antlion_guard.spine3" y limit -15.00 15.00 1.00
+	$jointconstrain "antlion_guard.spine3" z limit -30.00 20.00 1.00
+
+	$jointconstrain "antlion_guard.head" x limit -15.00 15.00 1.00
+	$jointconstrain "antlion_guard.head" y limit -15.00 15.00 1.00
+	$jointconstrain "antlion_guard.head" z limit -25.00 25.00 1.00
+
+	$jointrotdamping "antlion_guard.claw3_r" 2.00
+	$jointconstrain "antlion_guard.claw3_r" x limit 0.00 0.00 1.00
+	$jointconstrain "antlion_guard.claw3_r" y limit 0.00 0.00 1.00
+	$jointconstrain "antlion_guard.claw3_r" z limit -30.00 50.00 1.00
+
+	$jointrotdamping "antlion_guard.leg2_r" 2.00
+	$jointconstrain "antlion_guard.leg2_r" x limit 0.00 0.00 1.00
+	$jointconstrain "antlion_guard.leg2_r" y limit 0.00 0.00 1.00
+	$jointconstrain "antlion_guard.leg2_r" z limit -50.00 30.00 1.00
+}
+$sequence ragdoll 		"ragdoll_pose" 		FPS 30 		activity ACT_DIERAGDOLL 1
