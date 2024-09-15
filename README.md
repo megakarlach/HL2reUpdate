@@ -10,6 +10,7 @@ GameBanana: https://gamebanana.com/mods/429040
 PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-new-engine-patch-new-bugfixes-for-hl2-update-updated-2023/
 
 Patch current version: 1.0.4.1 - build 8491853 - 4/16/2024 (Windows & Linux)
+Based off November 17, 2023 official patch.
 
 Downloads:
 Gamebanana, PCGW: See above.
@@ -33,18 +34,18 @@ An explorer/file browser window will pop-up. Copy the path from the address bar 
 NOTE: There will be limited support for cracked version (like cs.rin.ru) of HL2: Update as it's too much work.
 
 ## Here are the features:
-- Increased FOV from 90 to 110 (120 max via Console "fov_desired 120" or Gamepad UI)
+- Increased FOV from 90 to 120
 - HUD Aspect Ratio (4:3, 16:9, 16:10)
 - Vulkan renderer (-vulkan)
-- Working Gamepad UI/Steam Deck UI (-gamepadui)
+- Working Gamepad UI/Steam Deck UI (-gamepadui), also to use Gamepad UI with DX9, use (-dx9 alongside -gamepadui)
 - XInput/Legacy controller support has working rumble/vibration (as SDL2 was updated) (Windows only).
-- Steam Input (may not work)
+- Steam Input (currently not working)
 
 Beside the official changes above. The reUpdate patch also added/changed some features:
 - The Gamepad UI have been customized, in this case, most thumbnails on "New Game" chapters are taken from HL2: Update instead of the vanilla HL2.
 - More improvements and few new features to Gamepad UI, restored some missing options, including:
   Keyboard Advanced Options:
-    Fast Weapon Switch - Disabled (0), Enabled (1), Gamepad style (2), Horizontal style/Postal III style (3), can be also changed with "hud_fastswitch" command.
+    Fast Weapon Switch - Disabled (0), Enabled (1), Controller (2), Horizontal scroll/Postal III style (3), can be also changed with "hud_fastswitch" command.
     Enable Developer Console directly via Gamepad UI
     Mouse sensitivity on Gamepad UI can be increased up to 20.
 - (NEW) Some improvements to old VGUI:
@@ -59,8 +60,8 @@ November 17, 2023
 - Fixed sprinting when using an external controller (This fix would be pointless with HL2 reUPDATE due to Steam Controller being unsupported anyway).
 
 Previously:
-- Dropship container gun fix which makes the gun possible to turn (previously present since 2007 on X360/PS3 (Orange Box), and 2010 on PC, now fixed).
-- Long loading saves bug/engine freezing while saving has been fixed (caused by the game tries to access \\MOD, which freezes the engine).
+- Dropship container gun fix which makes the gun possible to turn (broken since 2007 on X360/PS3, and 2010 on PC. Fixed in 2022.)
+- Long loading saves bug/engine freezing while saving has been fixed.
 - Improved loading times (for users with HDD only)
 - Fixed some stuttering on level transitions
 - NPC eyes not blinking (fixed in 2019)
@@ -68,9 +69,7 @@ Previously:
 - and much more... (see [here](https://web.archive.org/web/20160830085422/http://forums.steampowered.com/forums/showthread.php?t=1286478))
 
 # Bugs that hasn't been fixed
-- Steam Input are non-functional.
-  You can use the legacy XInput mode (using -nosteamcontroller command line) for game controllers (this is optimized for X360/Xbox One/Series X|S Controller, but may work
-  with anything else).
+- Steam Input are non-functional on Gamepad UI
 - DirectX 8 compability mode by default. This is a common bug that also affect vanilla HL2 aswell, when playing the game on some modern hardware/GPUs.
   To workaround this bug, launch the game with -dxlevel 95, configure your video settings, save it (by clicking OK), then
   exit the game, remove the launch options, launch the game again, if your video settings was reset again, just configuring it again, then save it, try to relaunch
