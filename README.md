@@ -14,18 +14,22 @@ Patch current version: 1.0.4.1 - build 8491853 - 4/16/2024 (Windows & Linux)
 Based off November 17, 2023 official patch.
 
 Downloads:
+
 Gamebanana, PCGW: See above.
+
 MEGA: https://mega.nz/folder/cj8VWTgI#hsPshFA1J4ARrqcw_UVmHQ
+
 Last updated 4/16/2024.
 
 # About this mod
-WARNING: This mod is for "Half-Life 2: Update" only.
+WARNING: This mod is for "Half-Life 2: Update" (AppID: 290930) only.
+
 This is the unofficial patch for Half-Life 2: Update, which adds all the bug fixes, Steam Deck features from original (vanilla) Half-Life 2 to HL2: Update.
 
 ## Installation / Update
 See [Wiki - Installation](https://github.com/megakarlach/HL2reUpdate/wiki/Installation)
 
-(Optional) If you want to install the custom Orange-themed Gamepad UI with Verdana & Trebuchet MS font (inspired by the X360/PS3 Orange Box menu UI), 
+(Optional) If you want to install the custom Orange-themed Gamepad UI with Verdana & Trebuchet MS font (inspired by the X360/PS3 Orange Box menu UI),<br>
 put the VPK file into hl2\custom folder (if it doesn't exist, create it).
 
 NOTE: For those who don't know where Steam and the game (Half-Life 2: Update) is installed, go to Steam Library > 
