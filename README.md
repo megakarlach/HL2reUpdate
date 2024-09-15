@@ -10,6 +10,8 @@ GameBanana: https://gamebanana.com/mods/429040
 
 PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-new-engine-patch-new-bugfixes-for-hl2-update-updated-2023/
 
+# Versions
+
 Patch current version: 1.0.4.2 - build 8491853 - 9/15/2024 (Windows)
 
 Linux version: 1.0.4.1 (will be updated later if I can)
