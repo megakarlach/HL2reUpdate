@@ -10,7 +10,8 @@ GameBanana: https://gamebanana.com/mods/429040
 
 PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-new-engine-patch-new-bugfixes-for-hl2-update-updated-2023/
 
-Patch current version: 1.0.4.1 - build 8491853 - 4/16/2024 (Windows & Linux)
+Patch current version: 1.0.4.2 - build 8491853 - 9/15/2024 (Windows)
+Linux version: 1.0.4.1 (will be updated later if I can)
 Based off November 17, 2023 official patch.
 
 Downloads:
@@ -19,7 +20,7 @@ Gamebanana, PCGW: See above.
 
 MEGA: https://mega.nz/folder/cj8VWTgI#hsPshFA1J4ARrqcw_UVmHQ
 
-Last updated 4/16/2024.
+Last updated 9/15/2024.
 
 # About this mod
 WARNING: This mod is for "Half-Life 2: Update" (AppID: 290930) only.
@@ -38,7 +39,7 @@ An explorer/file browser window will pop-up. Copy the path from the address bar 
 
 NOTE: There will be limited support for cracked version (like cs.rin.ru) of HL2: Update as it's too much work.
 
-## Here are the features:
+## Official Features:
 - Increased FOV from 90 to 120
 - HUD Aspect Ratio (4:3, 16:9, 16:10)
 - Vulkan renderer (-vulkan)
@@ -58,6 +59,17 @@ Beside the official changes above. The reUpdate patch also added/changed some fe
     Removed broken "Use 'bloom' effect when available" that always uncheck itself when saved. Bloom and HDR will still functioning normally with it's options remain available.
     FOV options increased to 120 without using Console command.
 - Optional: Orange Gamepad UI scheme with Verdana & Trebuchet MS font included.
+
+# New since 9/15/2024:
+## **Source SDK**
+- Added Hammer++ and included GameConfig.txt
+- Added detail.vbsp and lights.rad
+## **Other**
+- Updated SDL to [2.30.7](https://github.com/libsdl-org/SDL/releases/tag/release-2.30.7)
+- Updated DXVK to [2.4](https://github.com/doitsujin/dxvk/releases/tag/v2.4)
+- Updated dxsupport.cfg to includes NVIDIA GPU from GTX 700 series up to RTX 40 series.
+  - This meant that the game will now set anti-aliasing, textures and other settings to highest on these GPUs by default when launching the game for first time. This does not apply to newer AMD/ATI systems as I don't have time to include them here.
+- Minor changes to Chapter 14 thumbnail on Gamepad UI.
 
 ## Bugs fixed:
 November 17, 2023
