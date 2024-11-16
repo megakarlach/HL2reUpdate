@@ -1,5 +1,5 @@
 # Half-Life 2: reUpdate - 20th anniversary update for HL2: Update
-<img src="https://raw.githubusercontent.com/megakarlach/HL2UpdatePlusPlus/main/hl2reupdatelogo.jpg" width="640" ><br>
+<center><img src="https://github.com/megakarlach/HL2reUpdate/blob/main/hl2reupdatelogo.jpg?raw=true" width="480" ></center>
 
 See this patch showcases here:
 https://www.youtube.com/embed/BPhvxuZAkQ4
@@ -9,6 +9,8 @@ More information about this patch:
 GameBanana: https://gamebanana.com/mods/429040
 
 PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-new-engine-patch-new-bugfixes-for-hl2-update-updated-2023/
+
+GitHub: Go to [Releases](https://github.com/megakarlach/HL2reUpdate/releases).
 
 # Versions
 
@@ -31,14 +33,14 @@ This is the unofficial patch for Half-Life 2: Update, which adds all the bug fix
 ## Installation / Update
 See [Wiki - Installation](https://github.com/megakarlach/HL2reUpdate/wiki/Installation)
 
+SINCE 2.0.0.0 UPDATE, YOU MUST UNINSTALL PREVIOUS VERSION (reUpdate 1.x.x.x), AND VERIFY HL2: UPDATE ON STEAM, BEFORE INSTALL ANY NEW VERSION.
+
 (Optional) If you want to install the custom Orange-themed Gamepad UI with Verdana & Trebuchet MS font (inspired by the X360/PS3 Orange Box menu UI),<br>
 put the VPK file into hl2\custom folder (if it doesn't exist, create it).
 
 NOTE: For those who don't know where Steam and the game (Half-Life 2: Update) is installed, go to Steam Library > 
 right click Half-Life 2: Update > Properties > Local Files > Browse...
 An explorer/file browser window will pop-up. Copy the path from the address bar (example: V:\Steam\steamapps\common\Half-Life 2 Update, may vary by system).
-
-NOTE: There will be limited support for cracked version (like cs.rin.ru) of HL2: Update as it's too much work.
 
 ## Official Features:
 - Increased FOV from 90 to 120
