@@ -14,7 +14,7 @@ PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-new-engine-p
 
 Patch current version: 2.0.0.0 - build 9351275 - 11/16/2024 (Windows)
 
-Linux version: 1.0.4.1 (tomorrow or next few day I might try to port it)
+Linux version: 1.0.4.1 (tomorrow or next few day I might try to port changes from 20th anniversary)
 
 Based off November 17, 2023 official patch.
 
