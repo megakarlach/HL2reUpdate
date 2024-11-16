@@ -1,4 +1,4 @@
-# Half-Life 2: reUpdate - Patch & ported Steam Deck features & bug fixes for Half-Life 2: Update
+# Half-Life 2: reUpdate - 20th anniversary update for HL2: Update
 <img src="https://raw.githubusercontent.com/megakarlach/HL2UpdatePlusPlus/main/hl2reupdatelogo.jpg" width="640" ><br>
 
 See this patch showcases here:
@@ -12,20 +12,16 @@ PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-new-engine-p
 
 # Versions
 
-Patch current version: 1.0.4.2 - build 8491853 - 9/15/2024 (Windows)
+Patch current version: 2.0.0.0 - build 9351275 - 11/16/2024 (Windows)
 
-Linux version: 1.0.4.1 (will be updated later if I can)
+Linux version: 1.0.4.1 (tomorrow or next few day I might try to port it)
 
 Based off November 17, 2023 official patch.
 
 
 # Downloads:
 
-Gamebanana, PCGW: See above.
-
-MEGA: https://mega.nz/folder/cj8VWTgI#hsPshFA1J4ARrqcw_UVmHQ
-
-Last updated 9/15/2024.
+See above. MEGA LINKS NO LONGER UPDATED.
 
 # About this mod
 WARNING: This mod is for "Half-Life 2: Update" (AppID: 290930) only.
@@ -48,9 +44,10 @@ NOTE: There will be limited support for cracked version (like cs.rin.ru) of HL2:
 - Increased FOV from 90 to 120
 - HUD Aspect Ratio (4:3, 16:9, 16:10)
 - Vulkan renderer (-vulkan)
+- Classic Old Engine particles
 - Working Gamepad UI/Steam Deck UI (-gamepadui), also to use Gamepad UI with DX9, use (-dx9 alongside -gamepadui)
 - XInput/Legacy controller support has working rumble/vibration (as SDL2 was updated) (Windows only).
-- Steam Input (currently not working)
+- Steam Input (needs to be enabled on Steam client)
 
 Beside the official changes above. The reUpdate patch also added/changed some features:
 - The Gamepad UI have been customized, in this case, most thumbnails on "New Game" chapters are taken from HL2: Update instead of the vanilla HL2.
@@ -65,18 +62,21 @@ Beside the official changes above. The reUpdate patch also added/changed some fe
     FOV options increased to 120 without using Console command.
 - Optional: Orange Gamepad UI scheme with Verdana & Trebuchet MS font included.
 
-# New since 9/15/2024:
-## **Source SDK**
-- Added Hammer++ and included GameConfig.txt
-- Added detail.vbsp and lights.rad
+# New since 11/16/2024:
+## **HALF-LIFE 2 20th ANNIVERSARY UPDATE**
+See changes at: https://www.half-life.com/en/halflife2/20th
 ## **Other**
-- Updated SDL to [2.30.7](https://github.com/libsdl-org/SDL/releases/tag/release-2.30.7)
-- Updated DXVK to [2.4](https://github.com/doitsujin/dxvk/releases/tag/v2.4)
-- Updated dxsupport.cfg to includes NVIDIA GPU from GTX 700 series up to RTX 40 series.
-  - This meant that the game will now set anti-aliasing, textures and other settings to highest on these GPUs by default when launching the game for first time. This does not apply to newer AMD/ATI systems as I don't have time to include them here.
-- Minor changes to Chapter 14 thumbnail on Gamepad UI.
+- Steam Input seems to be functional, again. To get this to work you need to enable it on Steam > View controller settings.
+- Updated SDL to 2.30.9
+- Updated DXVK to 2.5
+- Updated dxsupport.cfg (again) to includes NVIDIA GPU from GTX 700 series up to RTX 40 series, aswell as forcing dxlevel 95 on Intel HD Graphics.
+-- This meant that the game will now set anti-aliasing, textures and other settings to highest on these GPUs by default when launching the game for first time.
+-- On other GPUs, the game will default to 4x MSAA, just like the 20th anniversary version.
 
 ## Bugs fixed:
+November 16, 2024
+- See changes at: https://www.half-life.com/en/halflife2/20th
+- ReUpdate: Fixed Steam Input support. You might need to enable this on Steam first to make sure it's working.
 November 17, 2023
 - Fixed a hang where NPC pathfinding could stall forever
 - Fixed sprinting when using an external controller (This fix would be pointless with HL2 reUPDATE due to Steam Controller being unsupported anyway).
@@ -91,8 +91,7 @@ Previously:
 - and much more... (see [here](https://web.archive.org/web/20160830085422/http://forums.steampowered.com/forums/showthread.php?t=1286478))
 
 # Bugs that hasn't been fixed
-- Steam Input are non-functional on Gamepad UI
-- DirectX 8 compability mode by default. This is a common bug that also affect vanilla HL2 aswell, when playing the game on some modern hardware/GPUs.
+- DirectX 8 feature level by default. This is a common bug that also affect vanilla HL2 aswell, when playing the game on some modern hardware/GPUs.
   To workaround this bug, launch the game with -dxlevel 95, configure your video settings, save it (by clicking OK), then
   exit the game, remove the launch options, launch the game again, if your video settings was reset again, just configuring it again, then save it, try to relaunch
   just to make sure, if video settings doesn't reset to low quality, low textures or DX8, then you are good to go.
@@ -100,10 +99,10 @@ Previously:
 # LICENSE (ignore)
 
 Games files included in this patch are © 2004 - 2024 Valve Corporation.
-Redistributing this patch is allowed as long if you credit this to me, and Valve. Commercial purposes not allowed.
+Commercial purposes not allowed.
 
-For SDL2:
-
+SDL 2 and DXVK:
+```
 This software is provided 'as-is', without any express or implied
 warranty.  In no event will the authors be held liable for any damages
 arising from the use of this software.
@@ -123,8 +122,33 @@ freely, subject to the following restrictions:
 
 3. This notice may not be removed or altered from any source distribution.
 
-The setup icon was based off the Half-Life 2 icon made by vaksa
-© 2005 vaksa, used with permissions
+                  Copyright (c) 2017 Philip Rebohle
+                  Copyright (c) 2019 Joshua Ashton
+                  Copyright (c) 2019 Robin Kertels
+                  Copyright (c) 2023 Jeffrey Ellison
+
+                          zlib/libpng license
+
+This software is provided 'as-is', without any express or implied
+warranty. In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+– The origin of this software must not be misrepresented; you must not
+  claim that you wrote the original software. If you use this software
+  in a product, an acknowledgment in the product documentation would be
+  appreciated but is not required.
+
+– Altered source versions must be plainly marked as such, and must not
+  be misrepresented as being the original software.
+
+– This notice may not be removed or altered from any source distribution.
+```
+Uses Half-Life 2 icon made by vaksa for the setup bitmap.
+© 2005 vaksa
 https://www.deviantart.com/vaksa/art/Half-Life-2-icon-16869820
 and the Windows Vista/7 setup icon from Microsoft Windows. © Microsoft Corporation.
 
