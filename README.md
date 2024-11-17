@@ -94,10 +94,7 @@ Previously:
 - and much more... (see [here](https://web.archive.org/web/20160830085422/http://forums.steampowered.com/forums/showthread.php?t=1286478))
 
 # Bugs that hasn't been fixed
-- DirectX 8 feature level by default. This is a common bug that also affect vanilla HL2 aswell, when playing the game on some modern hardware/GPUs.
-  To workaround this bug, launch the game with -dxlevel 95, configure your video settings, save it (by clicking OK), then
-  exit the game, remove the launch options, launch the game again, if your video settings was reset again, just configuring it again, then save it, try to relaunch
-  just to make sure, if video settings doesn't reset to low quality, low textures or DX8, then you are good to go.
+None.
 
 # LICENSE (ignore)
 
