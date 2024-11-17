@@ -14,16 +14,15 @@ GitHub: Go to [Releases](https://github.com/megakarlach/HL2reUpdate/releases).
 
 # Versions
 
-Patch current version: 2.0.0.0 - build 9351275 - 11/16/2024 (Windows)
+Patch current version: 2.0.0.1 - build 9352380 (20th anniversary + hotfix) - 11/17/2024 (Windows)
 
 Linux version: 1.0.4.1 (tomorrow or next few day I might try to port changes from 20th anniversary)
 
 Based off November 17, 2023 official patch.
 
-
 # Downloads:
 
-See above. MEGA LINKS NO LONGER UPDATED.
+See above (GameBanana/PCGW/GitHub). MEGA LINKS NO LONGER UPDATED.
 
 # About this mod
 WARNING: This mod is for "Half-Life 2: Update" (AppID: 290930) only.
@@ -76,12 +75,13 @@ See changes at: https://www.half-life.com/en/halflife2/20th
 -- On other GPUs, the game will default to 4x MSAA, just like the 20th anniversary version.
 
 ## Bugs fixed:
+November 16/17, 2024 (Hotfix)
+- Fixed a crash that could occur in some languages when starting a new chapter.
+- UI - Fixed some weapon icon alignment issues at various resolutions.
+- Workshop changes not included since HL2 Update never have one anyway.
 November 16, 2024
 - See changes at: https://www.half-life.com/en/halflife2/20th
 - ReUpdate: Fixed Steam Input support. You might need to enable this on Steam first to make sure it's working.
-November 17, 2023
-- Fixed a hang where NPC pathfinding could stall forever
-- Fixed sprinting when using an external controller (This fix would be pointless with HL2 reUPDATE due to Steam Controller being unsupported anyway).
 
 Previously:
 - Dropship container gun fix which makes the gun possible to turn (broken since 2007 on X360/PS3, and 2010 on PC. Fixed in 2022.)
