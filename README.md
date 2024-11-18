@@ -17,9 +17,9 @@ GitHub: Go to [Releases](https://github.com/megakarlach/HL2reUpdate/releases).
 Patch current version: 2.0.0.0 - build 9352380 (20th anniversary) - 11/16/2024 (Windows)
 - Next hotfix update will be released later.
 
-Linux version: 1.0.4.1 (tomorrow or next few day I might try to port changes from 20th anniversary)
+Linux version: 1.0.4.1 (I might try to port changes from 20th anniversary at some point but linux is not my main OS so expect delays)
 
-Based off November 17, 2023 official patch.
+The latest version is based off the 20th anniversary update + official hotfix (Nov 16, 2024).
 
 # Downloads:
 
