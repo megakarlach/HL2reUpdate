@@ -79,7 +79,8 @@ See changes at: https://www.half-life.com/en/halflife2/20th
 November 16/17, 2024 (Hotfix)
 - Fixed a crash that could occur in some languages when starting a new chapter.
 - UI - Fixed some weapon icon alignment issues at various resolutions.
-- Workshop changes not included since HL2 Update never have one anyway.
+- Workshop changes included even through HL2 Update never have one anyway.
+
 November 16, 2024
 - See changes at: https://www.half-life.com/en/halflife2/20th
 - ReUpdate: Fixed Steam Input support. You might need to enable this on Steam first to make sure it's working.
