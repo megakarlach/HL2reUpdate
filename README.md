@@ -94,8 +94,8 @@ Previously:
 - Some missing Combine sounds has been fixed (noticeable by shooting them)
 - and much more... (see [here](https://web.archive.org/web/20160830085422/http://forums.steampowered.com/forums/showthread.php?t=1286478))
 
-# Bugs that hasn't been fixed
-None.
+# Bugs that hasn't been fixed/changes not included
+- Does not include 20th maps fixes (but Update itself even also have it's own changes and fixes aswell).
 
 # LICENSE (ignore)
 
