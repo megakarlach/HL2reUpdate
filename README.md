@@ -100,6 +100,10 @@ Previously:
 # Bugs that hasn't been fixed/changes not included
 - Does not include 20th maps fixes (but Update itself even also have it's own changes and fixes aswell).
 
+# TODOs:
+- Combining Developer Commentary (20th anniversary) with Community Commentary
+- Map changes
+
 # LICENSE (ignore)
 
 Games files included in this patch are © 2004 - 2024 Valve Corporation.
