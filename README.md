@@ -102,6 +102,7 @@ Previously:
 
 # TODOs:
 - Combining Developer Commentary (20th anniversary) with Community Commentary
+- Also fixing typos in official Developer Commentary and the audio caching commentary subtitles being missing
 - Map changes
 
 # LICENSE (ignore)
