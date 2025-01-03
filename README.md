@@ -14,9 +14,12 @@ GitHub: Go to [Releases](https://github.com/megakarlach/HL2reUpdate/releases).
 
 # Versions
 
-Patch current version: 2.0.0.1 - build 9352380 (20th anniversary hotfix) - 11/16/2024 (Windows)
+Patch current version: 2.0.0.2 - build 9352380 (20th anniversary hotfix) - 11/18/2024 (Windows)
 
-Linux version: 1.0.4.1 (I might try to port changes from 20th anniversary at some point but linux is not my main OS so expect delays)
+BETA version: [2.1.0.0](https://github.com/megakarlach/HL2reUpdate/releases/tag/v2.1.0.0-beta1) - BETA 1 - build 9377890 - 11/26/2024 (Windows)
+- Released Jan 3, 2025
+
+Linux version: 1.0.4.1 (I might try to port changes from 20th anniversary at some point but linux is not my main OS so expect delays, or might as well not be released)
 
 The latest version is based off the 20th anniversary update + official hotfix (Nov 16, 2024).
 
