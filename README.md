@@ -22,7 +22,9 @@ GitHub: Go to [Releases](https://github.com/megakarlach/HL2reUpdate/releases).
 
 Linux version: 1.0.4.1 (I might try to port changes from 20th anniversary at some point but linux is not my main OS so expect delays, or might as well not be released)
 
-The latest version is based off the 20th anniversary update + official hotfix (Nov 16, 2024).
+The latest version is based off the slightly old version of 20th anniversary update + official hotfix (Nov 16, 2024).
+
+BETA version is based on the latest 20th anniversary version (Nov 27, 2024).
 
 ## Downloads:
 
