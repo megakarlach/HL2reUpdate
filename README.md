@@ -32,7 +32,7 @@ WARNING: This mod is for "Half-Life 2: Update" (AppID: 290930) only.
 
 This is the unofficial patch for Half-Life 2: Update, which adds all the 20th anniversary bug fixes, some features, Steam Deck features from original (vanilla) Half-Life 2 to HL2: Update.
 
-DOES NOT INCLUDE MAP CHANGES YET (this is still work in progress which would be planned to be released somewhere in 2025)
+DOES NOT INCLUDE ALL MAP CHANGES YET (this is still work in progress, but you can try it now on the BETA version)
 
 NOTE (11/18/2024): The latest version of the patch currently were based off the 20th anniversary version (with Nov 17, 2024 official hotfix), there might be minor bugs, and the font looks bit off but the game is completely playable, and has most of the features of 20th anniversary like classic particles effect, working Steam Input, bicubic lightmaps. 
 
