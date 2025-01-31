@@ -28,7 +28,7 @@ BETA version is based on the latest 20th anniversary version (Nov 27, 2024). The
 
 ## Downloads:
 
-See above (GameBanana/PCGW/GitHub). MEGA LINKS NO LONGER UPDATED.
+* See above (GameBanana/PCGW/GitHub). MEGA LINKS NO LONGER UPDATED.
 
 ## About this mod
 WARNING: This mod is for "Half-Life 2: Update" (AppID: 290930) only.
@@ -42,14 +42,14 @@ NOTE (1/31/2025): The latest version of the patch currently were based off the 2
 At the moment, instead you can play the regular Half-Life 2 for now, and wait for this to be finished.
 
 ## Installation / Update
-See [Wiki - Installation](https://github.com/megakarlach/HL2reUpdate/wiki/Installation)
+* See [Wiki - Installation](https://github.com/megakarlach/HL2reUpdate/wiki/Installation)
 
 SINCE 2.0.0.0 UPDATE, YOU MUST UNINSTALL PREVIOUS VERSION (reUpdate 1.x.x.x), AND VERIFY HL2: UPDATE ON STEAM, BEFORE INSTALL ANY NEW VERSION.
 
 (Optional) If you want to install the custom Orange-themed Gamepad UI with Verdana & Trebuchet MS font (inspired by the X360/PS3 Orange Box menu UI),<br>
 put the VPK file into hl2\custom folder (if it doesn't exist, create it).
 
-NOTE: For those who don't know where Steam and the game (Half-Life 2: Update) is installed, go to Steam Library > 
+**NOTE:* For those who don't know where Steam and the game (Half-Life 2: Update) is installed, go to Steam Library > 
 right click Half-Life 2: Update > Properties > Local Files > Browse...
 An explorer/file browser window will pop-up. Copy the path from the address bar (example: V:\Steam\steamapps\common\Half-Life 2 Update, may vary by system).
 
