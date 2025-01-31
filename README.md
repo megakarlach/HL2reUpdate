@@ -24,7 +24,7 @@ Linux version: 1.0.4.1 (I might try to port changes from 20th anniversary at som
 
 The latest version is based off the slightly old version of 20th anniversary update + official hotfix (Nov 16, 2024).
 
-BETA version is based on the latest 20th anniversary version (Nov 27, 2024).
+BETA version is based on the latest 20th anniversary version (Nov 27, 2024). The next BETA 2 version will be based on current available "beta" branch and features change in "Water Hazard, Black Mesa East and Ravenholm" (running on engine dated Jan 27, 2025).
 
 ## Downloads:
 
@@ -37,9 +37,9 @@ This is the unofficial patch for Half-Life 2: Update, which adds all the 20th an
 
 DOES NOT INCLUDE ALL MAP CHANGES YET (this is still work in progress, but you can try it now on the BETA version)
 
-NOTE (11/18/2024): The latest version of the patch currently were based off the 20th anniversary version (with Nov 17, 2024 official hotfix), there might be minor bugs, and the font looks bit off but the game is completely playable, and has most of the features of 20th anniversary like classic particles effect, working Steam Input, bicubic lightmaps. 
+NOTE (1/31/2025): The latest version of the patch currently were based off the 20th anniversary version (with Nov 17, 2024 official hotfix), which has most of the features of 20th anniversary like classic particles effect, working Steam Input, bicubic lightmaps. However, map changes are not available except in the work in progress BETA version (which only feature changes from Chapter 1 to 3 - Point Insertion to Route Kanal). Next BETA version will have changes from Chapter 4 to 6 (Water Hazard, Black Mesa East and Ravenholm), aswell running on newer engine build.
 
-However, it does not include any map changes unlike HL2 itself (because I don't have the official original VMF plus decompiling the map, editing then recompiling it may produce different results and break something), but HL2 Update also has it's own map changes and fixes so it's even more time-consuming to merge both changes into one, so wait for HL2 Remastered Collection for that. Currently, i'm currently working on new version which would include these changes (currently available now as BETA). Tldr; This mod and HL2: Update itself, is not a replacement for original Half-Life 2.
+At the moment, instead you can play the regular Half-Life 2 for now, and wait for this to be finished.
 
 ## Installation / Update
 See [Wiki - Installation](https://github.com/megakarlach/HL2reUpdate/wiki/Installation)
