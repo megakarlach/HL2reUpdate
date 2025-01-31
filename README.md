@@ -53,6 +53,15 @@ NOTE: For those who don't know where Steam and the game (Half-Life 2: Update) is
 right click Half-Life 2: Update > Properties > Local Files > Browse...
 An explorer/file browser window will pop-up. Copy the path from the address bar (example: V:\Steam\steamapps\common\Half-Life 2 Update, may vary by system).
 
+## System requirements
+- Windows Vista or later (newer Source 2013 builds are no longer compatible with XP since Steam Deck update)
+- Atleast 2 GB disk space or higher
+- Any graphics card from 2010 should be able to run with maximum settings with LOD disabled (Anniversary Update disables LOD).
+
+NOTE: For best exprience, you can enable SGSSAA anti-aliasing (, instead of MSAA which produces inferior result with alpha textures (even with alpha to coverage), 
+however you need a good graphics card (GTX 1080Ti or RTX 3060 (latter tested) should handle 8X SGSSAA easily with 100+ FPS).
+NOTE for Intel users or stuck on DX8: To get the best graphics on Intel GPU, or to fix the game stuck on DirectX 8 mode, [Follow instructions on PCGW](https://www.pcgamingwiki.com/wiki/Engine:Source#Game_runs_on_DirectX_8.0.2F9.0_level_.28instead_of_9.0.2B.29).
+
 ## Official Features:
 - Increased FOV from 90 to 120
 - HUD Aspect Ratio (4:3, 16:9, 16:10)
