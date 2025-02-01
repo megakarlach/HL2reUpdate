@@ -24,7 +24,7 @@ Linux version: 1.0.4.1 (I might try to port changes from 20th anniversary at som
 
 The latest version is based off the slightly old version of 20th anniversary update + official hotfix (Nov 16, 2024).
 
-BETA version is based on the latest 20th anniversary version (Nov 27, 2024). The next BETA 2 version will be based on current available "beta" branch and features change in "Water Hazard, Black Mesa East and Ravenholm" (running on engine dated Jan 27, 2025).
+BETA version is based on the latest 20th anniversary version (Nov 27, 2024). The next BETA 2 version will be based on current available "beta" branch and features change in "Water Hazard, Black Mesa East and Ravenholm" (running on engine dated Jan 27, 2025). It will also feature new bug fixes aswell.
 
 ## Downloads:
 
