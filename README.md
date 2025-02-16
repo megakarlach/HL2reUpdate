@@ -1,6 +1,17 @@
 # Half-Life 2: reUpdate - 20th anniversary update for HL2: Update
 <center><img src="https://github.com/megakarlach/HL2reUpdate/blob/main/hl2reupdatelogo.jpg?raw=true" width="480" ></center>
 
+<center>Viktor Antonov
+
+HL2 Art Director
+  
+1972 - 2025
+
+</center>
+
+
+## About this patch
+
 See this patch showcases here:
 https://www.youtube.com/embed/BPhvxuZAkQ4
 
