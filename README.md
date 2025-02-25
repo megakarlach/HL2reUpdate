@@ -1,13 +1,6 @@
 # Half-Life 2: reUpdate - 20th anniversary update for HL2: Update
 <center><img src="https://github.com/megakarlach/HL2reUpdate/blob/main/hl2reupdatelogo.jpg?raw=true" width="480" ></center>
 
-<center>Viktor Antonov
-
-HL2 Art Director
-  
-1972 - 2025
-
-</center>
 
 
 ## About this patch
@@ -35,7 +28,7 @@ Linux version: 1.0.4.1 (I might try to port changes from 20th anniversary at som
 
 The latest version is based off the slightly old version of 20th anniversary update + official hotfix (Nov 16, 2024).
 
-BETA version is based on the latest 20th anniversary version (Nov 27, 2024). The next BETA 2 version will be based on current available "beta" branch and features change in "Water Hazard, Black Mesa East and Ravenholm" (running on engine dated Jan 27, 2025). It will also feature new bug fixes aswell.
+BETA version is based on the latest 20th anniversary version (Nov 27, 2024). The next BETA 2 version will be based on newer version (Feb 11, 2025 update) and features map changes in "Water Hazard, Black Mesa East and Ravenholm". It will also feature new bug fixes aswell.
 
 ## Downloads:
 
@@ -69,8 +62,8 @@ An explorer/file browser window will pop-up. Copy the path from the address bar 
 - Atleast 2 GB disk space or higher
 - Any graphics card from 2010 should be able to run with maximum settings with LOD disabled (Anniversary Update disables LOD).
 
-**NOTE:** For best exprience, you can enable [SGSSAA anti-aliasing](https://github.com/megakarlach/HL2reUpdate/wiki/Get-the-best-graphical-settings#sgssaa-anti-aliasing) instead of MSAA which produces inferior result with alpha textures (even with alpha to coverage), 
-however you need a good graphics card (GTX 1080Ti or RTX 3060 (latter tested) should handle 8X SGSSAA easily with 100+ FPS).
+**NOTE:** To get the best anti-aliasing, you can enable [SGSSAA anti-aliasing](https://github.com/megakarlach/HL2reUpdate/wiki/Get-the-best-graphical-settings#sgssaa-anti-aliasing) instead of MSAA which produces inferior result with alpha textures (even with alpha to coverage), 
+however you need a good graphics card (GTX 1080Ti or RTX 3060 (latter tested) should handle 8X SGSSAA easily with 100+ FPS). Doing this also makes transparent or decal textures on far distance look sharper (if you adjust LOD bias).
 
 **NOTE for Intel users or stuck on DX8:** To get the best graphics on Intel GPU, or to fix the game stuck on DirectX 8 mode, [Follow instructions on PCGW](https://www.pcgamingwiki.com/wiki/Engine:Source#Game_runs_on_DirectX_8.0.2F9.0_level_.28instead_of_9.0.2B.29).
 
@@ -189,6 +182,8 @@ Uses Half-Life 2 icon made by vaksa for the setup bitmap.
 © 2005 vaksa
 https://www.deviantart.com/vaksa/art/Half-Life-2-icon-16869820
 and the Windows Vista/7 setup icon from Microsoft Windows. © Microsoft Corporation.
+
+Rest in Peace, Viktor Antonov (1972 - 2025) - HL2 (and Dishonored) Art Director.
 
 This patch is not made by, or affiliated with Valve, Fillip Victor, and others who have worked on the game.
 
