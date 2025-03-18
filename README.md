@@ -47,11 +47,11 @@ https://www.youtube.com/embed/BPhvxuZAkQ4
 
 More information about this patch:
 
-GameBanana: https://gamebanana.com/mods/429040
+- GameBanana: https://gamebanana.com/mods/429040
 
-PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-new-engine-patch-new-bugfixes-for-hl2-update-updated-2023/
+- PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-new-engine-patch-new-bugfixes-for-hl2-update-updated-2023/
 
-GitHub: Go to [Releases](https://github.com/megakarlach/HL2reUpdate/releases).
+- GitHub: Go to [Releases](https://github.com/megakarlach/HL2reUpdate/releases).
 
 ## Versions
 
