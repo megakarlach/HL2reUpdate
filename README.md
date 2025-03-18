@@ -5,25 +5,25 @@
 ## About this patch
 Half-Life 2: reUpdate is a patch that enhances Half-Life 2: Update. It adds 20th anniversary bug fixes, new featres (including Steam Deck Gamepad UI) from original (vanilla) Half-Life 2. Additionally, reUpdate also adds many exclusive map changes (which are not present on 20th Anniversary, pre-Anniversary nor Update).
 
-## reUpdate Features:
+## Features
+### reUpdate Features:
 - Customized Gamepad UI (screenshots are taken from HL2: Update, instead of original HL2, used for New Game thumbnails)
 - More improvements and few new features to Gamepad UI, restored some missing options, including:
-  Keyboard Advanced Options:
-    Fast Weapon Switch - Disabled (0), Enabled (1), Controller (2), Horizontal scroll/Postal III style (3), can be also changed with "hud_fastswitch" command.
-    Enable Developer Console directly via Gamepad UI
-    Mouse sensitivity on Gamepad UI can be increased up to 20.
-- (NEW) Some improvements to old VGUI:
-  Video - Advanced
-    Removed broken "Use 'bloom' effect when available" that always uncheck itself when saved. Bloom and HDR will still functioning normally with it's options remain available.
-    FOV options increased to 120 without using Console command.
-- Optional: Orange Gamepad UI scheme with Verdana & Trebuchet MS font included.
+  - Weapon Selection Style - Disabled (0), Enabled (1), Cross (Controller) (2), Carousel (Postal III style) (3), can be also changed with "hud_fastswitch" command.
+  - Options to Enable Developer Console on Gamepad UI
+  - Mouse sensitivity on Gamepad UI can be increased up to 20.
+- Improvements to VGUI menu:
+  - Removed broken "Use 'bloom' effect when available" that always uncheck itself when saved. Bloom and HDR will still functioning normally with it's options remain available.
+  - FOV options increased to 120 without using Console command.
+- Optional stuff:
+  - Orange Gamepad UI scheme with Verdana & Trebuchet MS font included.
 
-# Upcoming reUpdate Features (BETA):
+### Upcoming reUpdate Features (BETA):
 - Combining Developer Commentary (20th anniversary) with Community Commentary
 - Also fixing typos in official Developer Commentary and the audio caching commentary subtitles being missing
 - Map changes (will feature exclusive changes, for example, 3D Skybox on Ravenholm, all maps have radial fog, and maps are more detailed)
 
-## Official Features:
+### Official Features:
 - Increased FOV from 90 to 120
 - HUD Aspect Ratio (4:3, 16:9, 16:10)
 - Vulkan renderer (-vulkan)
@@ -31,36 +31,6 @@ Half-Life 2: reUpdate is a patch that enhances Half-Life 2: Update. It adds 20th
 - Working Gamepad UI/Steam Deck UI (-gamepadui), also to use Gamepad UI with DX9, use (-dx9 alongside -gamepadui)
 - XInput/Legacy controller support has working rumble/vibration (as SDL2 was updated) (Windows only).
 - Steam Input (needs to be enabled on Steam client)
-
-# New since 11/16/2024:
-## **HALF-LIFE 2 20th ANNIVERSARY UPDATE**
-See changes at: https://www.half-life.com/en/halflife2/20th
-## **Other**
-- Steam Input seems to be functional, again. To get this to work you need to enable it on Steam > View controller settings.
-- Updated SDL to 2.30.9
-- Updated DXVK to 2.5
-- Updated dxsupport.cfg (again) to includes NVIDIA GPU from GTX 700 series up to RTX 40 series, aswell as forcing dxlevel 95 on Intel HD Graphics.
--- This meant that the game will now set anti-aliasing, textures and other settings to highest on these GPUs by default when launching the game for first time.
--- On other GPUs, the game will default to 4x MSAA, just like the 20th anniversary version.
-
-## Bugs fixed:
-November 16/17, 2024 (Hotfix)
-- Fixed a crash that could occur in some languages when starting a new chapter.
-- UI - Fixed some weapon icon alignment issues at various resolutions.
-- Workshop changes included even through HL2 Update never have one anyway.
-
-November 16, 2024
-- See changes at: https://www.half-life.com/en/halflife2/20th
-- ReUpdate: Fixed Steam Input support. You might need to enable this on Steam first to make sure it's working.
-
-Previously:
-- Dropship container gun fix which makes the gun possible to turn (broken since 2007 on X360/PS3, and 2010 on PC. Fixed in 2022.)
-- Long loading saves bug/engine freezing while saving has been fixed.
-- Improved loading times (for users with HDD only)
-- Fixed some stuttering on level transitions
-- NPC eyes not blinking (fixed in 2019)
-- Some missing Combine sounds has been fixed (noticeable by shooting them)
-- and much more... (see [here](https://web.archive.org/web/20160830085422/http://forums.steampowered.com/forums/showthread.php?t=1286478))
 
 ### Important Note:
 THE CURRENT PATCH (OUTSIDE BETA) DOES NOT INCLUDE ALL MAP CHANGES YET (this is still work in progress, but you can try it now on the BETA version)
@@ -118,6 +88,36 @@ An explorer/file browser window will pop-up. Copy the path from the address bar 
 however you need a good graphics card (GTX 1080Ti or RTX 3060 (latter tested) should handle 8X SGSSAA easily with 100+ FPS). Doing this also makes transparent or decal textures on far distance look sharper (if you adjust LOD bias).
 
 **NOTE for Intel users or stuck on DX8:** To get the best graphics on Intel GPU, or to fix the game stuck on DirectX 8 mode, [Follow instructions on PCGW](https://www.pcgamingwiki.com/wiki/Engine:Source#Game_runs_on_DirectX_8.0.2F9.0_level_.28instead_of_9.0.2B.29).
+
+## Changelogs
+### **HALF-LIFE 2 20th ANNIVERSARY UPDATE**
+See changes at: https://www.half-life.com/en/halflife2/20th
+### **Other**
+- Steam Input seems to be functional, again. To get this to work you need to enable it on Steam > View controller settings.
+- Updated SDL to 2.30.9
+- Updated DXVK to 2.5
+- Updated dxsupport.cfg (again) to includes NVIDIA GPU from GTX 700 series up to RTX 40 series, aswell as forcing dxlevel 95 on Intel HD Graphics.
+-- This meant that the game will now set anti-aliasing, textures and other settings to highest on these GPUs by default when launching the game for first time.
+-- On other GPUs, the game will default to 4x MSAA, just like the 20th anniversary version.
+
+### Bugs fixed:
+November 16/17, 2024 (Hotfix)
+- Fixed a crash that could occur in some languages when starting a new chapter.
+- UI - Fixed some weapon icon alignment issues at various resolutions.
+- Workshop changes included even through HL2 Update never have one anyway.
+
+November 16, 2024
+- See changes at: https://www.half-life.com/en/halflife2/20th
+- ReUpdate: Fixed Steam Input support. You might need to enable this on Steam first to make sure it's working.
+
+Previously:
+- Dropship container gun fix which makes the gun possible to turn (broken since 2007 on X360/PS3, and 2010 on PC. Fixed in 2022.)
+- Long loading saves bug/engine freezing while saving has been fixed.
+- Improved loading times (for users with HDD only)
+- Fixed some stuttering on level transitions
+- NPC eyes not blinking (fixed in 2019)
+- Some missing Combine sounds has been fixed (noticeable by shooting them)
+- and much more... (see [here](https://web.archive.org/web/20160830085422/http://forums.steampowered.com/forums/showthread.php?t=1286478))
 
 # LICENSE (ignore)
 
