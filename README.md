@@ -67,6 +67,8 @@ The latest version is based off the slightly old version of 20th anniversary upd
 
 BETA version is based on the latest 20th anniversary version (Nov 27, 2024). The next BETA 2 version will be based on newer version (Feb 11, 2025 update) and features map changes in "Water Hazard, Black Mesa East and Ravenholm". It will also feature new bug fixes aswell.
 
+BETA version also feature **maps changes**, but **it will be incompatible with save files made on unpatched Update, or older version of reUpdate.** Start with New Game (or use "map" console command) instead.
+
 ## Installation Guide / Updating reUpdate
 * See [Wiki - Installation](https://github.com/megakarlach/HL2reUpdate/wiki/Installation)
 
