@@ -1,83 +1,12 @@
-# Half-Life 2: reUpdate - 20th anniversary update for HL2: Update
+# Half-Life 2: reUpdate
+## Enhances Half-Life 2: Update, with 20th anniversary update features & bug fixes
 <center><img src="https://github.com/megakarlach/HL2reUpdate/blob/main/hl2reupdatelogo.jpg?raw=true" width="480" ></center>
 
-
-
 ## About this patch
+Half-Life 2: reUpdate is a patch that enhances Half-Life 2: Update. It adds 20th anniversary bug fixes, new featres (including Steam Deck Gamepad UI) from original (vanilla) Half-Life 2. Additionally, reUpdate also adds many exclusive map changes (which are not present on 20th Anniversary, pre-Anniversary nor Update).
 
-See this patch showcases here:
-https://www.youtube.com/embed/BPhvxuZAkQ4
-
-More information about this patch:
-
-GameBanana: https://gamebanana.com/mods/429040
-
-PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-new-engine-patch-new-bugfixes-for-hl2-update-updated-2023/
-
-GitHub: Go to [Releases](https://github.com/megakarlach/HL2reUpdate/releases).
-
-## Versions
-
-- Patch current version: 2.0.0.2 - build 9352380 (20th anniversary hotfix) - 11/18/2024 (Windows)
-- Released Nov 20, 2024
-
-- BETA version: [2.1.0.0](https://github.com/megakarlach/HL2reUpdate/releases/tag/v2.1.0.0-beta1) - BETA 1 - build 9377890 - 11/26/2024 (Windows)
-- Released Jan 3, 2025
-
-Linux version: 1.0.4.1 (I might try to port changes from 20th anniversary at some point but linux is not my main OS so expect delays, or might as well not be released)
-
-The latest version is based off the slightly old version of 20th anniversary update + official hotfix (Nov 16, 2024).
-
-BETA version is based on the latest 20th anniversary version (Nov 27, 2024). The next BETA 2 version will be based on newer version (Feb 11, 2025 update) and features map changes in "Water Hazard, Black Mesa East and Ravenholm". It will also feature new bug fixes aswell.
-
-## Downloads:
-
-* See above (GameBanana/PCGW/GitHub). MEGA LINKS NO LONGER UPDATED.
-
-## About this mod
-WARNING: This mod is for "Half-Life 2: Update" (AppID: 290930) only.
-
-This is the unofficial patch for Half-Life 2: Update, which adds all the 20th anniversary bug fixes, some features, Steam Deck features from original (vanilla) Half-Life 2 to HL2: Update.
-
-DOES NOT INCLUDE ALL MAP CHANGES YET (this is still work in progress, but you can try it now on the BETA version)
-
-NOTE (1/31/2025): The latest version of the patch currently were based off the 20th anniversary version (with Nov 17, 2024 official hotfix), which has most of the features of 20th anniversary like classic particles effect, working Steam Input, bicubic lightmaps. However, map changes are not available except in the work in progress BETA version (which only feature changes from Chapter 1 to 3 - Point Insertion to Route Kanal). Next BETA version will have changes from Chapter 4 to 6 (Water Hazard, Black Mesa East and Ravenholm), aswell running on newer engine build.
-
-At the moment, instead you can play the regular Half-Life 2 for now, and wait for this to be finished.
-
-## Installation / Update
-* See [Wiki - Installation](https://github.com/megakarlach/HL2reUpdate/wiki/Installation)
-
-SINCE 2.0.0.0 UPDATE, YOU MUST UNINSTALL PREVIOUS VERSION (reUpdate 1.x.x.x), AND VERIFY HL2: UPDATE ON STEAM, BEFORE INSTALL ANY NEW VERSION.
-
-(Optional) If you want to install the custom Orange-themed Gamepad UI with Verdana & Trebuchet MS font (inspired by the X360/PS3 Orange Box menu UI),<br>
-put the VPK file into hl2\custom folder (if it doesn't exist, create it).
-
-**NOTE:* For those who don't know where Steam and the game (Half-Life 2: Update) is installed, go to Steam Library > 
-right click Half-Life 2: Update > Properties > Local Files > Browse...
-An explorer/file browser window will pop-up. Copy the path from the address bar (example: V:\Steam\steamapps\common\Half-Life 2 Update, may vary by system).
-
-## System requirements
-- Windows Vista or later (newer Source 2013 builds are no longer compatible with XP since Steam Deck update)
-- Atleast 2 GB disk space or higher
-- Any graphics card from 2010 should be able to run with maximum settings with LOD disabled (Anniversary Update disables LOD).
-
-**NOTE:** To get the best anti-aliasing, you can enable [SGSSAA anti-aliasing](https://github.com/megakarlach/HL2reUpdate/wiki/Get-the-best-graphical-settings#sgssaa-anti-aliasing) instead of MSAA which produces inferior result with alpha textures (even with alpha to coverage), 
-however you need a good graphics card (GTX 1080Ti or RTX 3060 (latter tested) should handle 8X SGSSAA easily with 100+ FPS). Doing this also makes transparent or decal textures on far distance look sharper (if you adjust LOD bias).
-
-**NOTE for Intel users or stuck on DX8:** To get the best graphics on Intel GPU, or to fix the game stuck on DirectX 8 mode, [Follow instructions on PCGW](https://www.pcgamingwiki.com/wiki/Engine:Source#Game_runs_on_DirectX_8.0.2F9.0_level_.28instead_of_9.0.2B.29).
-
-## Official Features:
-- Increased FOV from 90 to 120
-- HUD Aspect Ratio (4:3, 16:9, 16:10)
-- Vulkan renderer (-vulkan)
-- Classic Old Engine particles
-- Working Gamepad UI/Steam Deck UI (-gamepadui), also to use Gamepad UI with DX9, use (-dx9 alongside -gamepadui)
-- XInput/Legacy controller support has working rumble/vibration (as SDL2 was updated) (Windows only).
-- Steam Input (needs to be enabled on Steam client)
-
-Beside the official changes above. The reUpdate patch also added/changed some features:
-- The Gamepad UI have been customized, in this case, most thumbnails on "New Game" chapters are taken from HL2: Update instead of the vanilla HL2.
+## reUpdate Features:
+- Customized Gamepad UI (screenshots are taken from HL2: Update, instead of original HL2, used for New Game thumbnails)
 - More improvements and few new features to Gamepad UI, restored some missing options, including:
   Keyboard Advanced Options:
     Fast Weapon Switch - Disabled (0), Enabled (1), Controller (2), Horizontal scroll/Postal III style (3), can be also changed with "hud_fastswitch" command.
@@ -88,6 +17,20 @@ Beside the official changes above. The reUpdate patch also added/changed some fe
     Removed broken "Use 'bloom' effect when available" that always uncheck itself when saved. Bloom and HDR will still functioning normally with it's options remain available.
     FOV options increased to 120 without using Console command.
 - Optional: Orange Gamepad UI scheme with Verdana & Trebuchet MS font included.
+
+# Upcoming reUpdate Features (BETA):
+- Combining Developer Commentary (20th anniversary) with Community Commentary
+- Also fixing typos in official Developer Commentary and the audio caching commentary subtitles being missing
+- Map changes (will feature exclusive changes, for example, 3D Skybox on Ravenholm, all maps have radial fog, and maps are more detailed)
+
+## Official Features:
+- Increased FOV from 90 to 120
+- HUD Aspect Ratio (4:3, 16:9, 16:10)
+- Vulkan renderer (-vulkan)
+- Classic Old Engine particles
+- Working Gamepad UI/Steam Deck UI (-gamepadui), also to use Gamepad UI with DX9, use (-dx9 alongside -gamepadui)
+- XInput/Legacy controller support has working rumble/vibration (as SDL2 was updated) (Windows only).
+- Steam Input (needs to be enabled on Steam client)
 
 # New since 11/16/2024:
 ## **HALF-LIFE 2 20th ANNIVERSARY UPDATE**
@@ -119,13 +62,62 @@ Previously:
 - Some missing Combine sounds has been fixed (noticeable by shooting them)
 - and much more... (see [here](https://web.archive.org/web/20160830085422/http://forums.steampowered.com/forums/showthread.php?t=1286478))
 
-# Bugs that hasn't been fixed/changes not included
-- Does not include 20th maps fixes (but Update itself even also have it's own changes and fixes aswell).
+### Important Note:
+THE CURRENT PATCH (OUTSIDE BETA) DOES NOT INCLUDE ALL MAP CHANGES YET (this is still work in progress, but you can try it now on the BETA version)
 
-# TODOs:
-- Combining Developer Commentary (20th anniversary) with Community Commentary
-- Also fixing typos in official Developer Commentary and the audio caching commentary subtitles being missing
-- Map changes
+NOTE (1/31/2025): The latest version of the patch currently were based off the 20th anniversary version (with Nov 17, 2024 official hotfix), which has most of the features of 20th anniversary like classic particles effect, working Steam Input, bicubic lightmaps. However, map changes are not available except in the work in progress BETA version (which only feature changes from Chapter 1 to 3 - Point Insertion to Route Kanal). Next BETA version will have changes from Chapter 4 to 6 (Water Hazard, Black Mesa East and Ravenholm), aswell running on newer engine build.
+
+At the moment, instead you can play the regular Half-Life 2 for now, and wait for this to be finished.
+
+## Download
+**WARNING:** This patch is made for "Half-Life 2: Update" (AppID: 290930) only.
+
+See this patch showcases here:
+https://www.youtube.com/embed/BPhvxuZAkQ4
+
+More information about this patch:
+
+GameBanana: https://gamebanana.com/mods/429040
+
+PCGW: https://community.pcgamingwiki.com/files/file/2588-hl2-update-new-engine-patch-new-bugfixes-for-hl2-update-updated-2023/
+
+GitHub: Go to [Releases](https://github.com/megakarlach/HL2reUpdate/releases).
+
+## Versions
+
+- Patch current version: 2.0.0.2 - build 9352380 (20th anniversary hotfix) - 11/18/2024 (Windows)
+- Released Nov 20, 2024
+
+- BETA version: [2.1.0.0](https://github.com/megakarlach/HL2reUpdate/releases/tag/v2.1.0.0-beta1) - BETA 1 - build 9377890 - 11/26/2024 (Windows)
+- Released Jan 3, 2025
+
+Linux version: 1.0.4.1 (I might try to port changes from 20th anniversary at some point but linux is not my main OS so expect delays, or might as well not be released)
+
+The latest version is based off the slightly old version of 20th anniversary update + official hotfix (Nov 16, 2024).
+
+BETA version is based on the latest 20th anniversary version (Nov 27, 2024). The next BETA 2 version will be based on newer version (Feb 11, 2025 update) and features map changes in "Water Hazard, Black Mesa East and Ravenholm". It will also feature new bug fixes aswell.
+
+## Installation Guide / Updating reUpdate
+* See [Wiki - Installation](https://github.com/megakarlach/HL2reUpdate/wiki/Installation)
+
+SINCE 2.0.0.0 UPDATE, YOU MUST UNINSTALL PREVIOUS VERSION (reUpdate 1.x.x.x), AND VERIFY HL2: UPDATE ON STEAM, BEFORE INSTALL ANY NEW VERSION.
+
+(Optional) If you want to install the custom Orange-themed Gamepad UI with Verdana & Trebuchet MS font (inspired by the X360/PS3 Orange Box menu UI),<br>
+put the VPK file into hl2\custom folder (if it doesn't exist, create it).
+
+**NOTE:* For those who don't know where Steam and the game (Half-Life 2: Update) is installed, go to Steam Library > 
+right click Half-Life 2: Update > Properties > Local Files > Browse...
+An explorer/file browser window will pop-up. Copy the path from the address bar (example: V:\Steam\steamapps\common\Half-Life 2 Update, may vary by system).
+
+## System requirements
+- Windows Vista or later (newer Source 2013 builds are no longer compatible with XP since Steam Deck update)
+- Atleast 2 GB disk space or higher
+- Any graphics card from 2010 should be able to run with maximum settings with LOD disabled (Anniversary Update disables LOD).
+
+**NOTE:** To get the best anti-aliasing, you can enable [SGSSAA anti-aliasing](https://github.com/megakarlach/HL2reUpdate/wiki/Get-the-best-graphical-settings#sgssaa-anti-aliasing) instead of MSAA which produces inferior result with alpha textures (even with alpha to coverage), 
+however you need a good graphics card (GTX 1080Ti or RTX 3060 (latter tested) should handle 8X SGSSAA easily with 100+ FPS). Doing this also makes transparent or decal textures on far distance look sharper (if you adjust LOD bias).
+
+**NOTE for Intel users or stuck on DX8:** To get the best graphics on Intel GPU, or to fix the game stuck on DirectX 8 mode, [Follow instructions on PCGW](https://www.pcgamingwiki.com/wiki/Engine:Source#Game_runs_on_DirectX_8.0.2F9.0_level_.28instead_of_9.0.2B.29).
 
 # LICENSE (ignore)
 
