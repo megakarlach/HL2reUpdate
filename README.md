@@ -21,7 +21,7 @@ Half-Life 2: reUpdate is a patch that enhances Half-Life 2: Update. It adds 20th
 ### Upcoming reUpdate Features (BETA):
 - Combining Developer Commentary (20th anniversary) with Community Commentary
 - Also fixing typos in official Developer Commentary and the audio caching commentary subtitles being missing
-- Map changes (will feature exclusive changes, for example, 3D Skybox on Ravenholm, all maps have radial fog, and maps are more detailed)
+- Map changes (will feature exclusive changes, for example, [3D Skybox on Ravenholm](https://imgsli.com/MzY2ODg1/0/2), all maps have radial fog, and maps are more detailed)
 
 ### Official Features:
 - Increased FOV from 90 to 120
