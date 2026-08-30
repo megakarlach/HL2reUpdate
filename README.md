@@ -7,6 +7,8 @@ Half-Life 2: reUpdate is a patch that enhances Half-Life 2: Update. It adds 20th
 
 8/9/2026: Next release (Canary 3.0) is aimed to be released in around late August or September once playtesting is done and any identified issues is solved. Apologized for the long delay and 1 year development of this next update since I kept getting distracted by other things and working on different unrelated project at the same time.
 
+8/30/2026: Well it sucked that it still happened again, i'm gonna try September or October, maybe even longer. And at the same time, the Valve Steam2 leak was happening at the same time aswell, but this project will still continued as usual.
+
 ## Key Features
 ### reUpdate Features:
 - Customized Gamepad UI (screenshots are taken from HL2: Update, instead of original HL2, used for New Game thumbnails)
