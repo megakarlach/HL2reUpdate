@@ -5,9 +5,8 @@
 ## About this patch
 Half-Life 2: reUpdate is a patch that enhances Half-Life 2: Update. It adds 20th anniversary bug fixes, new featres (including Steam Deck Gamepad UI) from original (vanilla) Half-Life 2. Additionally, reUpdate also adds many exclusive map changes (which are not present on 20th Anniversary, pre-Anniversary nor Update).
 
-8/9/2026: Next release (Canary 3.0) is aimed to be released in around late August or September once playtesting is done and any identified issues is solved. Apologized for the long delay and 1 year development of this next update since I kept getting distracted by other things and working on different unrelated project at the same time.
+9/15/2026: Next release (Canary 3.0 Part I) is aimed to be released in around late September. reUpdate Canary 3.0 Part I now enters playtesting phase. If there are any identified issues, I will try to solve it. Apologized for the long delay and 1 year development of this next update since I kept getting distracted by other things and working on different unrelated project at the same time. The update would split in two release, given development troubles, Part I would feature changes up to d2_coast_05, while Part II would feature changes up to end of Sandtraps chapter, which might came out next year.
 
-8/30/2026: Well it sucked that it still happened again, i'm gonna try September or October, maybe even longer. And at the same time, the Valve Steam2 leak was happening at the same time aswell, but this project will still continued as usual.
 
 ## Key Features
 ### reUpdate Features:
