@@ -1,11 +1,11 @@
 # Half-Life 2: reUpdate
-## Enhances Half-Life 2: Update, with 20th anniversary update features & bug fixes
 <center><img src="https://github.com/megakarlach/HL2reUpdate/blob/main/hl2reupdatelogo.jpg?raw=true" width="480" ></center>
 
 ## About this patch
-Half-Life 2: reUpdate is a patch that enhances Half-Life 2: Update. It adds 20th anniversary bug fixes, new featres (including Steam Deck Gamepad UI) from original (vanilla) Half-Life 2. Additionally, reUpdate also adds many exclusive map changes (which are not present on 20th Anniversary, pre-Anniversary nor Update).
+Half-Life 2: reUpdate is a patch that enhances Half-Life 2: Update. 
+Originally, this project plans to adds 20th anniversary bug fixes, new featres (including Steam Deck Gamepad UI) along with map changes (partially) from original (vanilla) Half-Life 2. Additionally, reUpdate also adds many additional map changes that combines the 20th Anniversary changes with Update visuals, plus reUpdate exclusive improvements (including uses of ficool2's VBSP++, VVIS++ and VRAD++ for improved performance and lighting & shadows (incl brush texture shadows).
 
-9/15/2026: Next release (Canary 3.0 Part I) is aimed to be released in around late September. reUpdate Canary 3.0 Part I now enters playtesting phase. If there are any identified issues, I will try to solve it. Apologized for the long delay and 1 year development of this next update since I kept getting distracted by other things and working on different unrelated project at the same time. The update would split in two release, given development troubles, Part I would feature changes up to d2_coast_05, while Part II would feature changes up to end of Sandtraps chapter, which might came out next year.
+10/1/2026: Next release (Canary 3.0 Part I) is aimed to be released in around early October. reUpdate Canary 3.0 Part I now enters playtesting phase. If there are any identified issues, I will try to solve it. Apologized for the long delay which leads to 1 year of waiting for the next update since I kept getting distracted by other things and working on different unrelated project at the same time, and also few issues during playtesting. The update would split in two release, given development troubles, Part I would feature changes up to d2_coast_05, while Part II would feature changes up to end of Sandtraps chapter, which might came out next year.
 
 
 ## Key Features
