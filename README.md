@@ -2,10 +2,11 @@
 <center><img src="https://github.com/megakarlach/HL2reUpdate/blob/main/hl2reupdatelogo.jpg?raw=true" width="480" ></center>
 
 ## About this patch
-Half-Life 2: reUpdate is a patch that enhances Half-Life 2: Update. 
-Originally, this project plans to adds 20th anniversary bug fixes, new featres (including Steam Deck Gamepad UI) along with map changes (partially) from original (vanilla) Half-Life 2. Additionally, reUpdate also adds many additional map changes that combines the 20th Anniversary changes with Update visuals, plus reUpdate exclusive improvements (including uses of ficool2's VBSP++, VVIS++ and VRAD++ for improved performance and lighting & shadows (incl brush texture shadows).
+Half-Life 2: reUpdate is a patch for Fillip Victor's Half-Life 2: Update, not only upgrading to newer version of Source 2013 SP used in Half-Life 20th Anniversary, but also include map changes (combining not only 20th Anniversary map changes with Update visuals & minor gameplay differences but also contain additional fixes & custom map changes from reUpdate. reUpdate maps would eventually made full use of ficool2's VBSP++, VVIS++ and VRAD++ for improved performance (without using visclusters) and lighting & shadows (incl brush texture shadows), and also significantly reduce time to compile maps in general.
 
-10/1/2026: Next release (Canary 3.0 Part I) is aimed to be released in around early October. reUpdate Canary 3.0 Part I now enters playtesting phase. If there are any identified issues, I will try to solve it. Apologized for the long delay which leads to 1 year of waiting for the next update since I kept getting distracted by other things and working on different unrelated project at the same time, and also few issues during playtesting. The update would split in two release, given development troubles, Part I would feature changes up to d2_coast_05, while Part II would feature changes up to end of Sandtraps chapter, which might came out next year.
+10/8/2026: non-AO version of the maps has been tested (up to d2_coast_05), with no issues, AO version would be later tested, release date would be **October 10, 2026**, to celebrate the 19th Anniversary of The Orange Box. Please note that the upcoming Canary 3.0 Part I will no longer allow direct upgrade, so reinstalling HL2: Update is needed before you can install the new reUpdate Canary 3.0 (you can delete everything inside HL2: Update folder except your "SAVE" files, or use the "reUpdate uninstaller" executable, before you verify files on Steam for clean install).
+
+Part I would feature changes up to d2_coast_05, while Part II would feature changes up to end of Sandtraps chapter, which might came out next year.
 
 
 ## Key Features
@@ -22,7 +23,7 @@ Originally, this project plans to adds 20th anniversary bug fixes, new featres (
   - Orange Gamepad UI scheme with Verdana & Trebuchet MS font included.
 
 ### Upcoming reUpdate Features (BETA):
-- Combining Developer Commentary (20th anniversary) with Community Commentary
+- Combining Developer Commentary (20th anniversary) with Community Commentary (Work in Progress, some maps already have one)
 - Also fixing typos in official Developer Commentary and the audio caching commentary subtitles being missing
 - Map changes (will feature exclusive changes, for example, [3D Skybox on Ravenholm](https://imgsli.com/MzY2ODg1/0/2), all maps have radial fog, and maps are more detailed)
 
@@ -40,7 +41,7 @@ THE CURRENT PATCH (OUTSIDE BETA) DOES NOT INCLUDE ALL MAP CHANGES YET (this is s
 
 NOTE (1/31/2025): The latest version of the patch currently were based off the 20th anniversary version (with Nov 17, 2024 official hotfix), which has most of the features of 20th anniversary like classic particles effect, working Steam Input, bicubic lightmaps. However, map changes are not available except in the work in progress BETA version (which only feature changes from Chapter 1 to 3 - Point Insertion to Route Kanal). Next BETA version will have changes from Chapter 4 to 6 (Water Hazard, Black Mesa East and Ravenholm), aswell running on newer engine build.
 
-At the moment, instead you can play the regular Half-Life 2 for now, and wait for this to be finished.
+As reUpdate wasn't finished, it is recommended that you play the regular Half-Life 2 for now, and wait for this to be finished. Feel free to test reUpdate out and play the whole game and report any issues on "[Issues](https://github.com/megakarlach/HL2reUpdate/issues)" tab.
 
 ## Download
 **WARNING:** This patch is made for "Half-Life 2: Update" (AppID: 290930) only.
@@ -61,8 +62,9 @@ More information about this patch:
 - Patch current version: 2.0.0.2 - build 9352380 (20th anniversary hotfix) - 11/18/2024 (Windows)
 - Released Nov 20, 2024
 
-- BETA version: [2.1.0.0](https://github.com/megakarlach/HL2reUpdate/releases/tag/v2.1.0.0-beta1) - BETA 1 - build 9377890 - 11/26/2024 (Windows)
-- Released Jan 3, 2025
+- BETA version: [2.1.0.0](https://github.com/megakarlach/HL2reUpdate/releases/tag/v2.1.0.0-beta2.5) - BETA 2.5 - build 9377890 - 3/8/2025 (Windows)
+- Released Aug 3, 2025
+- Upcoming version planned on Oct 2026.
 
 Linux version: 1.0.4.1 (I might try to port changes from 20th anniversary at some point but linux is not my main OS so expect delays, or might as well not be released)
 
